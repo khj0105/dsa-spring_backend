@@ -1,0 +1,1035 @@
+2026-06-16T14:50:00.483+09:00  INFO 38228 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 38228 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T14:50:00.483+09:00 DEBUG 38228 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T14:50:00.483+09:00  INFO 38228 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T14:50:00.531+09:00  INFO 38228 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T14:50:00.531+09:00  INFO 38228 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T14:50:01.577+09:00  INFO 38228 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T14:50:01.593+09:00  INFO 38228 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T14:50:01.593+09:00  INFO 38228 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T14:50:01.656+09:00  INFO 38228 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T14:50:01.656+09:00  INFO 38228 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1125 ms
+2026-06-16T14:50:02.069+09:00  INFO 38228 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T14:50:02.113+09:00  INFO 38228 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T14:50:02.118+09:00  INFO 38228 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 2.251 seconds (process running for 2.8)
+2026-06-16T14:50:10.674+09:00  INFO 38228 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T14:50:10.674+09:00  INFO 38228 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T14:50:10.674+09:00  INFO 38228 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T14:50:10.785+09:00 ERROR 38228 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T14:50:10.785+09:00  WARN 38228 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T14:50:10.785+09:00  INFO 38228 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T14:50:10.785+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T14:50:10.788+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T15:04:37.373+09:00 ERROR 38228 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T15:04:37.378+09:00  WARN 38228 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T15:04:37.378+09:00  INFO 38228 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T15:04:37.378+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T15:04:37.378+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T15:04:39.617+09:00 ERROR 38228 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T15:04:39.617+09:00  WARN 38228 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T15:04:39.617+09:00  INFO 38228 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T15:04:39.617+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T15:04:39.617+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T15:08:40.431+09:00 ERROR 38228 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T15:08:40.431+09:00  WARN 38228 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T15:08:40.434+09:00  INFO 38228 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T15:08:40.434+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T15:08:40.435+09:00 DEBUG 38228 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T15:17:40.075+09:00  INFO 38228 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T15:17:40.091+09:00  INFO 38228 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T15:17:50.263+09:00  INFO 41956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 41956 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T15:17:50.263+09:00 DEBUG 41956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T15:17:50.263+09:00  INFO 41956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T15:17:50.333+09:00  INFO 41956 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T15:17:50.333+09:00  INFO 41956 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T15:17:51.397+09:00  INFO 41956 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T15:17:51.413+09:00  INFO 41956 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T15:17:51.413+09:00  INFO 41956 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T15:17:51.468+09:00  INFO 41956 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T15:17:51.468+09:00  INFO 41956 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1135 ms
+2026-06-16T15:17:51.905+09:00  INFO 41956 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T15:17:51.952+09:00  INFO 41956 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T15:17:51.964+09:00  INFO 41956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 2.364 seconds (process running for 2.871)
+2026-06-16T15:18:17.736+09:00  INFO 41956 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T15:18:17.736+09:00  INFO 41956 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T15:18:17.744+09:00  INFO 41956 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T15:18:17.834+09:00 ERROR 41956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T15:18:17.834+09:00  WARN 41956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T15:18:17.834+09:00  INFO 41956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T15:18:17.834+09:00 DEBUG 41956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T15:18:17.834+09:00 DEBUG 41956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T15:18:20.052+09:00 DEBUG 41956 --- [web1] [http-nio-9991-exec-3] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:36:58.865+09:00 DEBUG 41956 --- [web1] [http-nio-9991-exec-5] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:37:01.072+09:00 DEBUG 41956 --- [web1] [http-nio-9991-exec-6] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:37:04.517+09:00  INFO 41956 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T15:37:04.533+09:00  INFO 41956 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T15:37:09.621+09:00  INFO 20780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 20780 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T15:37:09.621+09:00 DEBUG 20780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T15:37:09.621+09:00  INFO 20780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T15:37:09.678+09:00  INFO 20780 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T15:37:09.678+09:00  INFO 20780 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T15:37:10.750+09:00  INFO 20780 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T15:37:10.766+09:00  INFO 20780 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T15:37:10.766+09:00  INFO 20780 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T15:37:10.824+09:00  INFO 20780 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T15:37:10.824+09:00  INFO 20780 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1144 ms
+2026-06-16T15:37:11.295+09:00  INFO 20780 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T15:37:11.374+09:00  INFO 20780 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T15:37:11.390+09:00  INFO 20780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 2.382 seconds (process running for 2.929)
+2026-06-16T15:37:21.876+09:00  INFO 20780 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T15:37:21.878+09:00  INFO 20780 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T15:37:21.881+09:00  INFO 20780 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-06-16T15:37:21.958+09:00 DEBUG 20780 --- [web1] [http-nio-9991-exec-1] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:39:05.176+09:00 DEBUG 20780 --- [web1] [http-nio-9991-exec-8] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:39:09.279+09:00 DEBUG 20780 --- [web1] [http-nio-9991-exec-10] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:39:11.920+09:00  INFO 20780 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T15:39:11.932+09:00  INFO 20780 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T15:39:14.551+09:00  INFO 29148 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 29148 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T15:39:14.551+09:00 DEBUG 29148 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T15:39:14.551+09:00  INFO 29148 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T15:39:14.611+09:00  INFO 29148 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T15:39:14.611+09:00  INFO 29148 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T15:39:15.650+09:00  INFO 29148 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T15:39:15.672+09:00  INFO 29148 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T15:39:15.672+09:00  INFO 29148 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T15:39:15.720+09:00  INFO 29148 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T15:39:15.720+09:00  INFO 29148 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1109 ms
+2026-06-16T15:39:16.159+09:00  INFO 29148 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T15:39:16.191+09:00  INFO 29148 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T15:39:16.191+09:00  INFO 29148 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 2.322 seconds (process running for 2.889)
+2026-06-16T15:39:23.791+09:00  INFO 29148 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T15:39:23.794+09:00  INFO 29148 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T15:39:23.796+09:00  INFO 29148 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T15:39:23.851+09:00 DEBUG 29148 --- [web1] [http-nio-9991-exec-1] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:41:50.818+09:00  INFO 29148 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T15:41:50.818+09:00  INFO 29148 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T15:41:54.255+09:00  INFO 41520 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 41520 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T15:41:54.257+09:00 DEBUG 41520 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T15:41:54.257+09:00  INFO 41520 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T15:41:54.313+09:00  INFO 41520 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T15:41:54.313+09:00  INFO 41520 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T15:41:55.447+09:00  INFO 41520 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T15:41:55.470+09:00  INFO 41520 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T15:41:55.471+09:00  INFO 41520 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T15:41:55.518+09:00  INFO 41520 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T15:41:55.518+09:00  INFO 41520 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1205 ms
+2026-06-16T15:41:56.009+09:00  INFO 41520 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T15:41:56.063+09:00  INFO 41520 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T15:41:56.079+09:00  INFO 41520 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 2.447 seconds (process running for 2.966)
+2026-06-16T15:42:00.581+09:00  INFO 41520 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T15:42:00.581+09:00  INFO 41520 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T15:42:00.581+09:00  INFO 41520 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T15:42:00.631+09:00 ERROR 41520 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T15:42:00.631+09:00  WARN 41520 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T15:42:00.631+09:00  INFO 41520 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T15:42:00.631+09:00 DEBUG 41520 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T15:42:00.631+09:00 DEBUG 41520 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T15:42:02.413+09:00 DEBUG 41520 --- [web1] [http-nio-9991-exec-2] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:43:02.862+09:00  INFO 41520 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T15:43:02.862+09:00  INFO 41520 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T15:43:05.383+09:00  INFO 42556 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 42556 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T15:43:05.386+09:00 DEBUG 42556 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T15:43:05.386+09:00  INFO 42556 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T15:43:05.444+09:00  INFO 42556 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T15:43:05.444+09:00  INFO 42556 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T15:43:06.513+09:00  INFO 42556 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T15:43:06.526+09:00  INFO 42556 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T15:43:06.526+09:00  INFO 42556 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T15:43:06.575+09:00  INFO 42556 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T15:43:06.575+09:00  INFO 42556 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1130 ms
+2026-06-16T15:43:07.033+09:00  INFO 42556 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T15:43:07.081+09:00  INFO 42556 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T15:43:07.097+09:00  INFO 42556 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 2.368 seconds (process running for 2.911)
+2026-06-16T15:43:11.096+09:00  INFO 42556 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T15:43:11.096+09:00  INFO 42556 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T15:43:11.096+09:00  INFO 42556 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T15:43:11.167+09:00 ERROR 42556 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T15:43:11.167+09:00  WARN 42556 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T15:43:11.167+09:00  INFO 42556 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T15:43:11.167+09:00 DEBUG 42556 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T15:43:11.167+09:00 DEBUG 42556 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T15:43:12.096+09:00 DEBUG 42556 --- [web1] [http-nio-9991-exec-2] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T15:51:26.038+09:00  INFO 42556 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T15:51:26.051+09:00  INFO 42556 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T15:51:30.743+09:00  INFO 39796 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 39796 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T15:51:30.743+09:00 DEBUG 39796 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T15:51:30.743+09:00  INFO 39796 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T15:51:30.799+09:00  INFO 39796 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T15:51:30.799+09:00  INFO 39796 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T15:51:31.845+09:00  INFO 39796 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T15:51:31.860+09:00  INFO 39796 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T15:51:31.860+09:00  INFO 39796 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T15:51:31.919+09:00  INFO 39796 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T15:51:31.923+09:00  INFO 39796 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1124 ms
+2026-06-16T15:51:32.351+09:00  INFO 39796 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T15:51:32.397+09:00  INFO 39796 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T15:51:32.401+09:00  INFO 39796 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 2.236 seconds (process running for 2.753)
+2026-06-16T15:51:35.136+09:00  INFO 39796 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T15:51:35.140+09:00  INFO 39796 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T15:51:35.143+09:00  INFO 39796 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-06-16T15:51:35.211+09:00 ERROR 39796 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T15:51:35.211+09:00  WARN 39796 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T15:51:35.211+09:00  INFO 39796 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T15:51:35.211+09:00 DEBUG 39796 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T15:51:35.211+09:00 DEBUG 39796 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T16:14:26.693+09:00  INFO 39796 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T16:14:26.708+09:00  INFO 39796 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T16:16:40.750+09:00  INFO 39104 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 39104 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T16:16:40.750+09:00 DEBUG 39104 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T16:16:40.750+09:00  INFO 39104 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T16:16:40.785+09:00  INFO 39104 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T16:16:40.785+09:00  INFO 39104 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T16:16:41.506+09:00  INFO 39104 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T16:16:41.538+09:00  INFO 39104 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T16:16:41.538+09:00  INFO 39104 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T16:16:41.586+09:00  INFO 39104 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T16:16:41.586+09:00  INFO 39104 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 801 ms
+2026-06-16T16:16:41.886+09:00  INFO 39104 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T16:16:41.923+09:00  INFO 39104 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T16:16:41.934+09:00  INFO 39104 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.591 seconds (process running for 1.945)
+2026-06-16T16:16:48.039+09:00  INFO 39104 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T16:16:48.040+09:00  INFO 39104 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T16:16:48.041+09:00  INFO 39104 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-16T16:16:48.174+09:00 ERROR 39104 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T16:16:48.176+09:00  WARN 39104 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T16:16:48.177+09:00  INFO 39104 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T16:16:48.177+09:00 DEBUG 39104 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T16:16:48.177+09:00 DEBUG 39104 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T16:22:09.352+09:00  INFO 39104 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T16:22:09.362+09:00  INFO 39104 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T16:22:11.202+09:00  INFO 41840 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 41840 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T16:22:11.202+09:00 DEBUG 41840 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T16:22:11.202+09:00  INFO 41840 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T16:22:11.243+09:00  INFO 41840 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T16:22:11.243+09:00  INFO 41840 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T16:22:11.982+09:00  INFO 41840 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T16:22:11.997+09:00  INFO 41840 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T16:22:11.997+09:00  INFO 41840 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T16:22:12.029+09:00  INFO 41840 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T16:22:12.029+09:00  INFO 41840 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 786 ms
+2026-06-16T16:22:12.315+09:00  INFO 41840 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T16:22:12.346+09:00  INFO 41840 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T16:22:12.362+09:00  INFO 41840 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.593 seconds (process running for 1.946)
+2026-06-16T16:22:18.466+09:00  INFO 41840 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T16:22:18.476+09:00  INFO 41840 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T16:22:18.478+09:00  INFO 41840 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-16T16:22:18.541+09:00 ERROR 41840 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T16:22:18.542+09:00  WARN 41840 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T16:22:18.543+09:00  INFO 41840 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T16:22:18.544+09:00 DEBUG 41840 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T16:22:18.545+09:00 DEBUG 41840 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T16:22:26.089+09:00 DEBUG 41840 --- [web1] [http-nio-9991-exec-10] n.d.web1.controller.StaticController     : 이미지 경로 요청 처리
+2026-06-16T16:28:16.302+09:00  INFO 41840 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T16:28:16.318+09:00  INFO 41840 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T16:43:27.788+09:00  INFO 41876 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 41876 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T16:43:27.804+09:00 DEBUG 41876 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T16:43:27.804+09:00  INFO 41876 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T16:43:27.832+09:00  INFO 41876 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T16:43:27.832+09:00  INFO 41876 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T16:43:28.599+09:00  INFO 41876 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T16:43:28.614+09:00  INFO 41876 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T16:43:28.614+09:00  INFO 41876 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T16:43:28.662+09:00  INFO 41876 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T16:43:28.662+09:00  INFO 41876 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 830 ms
+2026-06-16T16:43:28.978+09:00  INFO 41876 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T16:43:28.994+09:00  INFO 41876 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T16:43:28.994+09:00  INFO 41876 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.674 seconds (process running for 2.041)
+2026-06-16T16:43:40.186+09:00  INFO 41876 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T16:43:40.186+09:00  INFO 41876 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T16:43:40.186+09:00  INFO 41876 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T16:43:40.237+09:00 ERROR 41876 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T16:43:40.237+09:00  WARN 41876 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T16:43:40.237+09:00  INFO 41876 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T16:43:40.237+09:00 DEBUG 41876 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T16:43:40.237+09:00 DEBUG 41876 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T16:44:46.059+09:00  INFO 41876 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T16:44:46.064+09:00  INFO 41876 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T16:44:47.874+09:00  INFO 44768 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 44768 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T16:44:47.878+09:00 DEBUG 44768 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T16:44:47.878+09:00  INFO 44768 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T16:44:47.916+09:00  INFO 44768 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T16:44:47.916+09:00  INFO 44768 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T16:44:48.654+09:00  INFO 44768 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T16:44:48.670+09:00  INFO 44768 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T16:44:48.670+09:00  INFO 44768 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T16:44:48.702+09:00  INFO 44768 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T16:44:48.702+09:00  INFO 44768 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 786 ms
+2026-06-16T16:44:49.004+09:00  INFO 44768 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T16:44:49.038+09:00  INFO 44768 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T16:44:49.038+09:00  INFO 44768 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.571 seconds (process running for 1.936)
+2026-06-16T16:44:53.340+09:00  INFO 44768 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T16:44:53.340+09:00  INFO 44768 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T16:44:53.340+09:00  INFO 44768 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T16:48:26.512+09:00  INFO 44768 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T16:48:26.528+09:00  INFO 44768 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:02:26.839+09:00  INFO 26176 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 26176 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:02:26.839+09:00 DEBUG 26176 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:02:26.839+09:00  INFO 26176 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:02:26.872+09:00  INFO 26176 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:02:26.872+09:00  INFO 26176 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:02:27.626+09:00  INFO 26176 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:02:27.642+09:00  INFO 26176 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:02:27.642+09:00  INFO 26176 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:02:27.674+09:00  INFO 26176 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:02:27.674+09:00  INFO 26176 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 802 ms
+2026-06-16T17:02:28.022+09:00  INFO 26176 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:02:28.053+09:00  INFO 26176 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:02:28.053+09:00  INFO 26176 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.643 seconds (process running for 1.991)
+2026-06-16T17:02:34.994+09:00  INFO 26176 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:02:34.995+09:00  INFO 26176 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:02:34.997+09:00  INFO 26176 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-16T17:02:35.042+09:00 ERROR 26176 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:02:35.042+09:00  WARN 26176 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:02:35.042+09:00  INFO 26176 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:02:35.042+09:00 DEBUG 26176 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:02:35.042+09:00 DEBUG 26176 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:03:58.596+09:00  INFO 26176 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:03:58.609+09:00  INFO 26176 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:04:00.572+09:00  INFO 14020 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 14020 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:04:00.577+09:00 DEBUG 14020 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:04:00.577+09:00  INFO 14020 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:04:00.615+09:00  INFO 14020 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:04:00.615+09:00  INFO 14020 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:04:01.423+09:00  INFO 14020 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:04:01.443+09:00  INFO 14020 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:04:01.443+09:00  INFO 14020 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:04:01.486+09:00  INFO 14020 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:04:01.486+09:00  INFO 14020 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 868 ms
+2026-06-16T17:04:01.897+09:00  INFO 14020 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:04:01.922+09:00  INFO 14020 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:04:01.927+09:00  INFO 14020 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.782 seconds (process running for 2.288)
+2026-06-16T17:04:02.177+09:00  INFO 14020 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:04:02.177+09:00  INFO 14020 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:04:02.177+09:00  INFO 14020 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T17:04:02.209+09:00 ERROR 14020 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:04:02.209+09:00  WARN 14020 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:04:02.209+09:00  INFO 14020 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:04:02.209+09:00 DEBUG 14020 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:04:02.209+09:00 DEBUG 14020 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:04:02.983+09:00 ERROR 14020 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:04:02.983+09:00  WARN 14020 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:04:02.984+09:00  INFO 14020 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:04:02.984+09:00 DEBUG 14020 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:04:02.984+09:00 DEBUG 14020 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:04:50.493+09:00  INFO 14020 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:04:50.499+09:00  INFO 14020 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:04:52.701+09:00  INFO 35956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 35956 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:04:52.701+09:00 DEBUG 35956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:04:52.701+09:00  INFO 35956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:04:52.734+09:00  INFO 35956 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:04:52.734+09:00  INFO 35956 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:04:53.430+09:00  INFO 35956 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:04:53.456+09:00  INFO 35956 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:04:53.458+09:00  INFO 35956 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:04:53.493+09:00  INFO 35956 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:04:53.493+09:00  INFO 35956 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 759 ms
+2026-06-16T17:04:53.795+09:00  INFO 35956 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:04:53.818+09:00  INFO 35956 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:04:53.823+09:00  INFO 35956 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.507 seconds (process running for 1.841)
+2026-06-16T17:04:58.281+09:00  INFO 35956 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:04:58.284+09:00  INFO 35956 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:04:58.285+09:00  INFO 35956 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T17:04:58.348+09:00 ERROR 35956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:04:58.348+09:00  WARN 35956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:04:58.348+09:00  INFO 35956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:04:58.348+09:00 DEBUG 35956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:04:58.348+09:00 DEBUG 35956 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:06:35.488+09:00  INFO 35956 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:06:35.488+09:00  INFO 35956 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:06:37.761+09:00  INFO 11836 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 11836 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:06:37.768+09:00 DEBUG 11836 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:06:37.768+09:00  INFO 11836 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:06:37.801+09:00  INFO 11836 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:06:37.801+09:00  INFO 11836 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:06:38.511+09:00  INFO 11836 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:06:38.532+09:00  INFO 11836 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:06:38.536+09:00  INFO 11836 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:06:38.559+09:00  INFO 11836 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:06:38.559+09:00  INFO 11836 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 758 ms
+2026-06-16T17:06:38.754+09:00  WARN 11836 --- [web1] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+2026-06-16T17:06:38.754+09:00  INFO 11836 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-16T17:06:38.766+09:00  INFO 11836 --- [web1] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-16T17:06:38.798+09:00 ERROR 11836 --- [web1] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1824) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1235) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1201) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.15.jar:3.5.15]
+	at net.datasa.web1.Web1Application.main(Web1Application.java:13) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.15.jar:3.5.15]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:677) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:637) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:507) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:237) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1871) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.2.19.jar:6.2.19]
+	... 21 common frames omitted
+
+2026-06-16T17:06:57.909+09:00  INFO 43440 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 43440 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:06:57.909+09:00 DEBUG 43440 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:06:57.909+09:00  INFO 43440 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:06:57.940+09:00  INFO 43440 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:06:57.940+09:00  INFO 43440 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:06:58.688+09:00  INFO 43440 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:06:58.706+09:00  INFO 43440 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:06:58.706+09:00  INFO 43440 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:06:58.729+09:00  INFO 43440 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:06:58.745+09:00  INFO 43440 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 789 ms
+2026-06-16T17:06:59.122+09:00  INFO 43440 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:06:59.144+09:00  INFO 43440 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:06:59.151+09:00  INFO 43440 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.641 seconds (process running for 1.977)
+2026-06-16T17:07:03.481+09:00  INFO 43440 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:07:03.485+09:00  INFO 43440 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:07:03.486+09:00  INFO 43440 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-16T17:07:03.548+09:00 ERROR 43440 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:07:03.548+09:00  WARN 43440 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:07:03.551+09:00  INFO 43440 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:07:03.551+09:00 DEBUG 43440 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:07:03.552+09:00 DEBUG 43440 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:07:27.110+09:00  INFO 43440 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:07:27.117+09:00  INFO 43440 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:07:29.323+09:00  INFO 43548 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 43548 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:07:29.323+09:00 DEBUG 43548 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:07:29.323+09:00  INFO 43548 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:07:29.360+09:00  INFO 43548 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:07:29.360+09:00  INFO 43548 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:07:30.058+09:00  INFO 43548 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:07:30.089+09:00  INFO 43548 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:07:30.089+09:00  INFO 43548 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:07:30.128+09:00  INFO 43548 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:07:30.136+09:00  INFO 43548 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 768 ms
+2026-06-16T17:07:30.247+09:00  WARN 43548 --- [web1] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+2026-06-16T17:07:30.247+09:00  INFO 43548 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-16T17:07:30.263+09:00  INFO 43548 --- [web1] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-16T17:07:30.279+09:00 ERROR 43548 --- [web1] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1824) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1235) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1201) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.15.jar:3.5.15]
+	at net.datasa.web1.Web1Application.main(Web1Application.java:13) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.15.jar:3.5.15]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:677) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:637) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:507) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:237) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1871) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.2.19.jar:6.2.19]
+	... 21 common frames omitted
+
+2026-06-16T17:08:03.125+09:00  INFO 34352 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 34352 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:08:03.125+09:00 DEBUG 34352 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:08:03.125+09:00  INFO 34352 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:08:03.158+09:00  INFO 34352 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:08:03.158+09:00  INFO 34352 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:08:04.003+09:00  INFO 34352 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:08:04.034+09:00  INFO 34352 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:08:04.034+09:00  INFO 34352 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:08:04.067+09:00  INFO 34352 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:08:04.067+09:00  INFO 34352 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 909 ms
+2026-06-16T17:08:04.461+09:00  INFO 34352 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:08:04.476+09:00  INFO 34352 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:08:04.492+09:00  INFO 34352 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.77 seconds (process running for 2.185)
+2026-06-16T17:08:08.244+09:00  INFO 34352 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:08:08.245+09:00  INFO 34352 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:08:08.248+09:00  INFO 34352 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-16T17:08:34.077+09:00  INFO 34352 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:08:34.084+09:00  INFO 34352 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:08:35.876+09:00  INFO 44376 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 44376 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:08:35.878+09:00 DEBUG 44376 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:08:35.878+09:00  INFO 44376 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:08:35.912+09:00  INFO 44376 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:08:35.912+09:00  INFO 44376 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:08:36.615+09:00  INFO 44376 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:08:36.640+09:00  INFO 44376 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:08:36.642+09:00  INFO 44376 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:08:36.672+09:00  INFO 44376 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:08:36.672+09:00  INFO 44376 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 760 ms
+2026-06-16T17:08:36.973+09:00  INFO 44376 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:08:36.989+09:00  INFO 44376 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:08:37.005+09:00  INFO 44376 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.562 seconds (process running for 1.892)
+2026-06-16T17:08:40.676+09:00  INFO 44376 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:08:40.676+09:00  INFO 44376 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:08:40.676+09:00  INFO 44376 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T17:10:25.848+09:00  INFO 44376 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:10:25.858+09:00  INFO 44376 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:10:28.192+09:00  INFO 42332 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 42332 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:10:28.196+09:00 DEBUG 42332 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:10:28.196+09:00  INFO 42332 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:10:28.229+09:00  INFO 42332 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:10:28.229+09:00  INFO 42332 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:10:28.956+09:00  INFO 42332 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:10:28.972+09:00  INFO 42332 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:10:28.972+09:00  INFO 42332 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:10:29.020+09:00  INFO 42332 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:10:29.020+09:00  INFO 42332 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 791 ms
+2026-06-16T17:10:29.180+09:00  WARN 42332 --- [web1] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+2026-06-16T17:10:29.194+09:00  INFO 42332 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-16T17:10:29.196+09:00  INFO 42332 --- [web1] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-16T17:10:29.225+09:00 ERROR 42332 --- [web1] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1824) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1235) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1201) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.15.jar:3.5.15]
+	at net.datasa.web1.Web1Application.main(Web1Application.java:13) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.15.jar:3.5.15]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:677) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:637) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:507) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:237) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1871) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.2.19.jar:6.2.19]
+	... 21 common frames omitted
+
+2026-06-16T17:11:43.644+09:00  INFO 38056 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 38056 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:11:43.660+09:00 DEBUG 38056 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:11:43.660+09:00  INFO 38056 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:11:43.690+09:00  INFO 38056 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:11:43.690+09:00  INFO 38056 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:11:44.406+09:00  INFO 38056 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:11:44.434+09:00  INFO 38056 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:11:44.434+09:00  INFO 38056 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:11:44.481+09:00  INFO 38056 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:11:44.481+09:00  INFO 38056 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 791 ms
+2026-06-16T17:11:44.640+09:00  WARN 38056 --- [web1] [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+2026-06-16T17:11:44.656+09:00  INFO 38056 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-06-16T17:11:44.656+09:00  INFO 38056 --- [web1] [restartedMain] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-06-16T17:11:44.687+09:00 ERROR 38056 --- [web1] [restartedMain] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/servlet/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1824) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1235) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1201) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1130) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:991) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:628) ~[spring-context-6.2.19.jar:6.2.19]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:752) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361) ~[spring-boot-3.5.15.jar:3.5.15]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350) ~[spring-boot-3.5.15.jar:3.5.15]
+	at net.datasa.web1.Web1Application.main(Web1Application.java:13) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50) ~[spring-boot-devtools-3.5.15.jar:3.5.15]
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'staticController' method 
+net.datasa.web1.controller.StaticController#home()
+to {GET [/ || ]}: There is already 'homeController' bean method
+net.datasa.web1.controller.HomeController#home() mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.validateMethodMapping(AbstractHandlerMethodMapping.java:677) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:637) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:331) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:507) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.registerHandlerMethod(RequestMappingHandlerMapping.java:84) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.lambda$detectHandlerMethods$2(AbstractHandlerMethodMapping.java:298) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[na:na]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:296) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.processCandidateBean(AbstractHandlerMethodMapping.java:265) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:224) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:212) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:237) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1871) ~[spring-beans-6.2.19.jar:6.2.19]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1820) ~[spring-beans-6.2.19.jar:6.2.19]
+	... 21 common frames omitted
+
+2026-06-16T17:14:41.880+09:00  INFO 36852 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 36852 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:14:41.880+09:00 DEBUG 36852 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:14:41.880+09:00  INFO 36852 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:14:41.915+09:00  INFO 36852 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:14:41.915+09:00  INFO 36852 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:14:42.665+09:00  INFO 36852 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:14:42.681+09:00  INFO 36852 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:14:42.681+09:00  INFO 36852 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:14:42.713+09:00  INFO 36852 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:14:42.713+09:00  INFO 36852 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 798 ms
+2026-06-16T17:14:43.127+09:00  INFO 36852 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:14:43.159+09:00  INFO 36852 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:14:43.159+09:00  INFO 36852 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.705 seconds (process running for 2.068)
+2026-06-16T17:14:48.993+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:14:48.993+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:14:48.999+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2026-06-16T17:14:49.040+09:00 ERROR 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:14:49.040+09:00  WARN 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:14:49.053+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:14:49.053+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:14:49.053+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:14:52.014+09:00 ERROR 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:14:52.014+09:00  WARN 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:14:52.014+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:14:52.014+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:14:52.014+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:14:54.668+09:00 ERROR 36852 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:14:54.668+09:00  WARN 36852 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:14:54.668+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:14:54.668+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:14:54.668+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:16:44.768+09:00 ERROR 36852 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:16:44.768+09:00  WARN 36852 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:16:44.768+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:16:44.768+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:16:44.768+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-8] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:16:47.175+09:00 ERROR 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:16:47.175+09:00  WARN 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:16:47.175+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:16:47.176+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:16:47.176+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:16:49.338+09:00 ERROR 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:16:49.338+09:00  WARN 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:16:49.338+09:00  INFO 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:16:49.338+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:16:49.339+09:00 DEBUG 36852 --- [web1] [http-nio-9991-exec-3] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:19:32.468+09:00  INFO 36852 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:19:32.468+09:00  INFO 36852 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:19:34.206+09:00  INFO 5212 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 5212 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:19:34.206+09:00 DEBUG 5212 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:19:34.206+09:00  INFO 5212 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:19:34.254+09:00  INFO 5212 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:19:34.254+09:00  INFO 5212 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:19:35.004+09:00  INFO 5212 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:19:35.020+09:00  INFO 5212 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:19:35.020+09:00  INFO 5212 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:19:35.054+09:00  INFO 5212 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:19:35.054+09:00  INFO 5212 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 800 ms
+2026-06-16T17:19:35.411+09:00  INFO 5212 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:19:35.429+09:00  INFO 5212 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:19:35.443+09:00  INFO 5212 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.676 seconds (process running for 2.013)
+2026-06-16T17:19:39.530+09:00  INFO 5212 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:19:39.531+09:00  INFO 5212 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:19:39.532+09:00  INFO 5212 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-16T17:19:41.289+09:00 ERROR 5212 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:19:41.289+09:00  WARN 5212 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:19:41.289+09:00  INFO 5212 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:19:41.289+09:00 DEBUG 5212 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:19:41.289+09:00 DEBUG 5212 --- [web1] [http-nio-9991-exec-2] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:27:12.621+09:00  INFO 5212 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:27:12.624+09:00  INFO 5212 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:27:14.891+09:00  INFO 42724 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 42724 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:27:14.891+09:00 DEBUG 42724 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:27:14.891+09:00  INFO 42724 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:27:14.926+09:00  INFO 42724 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:27:14.926+09:00  INFO 42724 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:27:15.662+09:00  INFO 42724 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:27:15.668+09:00  INFO 42724 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:27:15.668+09:00  INFO 42724 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:27:15.702+09:00  INFO 42724 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:27:15.702+09:00  INFO 42724 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 776 ms
+2026-06-16T17:27:15.994+09:00  INFO 42724 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:27:16.031+09:00  INFO 42724 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:27:16.043+09:00  INFO 42724 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.575 seconds (process running for 1.922)
+2026-06-16T17:27:17.783+09:00  INFO 42724 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:27:17.784+09:00  INFO 42724 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:27:17.787+09:00  INFO 42724 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-16T17:27:17.863+09:00 ERROR 42724 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:27:17.865+09:00  WARN 42724 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:27:17.865+09:00  INFO 42724 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:27:17.865+09:00 DEBUG 42724 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:27:17.865+09:00 DEBUG 42724 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:29:19.015+09:00  INFO 42724 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:29:19.015+09:00  INFO 42724 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:29:20.788+09:00  INFO 40204 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 40204 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:29:20.788+09:00 DEBUG 40204 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:29:20.788+09:00  INFO 40204 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:29:20.828+09:00  INFO 40204 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:29:20.828+09:00  INFO 40204 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:29:21.549+09:00  INFO 40204 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:29:21.564+09:00  INFO 40204 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:29:21.564+09:00  INFO 40204 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:29:21.596+09:00  INFO 40204 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:29:21.596+09:00  INFO 40204 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 768 ms
+2026-06-16T17:29:21.915+09:00  INFO 40204 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:29:21.931+09:00  INFO 40204 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:29:21.947+09:00  INFO 40204 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.585 seconds (process running for 1.959)
+2026-06-16T17:29:29.482+09:00  INFO 40204 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:29:29.483+09:00  INFO 40204 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:29:29.486+09:00  INFO 40204 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2026-06-16T17:29:29.565+09:00 ERROR 40204 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:29:29.567+09:00  WARN 40204 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:29:29.569+09:00  INFO 40204 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:29:29.569+09:00 DEBUG 40204 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:29:29.569+09:00 DEBUG 40204 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:29:32.727+09:00 ERROR 40204 --- [web1] [http-nio-9991-exec-4] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-9991-exec-4] Exception processing template "sub/path2": An error happened during template parsing (template: "class path resource [templates/sub/path2.html]")
+
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sub/path2.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:374) ~[thymeleaf-spring6-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:193) ~[thymeleaf-spring6-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1438) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.55.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.55.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+Caused by: org.attoparser.ParseException: Could not parse as expression: "../@{/}" (template: "sub/path2" - line 15, col 20)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "../@{/}" (template: "sub/path2" - line 15, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	... 50 common frames omitted
+
+2026-06-16T17:29:32.731+09:00 ERROR 40204 --- [web1] [http-nio-9991-exec-4] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/sub/path2.html]")] with root cause
+
+org.thymeleaf.exceptions.TemplateProcessingException: Could not parse as expression: "../@{/}" (template: "sub/path2" - line 15, col 20)
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:131) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:62) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.expression.StandardExpressionParser.parseExpression(StandardExpressionParser.java:44) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.parseAttributeExpression(EngineEventUtils.java:220) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.EngineEventUtils.computeAttributeExpression(EngineEventUtils.java:207) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:125) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleOpenElementEnd(TemplateHandlerAdapterMarkupHandler.java:304) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:278) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleOpenElementEnd(OutputExpressionInlinePreProcessorHandler.java:186) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleOpenElementEnd(InlinedOutputExpressionMarkupHandler.java:124) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.attoparser.HtmlElement.handleOpenElementEnd(HtmlElement.java:109) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.HtmlMarkupHandler.handleOpenElementEnd(HtmlMarkupHandler.java:297) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupEventProcessorHandler.handleOpenElementEnd(MarkupEventProcessorHandler.java:402) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.ParsingElementMarkupUtil.parseOpenElement(ParsingElementMarkupUtil.java:159) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:710) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257) ~[attoparser-2.0.7.RELEASE.jar:2.0.7.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077) ~[thymeleaf-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:374) ~[thymeleaf-spring6-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:193) ~[thymeleaf-spring6-3.1.5.RELEASE.jar:3.1.5.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1438) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1168) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1106) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.55.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.19.jar:6.2.19]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.55.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.19.jar:6.2.19]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:138) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:88) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1797) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:973) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:491) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2026-06-16T17:29:51.973+09:00  INFO 40204 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:29:51.989+09:00  INFO 40204 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:29:53.770+09:00  INFO 2780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 2780 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:29:53.770+09:00 DEBUG 2780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:29:53.770+09:00  INFO 2780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:29:53.807+09:00  INFO 2780 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:29:53.807+09:00  INFO 2780 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:29:54.727+09:00  INFO 2780 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:29:54.746+09:00  INFO 2780 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:29:54.746+09:00  INFO 2780 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:29:54.782+09:00  INFO 2780 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:29:54.782+09:00  INFO 2780 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 975 ms
+2026-06-16T17:29:55.076+09:00  INFO 2780 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:29:55.099+09:00  INFO 2780 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:29:55.106+09:00  INFO 2780 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.742 seconds (process running for 2.113)
+2026-06-16T17:29:58.815+09:00  INFO 2780 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:29:58.824+09:00  INFO 2780 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:29:58.825+09:00  INFO 2780 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T17:29:58.915+09:00 ERROR 2780 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:29:58.915+09:00  WARN 2780 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:29:58.916+09:00  INFO 2780 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:29:58.917+09:00 DEBUG 2780 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:29:58.918+09:00 DEBUG 2780 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:30:01.968+09:00 ERROR 2780 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:30:01.969+09:00  WARN 2780 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:30:01.969+09:00  INFO 2780 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:30:01.969+09:00 DEBUG 2780 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:30:01.969+09:00 DEBUG 2780 --- [web1] [http-nio-9991-exec-5] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:30:05.640+09:00 ERROR 2780 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:30:05.640+09:00  WARN 2780 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:30:05.640+09:00  INFO 2780 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:30:05.640+09:00 DEBUG 2780 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:30:05.640+09:00 DEBUG 2780 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:31:20.704+09:00  INFO 2780 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:31:20.716+09:00  INFO 2780 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:31:22.340+09:00  INFO 39760 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 39760 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:31:22.340+09:00 DEBUG 39760 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:31:22.340+09:00  INFO 39760 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:31:22.368+09:00  INFO 39760 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:31:22.368+09:00  INFO 39760 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:31:23.071+09:00  INFO 39760 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:31:23.080+09:00  INFO 39760 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:31:23.080+09:00  INFO 39760 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:31:23.128+09:00  INFO 39760 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:31:23.128+09:00  INFO 39760 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 760 ms
+2026-06-16T17:31:23.516+09:00  INFO 39760 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:31:23.540+09:00  INFO 39760 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:31:23.540+09:00  INFO 39760 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.618 seconds (process running for 1.952)
+2026-06-16T17:31:28.999+09:00  INFO 39760 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:31:29.004+09:00  INFO 39760 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:31:29.007+09:00  INFO 39760 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-06-16T17:31:29.083+09:00 ERROR 39760 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:31:29.085+09:00  WARN 39760 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:31:29.085+09:00  INFO 39760 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:31:29.086+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:31:29.086+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-1] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:31:33.132+09:00 ERROR 39760 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:31:33.132+09:00  WARN 39760 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:31:33.132+09:00  INFO 39760 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:31:33.136+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:31:33.136+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:31:36.902+09:00 ERROR 39760 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:31:36.902+09:00  WARN 39760 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:31:36.902+09:00  INFO 39760 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:31:36.902+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:31:36.902+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:31:39.515+09:00 ERROR 39760 --- [web1] [http-nio-9991-exec-9] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:31:39.515+09:00  WARN 39760 --- [web1] [http-nio-9991-exec-9] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:31:39.515+09:00  INFO 39760 --- [web1] [http-nio-9991-exec-9] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:31:39.515+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-9] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:31:39.515+09:00 DEBUG 39760 --- [web1] [http-nio-9991-exec-9] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:42:27.695+09:00  INFO 39760 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:42:27.695+09:00  INFO 39760 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2026-06-16T17:42:29.498+09:00  INFO 37640 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Starting Web1Application using Java 21.0.10 with PID 37640 (C:\spring-backend\web1\build\classes\java\main started by USER in C:\spring-backend\web1)
+2026-06-16T17:42:29.503+09:00 DEBUG 37640 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-16T17:42:29.503+09:00  INFO 37640 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-16T17:42:29.536+09:00  INFO 37640 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-16T17:42:29.536+09:00  INFO 37640 --- [web1] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-16T17:42:30.277+09:00  INFO 37640 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9991 (http)
+2026-06-16T17:42:30.309+09:00  INFO 37640 --- [web1] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-16T17:42:30.309+09:00  INFO 37640 --- [web1] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-16T17:42:30.356+09:00  INFO 37640 --- [web1] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-16T17:42:30.356+09:00  INFO 37640 --- [web1] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 820 ms
+2026-06-16T17:42:30.754+09:00  INFO 37640 --- [web1] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-16T17:42:30.784+09:00  INFO 37640 --- [web1] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9991 (http) with context path '/'
+2026-06-16T17:42:30.784+09:00  INFO 37640 --- [web1] [restartedMain] net.datasa.web1.Web1Application          : Started Web1Application in 1.753 seconds (process running for 2.138)
+2026-06-16T17:42:42.493+09:00  INFO 37640 --- [web1] [http-nio-9991-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-16T17:42:42.495+09:00  INFO 37640 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-16T17:42:42.497+09:00  INFO 37640 --- [web1] [http-nio-9991-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2026-06-16T17:42:46.374+09:00 ERROR 37640 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:42:46.374+09:00  WARN 37640 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:42:46.374+09:00  INFO 37640 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:42:46.374+09:00 DEBUG 37640 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:42:46.374+09:00 DEBUG 37640 --- [web1] [http-nio-9991-exec-4] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:42:49.978+09:00 ERROR 37640 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:42:49.978+09:00  WARN 37640 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:42:49.978+09:00  INFO 37640 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:42:49.978+09:00 DEBUG 37640 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:42:49.978+09:00 DEBUG 37640 --- [web1] [http-nio-9991-exec-6] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:42:52.103+09:00 ERROR 37640 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : error 출력
+2026-06-16T17:42:52.103+09:00  WARN 37640 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : warn 출력
+2026-06-16T17:42:52.103+09:00  INFO 37640 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : info 출력
+2026-06-16T17:42:52.103+09:00 DEBUG 37640 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : debug 출력
+2026-06-16T17:42:52.103+09:00 DEBUG 37640 --- [web1] [http-nio-9991-exec-7] n.datasa.web1.controller.HomeController  : 로그로 출력: 문자열
+2026-06-16T17:45:32.334+09:00  INFO 37640 --- [web1] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2026-06-16T17:45:32.342+09:00  INFO 37640 --- [web1] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete

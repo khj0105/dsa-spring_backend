@@ -1,0 +1,57 @@
+자주 사용하는 앱에서 바로 AI를 사용해 보세요 … Gemini를 사용하여 초안을 생성하고 콘텐츠를 다듬고, Google의 차세대 AI가 지원되는 Gemini Pro를 이용하세요.
+[ web1 ]
+
+1. 프로젝트 개요
+   - Spring Boot 기반의 웹 서비스 기초 구조 이해
+   - Controller와 View(HTML)의 상호작용 실습
+   - 정적 리소스(Image, CSS, JS) 적용 및 처리 원리
+
+2. 주요 실습 내용
+   (1) 서버의 시작점: @SpringBootApplication
+       - 메인 메서드 실행 시 내장 톰캣(WAS)이 구동되는 과정 확인
+   (2) 웹 요청 처리: @Controller & @GetMapping
+       - 브라우저 주소창에 입력한 URL을 서버의 특정 메서드와 연결
+   (3) 화면 연결: View Resolver (Prefix, Suffix)
+       - return "home" -> templates/home.html 자동 완성 규칙 이해
+   (4) 경로 제어: 상대 경로 vs 절대 경로
+       - a태그의 href를 통한 페이지 이동 실습
+   (5) 정적 리소스 관리: static 디렉토리
+       - 이미지(<img src="...">), 스타일(CSS), 스크립트(JS)의 독립적 요청 이해
+
+3. 핵심 동작 흐름 (Flow)
+   ① 브라우저 요청 (GET /image)
+   ② Controller 메서드 실행 (StaticController.image())
+       - [@GetMapping("/image")]가 붙은 메서드를 찾아 실행 (메서드 이름은 상관 없음!)
+   ③ HTML 응답 (image.html)
+   ④ 브라우저의 2차 리소스 요청 (image, css, js 등..)
+       - <img src="image/aaa.jpg">를 만나면 브라우저는 서버에 다시 요청함.
+       - 그때의 요청 주소가 http://localhost:9991/web1/image/aaa.jpg 가 됨.
+       - 서버는 "/image/aaa.jpg"라는 '메서드'가 '컨트롤러'에 없으면, 자동으로 'static' 폴더 안에서 해당 파일을 찾으러 감.
+   ⑤ 화면 렌더링 완료
+
+4. 실습 포인트
+   - Controller에서 리턴하는 값은 반드시 'templates' 폴더 안에 존재해야 함
+   - 이미지나 CSS 같은 정적 파일은 반드시 'static' 폴더 안에 존재해야 함
+   - Controller 매핑 경로가 정적 파일 경로보다 우선순위가 높음
+
+** 알아두기 **
+1. URL의 구성
+    [  Origin : protocol + host + port  ]
+    protocol    host              port     path      query string          fragment
+    https://    www.domain.com    :8888    /login    ?query=name&page=1    #first
+      Origin : protocol + host + port 까지 모두 합친 URL
+      Protocol(Scheme) : http, https (브라우저와 서버가 어떤 방식으로 통신할지 결정하는 규칙)
+      Host : 접속할 서버의 주소 (고유IP주소를 사람들이 보기 편하게 Name으로 변경해서 사용 - DNS)
+      Port : 자원에 접근할 수 있는 포트 번호 (생략시 기본값 사용. HTTP = 80, HTTPS = 443)
+      Path : 사이트 내부 경로
+      Query string : URL에서 추가 정보(필터, 검색, 페이징)를 전달할 때 사용. (요청의 key와 value값)
+      Fragment : 서버로 보내지지 않는 클라이언트 전용 정보
+
+2. 경로의 종류
+    - 절대 경로(Absolute Path): Root에서부터 시작하는 경로.
+        /    : root로 이동
+    - 상대 경로 (Relative Path): 현재 내가 있는 위치를 기준으로 이동하는 경로.
+        ./   : 현재 디렉토리 (생략 가능)
+        ../  : 한 단계 위 상위 디렉토리로 이동
+    - 스프링부트의 경로 💡주의💡
+        “요청 경로(Path)” or “파일 경로(Resource)”

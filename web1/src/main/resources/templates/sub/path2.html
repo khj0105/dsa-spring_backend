@@ -1,0 +1,19 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org"></html>
+<!--<html lang="en">-->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>path2.html</title>
+    </head>
+    <body>
+
+        <h2>[ 경로 예제 ]</h2>
+
+        <ul>
+            <li><a href="/">home - 절대경로</a></li>
+            <li><a href="../../">home - 상대경로</a></li>
+            <li><a th:href="@{/}">home - 타임리프</a></li>
+        </ul>
+    </body>
+</html>

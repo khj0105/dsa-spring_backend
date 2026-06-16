@@ -1,0 +1,160 @@
+자주 사용하는 앱에서 바로 AI를 사용해 보세요 … Gemini를 사용하여 초안을 생성하고 콘텐츠를 다듬고, Google의 차세대 AI가 지원되는 Gemini Pro를 이용하세요.
+[ 스프링 홈페이지에서 프로젝트 생성하기 ]
+
+1. 파일 생성
+	- https://start.spring.io/
+	- 화면 상단 메뉴 - Projects - Spring Initializr
+	- 다음 선택
+	  Project : Gradle-Groovy
+	  Language : Java
+	  Spring Boot : 3.5.x (현재 LTS 버전)
+	  Project Metadata (프로젝트의 이름과 패키지 경로 등 입력)
+	      Group : net.datasa
+	      Artifact : web1
+	      Package name : net.datasa.web1
+	      Packaging : jar
+	      Configuration : Properties
+	      Java : 21
+	- GENERATE 버튼
+	- 다운로드한 web1.zip을 workspace에 압축 해제
+
+2. 파일 열기
+	- IntelliJ Community Edition 실행하고 [File] 메뉴 - Open 명령
+	  web1 폴더 선택하여 열기
+	- 또는, 다운로드한 web1 폴더 안에 .gradle, .idea 등 여러 폴더가 보일때까지 들어가서
+	  우클릭 Open Folder as IntelliJ IDEA Project 클릭하여 열기
+
+3. 플러그인 설치 및 환경 설정
+	- 좌측 상단의 File 메뉴 - 설정 - 플러그인
+
+	검색창에 아래 플러그인 설치(개인 선호에 따른 선택사항)
+		Lombok - (최신 버전은 기본 설치되어 있음)
+		Atom Material Icons
+		Grep Console
+		One Dark Theme
+		Rainbow Brackets
+		HTML Tools
+		Korean Language Pack
+
+	- 좌측 상단의 File 메뉴 - 설정 - 에디터 - 일반 - 자동 가져오기 - import 문 즉시 최적화 체크
+	- 좌측 상단의 File 메뉴 - 설정 - 에디터 - 파일 인코딩 - 프로퍼티 파일에 대한 디폴트 인코딩 UTF-8 변경
+	- 좌측 상단의 File 메뉴 - 설정 - 빌드, 실행, 배포 - 컴파일러 - 프로젝트 자동 빌드 체크
+	- 좌측 상단의 File 메뉴 - 설정 - 빌드, 실행, 배포 - 어노테이션 프로세서 - 어노테이션 처리 활성화 체크
+
+4. build.gradle 파일의 다음 내용 확인
+----------------------------------------------------------------------------------------------------------------------------------------
+	plugins {
+		id 'java'
+		id 'org.springframework.boot' version '3.5.15'
+		id 'io.spring.dependency-management' version '1.1.7'
+	}
+
+	group = 'net.datasa'
+	version = '0.0.1-SNAPSHOT'
+
+	java {
+		toolchain {
+			languageVersion = JavaLanguageVersion.of(21)
+		}
+	}
+
+	repositories {
+		mavenCentral()
+	}
+
+	dependencies {
+		/*
+			Dependencies 등록
+			  1. Spring Web
+			  2. Thymeleaf
+			  3. Lombok
+			  4. Spring Boot DevTools
+		 */
+		implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+		implementation 'org.springframework.boot:spring-boot-starter-web'
+		compileOnly 'org.projectlombok:lombok'
+		developmentOnly 'org.springframework.boot:spring-boot-devtools'
+		annotationProcessor 'org.projectlombok:lombok'
+		testImplementation 'org.springframework.boot:spring-boot-starter-test'
+		testCompileOnly 'org.projectlombok:lombok'
+		testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+		testAnnotationProcessor 'org.projectlombok:lombok'
+	}
+
+	tasks.named('test') {
+		useJUnitPlatform()
+	}
+----------------------------------------------------------------------------------------------------------------------------------------
+
+5. application.properties 파일에서 다음 설정 확인
+	- src/main/resources/application.properties
+
+	# 1. 애플리케이션 정보 및 네트워크 설정
+	# 애플리케이션의 이름을 정의. 서비스 식별 및 모니터링 시 사용.
+	spring.application.name=web1
+	# 서버가 실행될 포트 번호. 브라우저에서 http://localhost:9991 로 접속.
+	server.port=9991
+
+	# 애플리케이션의 기본 경로(Context Path)를 설정. '/'는 루트 경로를 의미.
+	server.servlet.context-path=/
+
+	# 2. 로깅 설정
+	# 전체 로그 수준을 INFO(정보성)로 설정.
+	logging.level.root=info
+	# 특정 패키지(net.datasa.web1)만 DEBUG 수준으로 로그를 남겨 개발 시 상세 추적이 가능하게 설정.
+	logging.level.net.datasa.web1=debug
+
+6. JDK21 설정
+	- 좌측 상단의 파일 메뉴 - 프로젝트 구조 - 프로젝트 설정 - 프로젝트 - SDK - 설치한 JDK21 선택
+
+7. Controller 생성
+	- src/main/java/패키지명을 마우스 우클릭 - New - Java Class - 클래스명 (HomeController) 입력
+----------------------------------------------------------------------------------------------------------------------------------------
+	package net.datasa.web1;
+
+	import org.springframework.stereotype.Controller;
+	import org.springframework.web.bind.annotation.GetMapping;
+
+	// @Controller: 이 클래스가 웹 요청을 처리하는 컨트롤러임을 Spring에 알림
+	@Controller
+	public class HomeController {
+
+		// @GetMapping: 특정 URL(root)로 들어오는 요청을 이 메서드에서 처리
+		@GetMapping({"", "/"})
+		public String home() {
+
+			System.out.println("Home Controller 실행");
+
+			// "home"을 반환하면 templates/home.html 파일을 찾아 화면에 표시
+			return "home";
+		}
+	}
+----------------------------------------------------------------------------------------------------------------------------------------
+
+8. HTML 생성
+	- src/main/resources/templates 마우스 우클릭 - New - HTML 파일 - 파일명 입력 (home.html)
+	- html 파일에 다음 내용 입력
+
+----------------------------------------------------------------------------------------------------------------------------------------
+	<!DOCTYPE html>
+	<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	    <meta charset="UTF-8">
+	    <title>web1</title>
+	</head>
+	<body>
+	    <h1>[ web1 예제 ]</h1>
+	</body>
+	</html>
+----------------------------------------------------------------------------------------------------------------------------------------
+
+9. 브라우저(Chrome)에서 접속
+	- src/main/java/패키지명/Web1Application 클래스 마우스 우클릭 - Run Web1Application.main() 실행
+	- 하단 [Run] 콘솔 창에 오류(Red Error) 없이 로그가 올라가고, Tomcat started on port 9991 문구가 보이면 서버 정상 실행
+	- 웹브라우저에서 http://localhost:9991 접속
+
+
+
+
+
+
