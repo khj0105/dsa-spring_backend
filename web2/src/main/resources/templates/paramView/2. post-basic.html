@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>2. post-basic.html</title>
+    </head>
+    <body>
+    <h2>[ POST method로 parameter 전달 ]</h2>
+
+    <form action="/param/input2" method="post">
+        <p>ID <input type="text" name="id"></p>
+        <p>PW <input type="password" name="password"></p>
+        <p>이름 <input type="text" name="name"></p>
+        <p>전화
+            <input type="text" name="phone">
+            <input type="radio" name="com" value="kt" checked>KT
+            <input type="radio" name="com" value="sk">SKT
+            <input type="radio" name="com" value="lg">LGT
+        </p>
+        <p>
+            <input type="submit" value="전송">
+            <input type="reset" value="초기화">
+        </p>
+    </form>
+    </body>
+</html>

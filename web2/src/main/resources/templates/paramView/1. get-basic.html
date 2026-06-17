@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>1. get-basic.html</title>
+    </head>
+    <body>
+        <h2>[ GET method로 parameter 전달 ]</h2>
+
+        <form action="/param/input1" method="get">
+            <!--보내고자 하는 경로 값을 작성, form은 입력값들을 묶어서 서버로 전송하는 컨테이너-->
+            <!--action = 어디로 보낼지 (URL), method = 어떻게 보낼지 (get/post)-->
+            <!--name 속성을 무조건 넣어야함-->
+            <p>ID <input type="text" name="id"></p>
+            <p>PW <input type="password" name="password"></p>
+            <p>이름 <input type="text" name="name"></p>
+            <p>전화
+                <input type="text" name="phone">
+                <input type="radio" name="com" value="kt" checked>KT
+                <input type="radio" name="com" value="sk">SKT
+                <input type="radio" name="com" value="lg">LGT
+            </p>
+            <p>
+                <input type="submit" value="전송">
+                <input type="reset" value="초기화">
+            </p>
+        </form>
+    </body>
+</html>
