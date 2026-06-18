@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5. validation.html</title>
+<!--    <script>-->
+<!--        function formCheck() {-->
+<!--            let name = document.querySelector('#name');-->
+<!--            // 1. 이름-->
+<!--            if (name.value.trim() == "") {-->
+<!--              alert('이름을 입력해주세요.');-->
+<!--              name.focus();-->
+<!--              return false;-->
+<!--            }-->
+
+<!--            // 2. 핸드폰 번호-->
+<!--            let phone = document.querySelector('#phone');-->
+<!--            // 💡 휴대폰 번호 정규표현식 (010으로 시작하고 중간에 3~4자리, 끝에 4자리 숫자 / 대시 필수)-->
+<!--            // 정규 표현식: 특정 규칙을 가진 문자열을 찾거나 검사하기 위해 사용하는 문자 패턴 공식-->
+<!--            const phoneRegex = /^010-\d{3,4}-\d{4}$/;-->
+
+<!--            // 1. 빈 값 검사-->
+<!--            if (phone.value.trim() === '') {-->
+<!--                alert('휴대폰 번호를 입력해주세요.');-->
+<!--                phone.focus();-->
+<!--                return false;-->
+<!--            }-->
+
+<!--            // 2. 형식 검사 (정규식 만족하지 않을 때)-->
+<!--            if (!phoneRegex.test(phone.value)) {-->
+<!--                alert('휴대폰 번호 형식이 올바르지 않습니다. (예: 010-1234-5678)');-->
+<!--                phone.focus();-->
+<!--                return false;-->
+<!--            }-->
+
+<!--            return true;-->
+<!--        }-->
+<!--    </script>-->
+    <style>
+        .form-group {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        .form-group input {
+            margin-right: 10px;
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>유효성 검사</h1>
+
+<!--
+    #fields는 Thymeleaf에서 Spring의 BindingResult 객체에 접근하기 위한 유틸리티 객체
+    Thymeleaf 템플릿에서 필드 오류, 글로벌 오류 등을 처리할 때 아주 자주 사용
+-->
+<!-- 폼 전체에 바인딩되는 모델 객체 이름 (PersonForm 클래스) -->
+<form action="validation" method="post" th:object="${person}" onsubmit="return formCheck()">
+    <!-- @Validated 검증에서 글로벌 에러가 발생한 경우 표시, #fields는 유틸리티 내장 객체 -->
+    <div th:if="${#fields.hasGlobalErrors()}">
+        <p th:each="err : ${#fields.globalErrors()}" th:text="${err}" class="error"></p>
+    </div>
+
+    <div class="form-group">
+        <label for="name">이름</label>
+        <!-- th:field가 HTML 렌더링 시 자동으로 name 속성을 생성하기 때문에 name속성 없어도 데이터 전송함 -->
+        <input type="text" id="name" th:field="*{name}">
+        <!-- person.name 과 같음, name 에 에러가 없으면 태그 자체를 생성 X -->
+        <span th:errors="*{name}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="password">비밀번호</label>
+        <input type="text" id="password" th:field="*{password}">
+        <span th:errors="*{password}" class="error"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="phone">핸드폰</label>
+        <input type="tel" id="phone" th:field="*{phone}">
+        <span th:errors="*{phone}" class="error"></span>
+    </div>
+    <input type="submit" value="전송">
+</form>
+
+</body>
+</html>

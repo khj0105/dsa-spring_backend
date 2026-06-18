@@ -2,8 +2,12 @@ package net.datasa.web2.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import net.datasa.web2.domain.Person;
+import net.datasa.web2.domain.PersonForm;
+import net.datasa.web2.domain.PersonForm_Messages;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 /*
@@ -110,13 +114,13 @@ public class Ex2_ParamController {
 	}
 	
 	
-	//-------------------------------------------------------------------------
+	//--------------------------------------------------------------------------------------------------------
 	//import org.springframework.ui.Model;
 	@GetMapping("/model")
 	public String model(Model model) {
 		
 		/*
-			Model 객체
+			Model 객체   (서버 데이터를 html에 출력하고 싶음)
 			- Controller와 View 사이에 데이터를 전달하기 위해 사용하는 인터페이스
 			- 구조: Map<String, Object> 형태의 키-값(Key-Value) 저장소
 			- 사용:
@@ -137,4 +141,57 @@ public class Ex2_ParamController {
 		
 		return "paramView/4. model-result";
 	}
+	
+	//--------------------------------------------------------------------------------------------------------
+	// validation
+	@GetMapping("/validation")
+	public String validation(Model model) {
+		model.addAttribute("person", new PersonForm());
+		return "/paramView/5. validation";
+	}
+	
+	// 유효성 검사
+	@PostMapping("/validation")
+	public String validation (
+//			@Validated @ModelAttribute("person") PersonForm personForm // @Validated는 검사
+			@Validated @ModelAttribute("person")
+			PersonForm_Messages personForm
+			, BindingResult result		// 반드시 @Validated 보다 뒤에 써야함
+	) {
+		log.debug("validation log personForm: {}", personForm);
+		log.debug("validation log result: {}", result);
+		
+		/*
+			필드 에러 vs 글로벌 에러
+				@NotNull, @Size ... 등 어노테이션 기반 에러 -> 필드 에러
+				result,reject(...) 처럼 특정 필드가 아닌 전체 폼 수준에서 발생되는 에러 -> 글로벌 에러
+		 */
+		
+		// 1. 필드 에러 체크 - 어노테이션 기반 검증
+		if (result.hasErrors()) {
+			log.debug("[필드 에러] 유효하지 않은 데이터!");
+			return "paramView/5. validation";
+		}
+		
+		// 2. 글로벌 에러 체크 - 커스텀한 로직으로 추가적인 유호성 검사
+		// 이미 가입된 회원이 있는 경우
+		boolean isDuplicate = true;
+		if (isDuplicate) {
+			// reject( 에러 코드, 에러 메시지 )
+//			result.reject("DuplicateUserError", "이미 동일한 정보로 가입된 회원이 존재합니다.");
+			result.reject("DuplicateUserError");
+			
+			log.debug("[글로벌 에러] 중복된 회원 가입 시도!");
+			return "paramView/5. validation";
+		}
+		
+		// 3. 모든 검증 통과시 처리
+//		Person p = PersonForm.toPerson(personForm);
+		Person p = PersonForm_Messages.toPerson(personForm);
+		log.debug(">person: {}", p);
+		
+		return "redirect:/";
+	}
+	
+	
 }
