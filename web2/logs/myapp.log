@@ -643,3 +643,21 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [sessi
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.55.jar:10.1.55]
 	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
 
+2026-06-18T17:27:38.473+09:00  INFO 39668 --- [web2] [restartedMain] net.datasa.web2.Web2Application          : Starting Web2Application using Java 21.0.10 with PID 39668 (C:\spring-backend\web2\build\classes\java\main started by USER in C:\spring-backend\web2)
+2026-06-18T17:27:38.476+09:00 DEBUG 39668 --- [web2] [restartedMain] net.datasa.web2.Web2Application          : Running with Spring Boot v3.5.15, Spring v6.2.19
+2026-06-18T17:27:38.476+09:00  INFO 39668 --- [web2] [restartedMain] net.datasa.web2.Web2Application          : No active profile set, falling back to 1 default profile: "default"
+2026-06-18T17:27:38.551+09:00  INFO 39668 --- [web2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2026-06-18T17:27:38.554+09:00  INFO 39668 --- [web2] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2026-06-18T17:27:39.930+09:00  INFO 39668 --- [web2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 9992 (http)
+2026-06-18T17:27:39.947+09:00  INFO 39668 --- [web2] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-06-18T17:27:39.947+09:00  INFO 39668 --- [web2] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.55]
+2026-06-18T17:27:40.003+09:00  INFO 39668 --- [web2] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-06-18T17:27:40.003+09:00  INFO 39668 --- [web2] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1449 ms
+2026-06-18T17:27:40.571+09:00  INFO 39668 --- [web2] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2026-06-18T17:27:40.615+09:00  INFO 39668 --- [web2] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 9992 (http) with context path '/'
+2026-06-18T17:27:40.620+09:00  INFO 39668 --- [web2] [restartedMain] net.datasa.web2.Web2Application          : Started Web2Application in 2.895 seconds (process running for 3.466)
+2026-06-18T17:27:44.939+09:00  INFO 39668 --- [web2] [http-nio-9992-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-18T17:27:44.939+09:00  INFO 39668 --- [web2] [http-nio-9992-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-06-18T17:27:44.943+09:00  INFO 39668 --- [web2] [http-nio-9992-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2026-06-18T17:27:57.538+09:00 DEBUG 39668 --- [web2] [http-nio-9992-exec-5] n.d.w.controller.Ex3_SessionController   : > 서버로 전달된 입력값 / id: abc, pw: 123
+2026-06-18T17:27:57.542+09:00 DEBUG 39668 --- [web2] [http-nio-9992-exec-5] n.d.w.controller.Ex3_SessionController   : abc 님 로그인
