@@ -10,7 +10,7 @@ function formCheck() {
 
     // 이름 3 - 10자
     if (name.length < 3 || name.length > 10) {
-        alter("이름은 3자 이상 10자 이하로 작성해주세요.");
+        alert("이름은 3자 이상 10자 이하로 작성해주세요.");
         return false;
     }
 

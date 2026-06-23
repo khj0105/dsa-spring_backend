@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>1. test.html</title>
+        <script>
+            // 저장
+            function storageSave() {
+                // 입력값 가져오기
+                let local = document.querySelector('#local').value;
+                let session = document.querySelector('#session').value;
+
+                // 키 -  값 (key-value) 쌍으로 데이터 저장
+                localStorage.setItem('code', local);
+                sessionStorage.setItem('code', session);
+            }
+
+            // 읽기
+            function storageRead() {
+                let div1 = document.querySelector('#div1');
+                let div2 = document.querySelector('#div2');
+
+                // 저장된 키('code')로 데이터 읽어오기
+                let local = localStorage.getItem('code');
+                let session = sessionStorage.getItem('code');
+
+                div1.innerHTML = `localStorage의 값은 ${(local || "없음")}`;
+                div2.innerHTML = `sessionStorage의 값은 ${(session || "없음")}`;
+            }
+
+            // 삭제
+            function storageClear() {
+                // 특정 키('code') 데이터 삭제
+                localStorage.removeItem('code');
+                sessionStorage.removeItem('code');
+
+                // 삭제 후 화면 갱신
+                storageRead();
+            }
+        </script>
+    </head>
+    <body>
+        <h1>[ Web Storage Test ]</h1>
+        <ol style="color: blue">
+            <li>LocalStorage</li>
+            <li>SessionStorage</li>
+        </ol>
+
+        <p>1. localStorage와 sessionStorage에 값을 저장</p>
+        <div>
+            LocalStorage: <input type="text" id="local"><br>
+            SessionStorage: <input type="text" id="session"><br>
+            <button onclick="storageSave()">데이터 저장</button>
+        </div>
+
+        <p>2. localStorage와 sessionStorage의 값을 불러오기</p>
+        <div>
+            <button onclick="storageRead()">데이터 읽기</button>
+        </div>
+        <div id="div1"></div>
+        <div id="div2"></div>
+
+        <hr>
+        <p>3. 저장된 값 삭제</p>
+        <div>
+            <button onclick="storageClear()">데이터 삭제</button>
+        </div>
+
+        <!--
+            웹 스토리지 : "클라이언트 측"에서 데이터를 저장할 수 있게 해주는 웹 API
+
+            구분  로컬 스토리지                 세션 스토리지
+            -----------------------------------------------------------
+            수명  영구적 (브라우저 닫아도 유지)    일시적 (탭/창 닫으면 삭제)
+            범위  동일 도메인 전체 공유           같은 탭/창 내부에서만 공유
+            활용  다크모드 설정, 아이디 기억하기    폼 입력 도중 임시저장
+
+            두 스토리지의 메서드는 동일
+            1. 저장       setItem('key', 'value');
+            2. 읽기       getItem('key');
+            3. 삭제       removeItem('key');
+            4. 전체 초기화 clear();
+        -->
+    </body>
+</html>

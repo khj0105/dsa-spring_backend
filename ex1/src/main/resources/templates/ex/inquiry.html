@@ -1,45 +1,45 @@
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Inquiry</title>
-        <!-- CSS 적용 & JS 적용 -->
-        <Link rel="stylesheet" href="/css/menu.css">
-        <Link rel="stylesheet" href="/css/inquiry.css">
-        <script src="/js/inquiry.js"></script>
-    </head>
-    <body>
-        <!-- 상단 메뉴 -->
-        <header>
-            <a href="./">홈</a>
-            <a href="introduce">소개</a>
-            <a href="notice">공지</a>
-            <a href="inquiry">문의</a>
-        </header>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Inquiry</title>
+    <!-- CSS 적용 & JS 적용 -->
+    <Link rel="stylesheet" href="/css/menu.css">
+    <Link rel="stylesheet" href="/css/inquiry.css">
+    <script src="/js/inquiry.js"></script>
+</head>
+<body>
+<!-- 상단 메뉴 -->
+<header>
+    <a href="./">홈</a>
+    <a href="introduce">소개</a>
+    <a href="notice">공지</a>
+    <a href="inquiry">문의</a>
+</header>
 
-        <!-- 본문 내용 -->
-        <main>
-            <h1>문의</h1>
-            <p>외부 CSS 적용할 것. (menu.css, inquiry.css)</p>
-            <p>외부 JS 적용할 것. (inquiry.js)</p>
-            <p>JS로 유효성 검사 (이름은 3자 이상 10자 이하, 이메일은 '@'를 포함, 메시지는 5자 이상)</p>
-            <p>JS의 유효성 검사를 통과한 폼 데이터를 서버로 전송하여 Log로 확인할 것.</p>
+<!-- 본문 내용 -->
+<main>
+    <h1>문의</h1>
+    <p>외부 CSS 적용할 것. (menu.css, inquiry.css)</p>
+    <p>외부 JS 적용할 것. (inquiry.js)</p>
+    <p>JS로 유효성 검사 (이름은 3자 이상 10자 이하, 이메일은 '@'를 포함, 메시지는 5자 이상)</p>
+    <p>JS의 유효성 검사를 통과한 폼 데이터를 서버로 전송하여 Log로 확인할 것.</p>
 
-            <div class="form-container">
-                <form action="sendData" method="post" onsubmit="return formCheck()">
-                    <label for="name">이름</label>
-                    <input type="text" id="name" name="name">
+    <div class="form-container">
+        <form action="sendData" method="post" onsubmit="return formCheck()">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name">
 
-                    <label for="email">이메일</label>
-                    <input type="email" id="email" name="email">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email">
 
-                    <label for="message">문의 내용</label>
-                    <textarea id="message" rows="5" name="message"></textarea>
+            <label for="message">문의 내용</label>
+            <textarea id="message" rows="5" name="message"></textarea>
 
-                    <!-- 상황에 따라 "submit 역할"을 자동으로 수행할 수 있기 때문 -->
-                    <button>보내기</button>
-                </form>
-            </div>
-        </main>
-    </body>
-    </html>
+            <!-- 상황에 따라 "submit 역할"을 자동으로 수행할 수 있기 때문 -->
+            <button>보내기</button>
+        </form>
+    </div>
+</main>
+</body>
+</html>

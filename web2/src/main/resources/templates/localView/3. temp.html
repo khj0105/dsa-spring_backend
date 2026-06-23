@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>3. temp.html</title>
+        <script>
+            window.onload = function () {
+                // 1. 저장된 값 불러오기
+                document.querySelector('#name').value = sessionStorage.getItem("name");
+                document.querySelector('#message').value = sessionStorage.getItem("message")
+
+                // 2. 입력할 때마다 저장
+                document.querySelector('#name').addEventListener("input", function() {
+                    let value = document.querySelector('#name').value;
+                    sessionStorage.setItem("name", value);
+                });
+                document.querySelector('#message').addEventListener("input", (e) => {
+                    // Arrow Function : 축약형 함수 표현 방식
+                    //      function(e) {}      ->      (e) => { }
+                    sessionStorage.setItem("message", e.target.value);
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h2>문의 하기</h2>
+        <form>
+            이름: <input type="text" id="name"><br>
+            메시지: <input type="text" id="message"><br>
+            <button type="submit">보내기</button>
+        </form>
+    </body>
+</html>
