@@ -27,4 +27,9 @@ public class Ex5_LocalController {
 	public String temp() {
 		return "localView/3. temp";
 	}
+	
+	@GetMapping("/tempSave/json")
+	public String temp2() {
+		return "LocalView/4. temp-json";
+	}
 }

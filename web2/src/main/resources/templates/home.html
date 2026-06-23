@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en">
+<!--<html lang="en">-->
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -74,6 +75,22 @@
                             <li><a href="local/webStorage">Web Storage (브라우저)</a></li>
                             <li><a href="local/darkMode">다크모드 전환</a></li>
                             <li><a href="local/tempSave">폼 임시저장</a></li>
+                            <li><a href="local/tempSave/json">폼 임시저장(JSON)</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>타임리프(Thymeleaf)</summary>
+                        <ul>
+                            <!-- <li><a href="thymeleaf/basic">기본 출력 및 주석, 경로 문법 (기초)</a></li>-->
+                            <li><a th:href="@{/thymeleaf/basic}">기본 출력 및 주석, 경로 문법 (기초)</a></li>
+                            <!--<li><a href="thymeleaf/operator">연산자, 포매팅</a></li>-->
+                            <li><a th:href="@{/thymeleaf/operator}">연산자, 포매팅</a></li>
+                            <!--<li><a href="thymeleaf/object">객체 출력, 제어(조건문 및 선택문)</a></li>-->
+                            <li><a th:href="@{/thymeleaf/object}">객체 출력, 제어(조건문 및 선택문)</a></li>
+                            <!--<li><a href="thymeleaf/loop">리스트/맵 반복문, 상태 객체</a></li>-->
+                            <li><a th:href="@{/thymeleaf/loop}">리스트/맵 반복문, 상태 객체</a></li>
                         </ul>
                     </details>
                 </li>

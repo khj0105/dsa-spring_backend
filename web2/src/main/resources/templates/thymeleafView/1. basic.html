@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>1. basic.html</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <script th:src="@{/js/func.js}"></script>
+    </head>
+    <body>
+
+        <h2>1. 기본 값 출력</h2>
+        <p>문자열 변수: [[${str}]]</p>
+        <p>숫자 변수: [[${num}]]</p>
+
+        <p th:text="${tag}">HTML 태그가 문자로 출력됩니다.</p>
+        <P th:utext="${tag}">HTML 태그가 반영되어 출력됩니다.</P>
+
+        <hr>
+
+        <h2>2. 타임리프 주석</h2>
+        <!-- 1. HTML 주석 - 브라우저가 주석 처리 -->
+        <!-- <p th:text="${str}"></p> -->
+
+        <!-- 2. 타임리프 주석 - 타임리프(서버)가 제거, 브라우저는 모름 -->
+        <!--/* <p th:text="${str}"></p> */-->
+
+        <hr>
+
+        <h2>3. 하이퍼링크 및 이미지 경로</h2>
+        <p><a href="https://naver.com" th:href="@{https://nate.com}">네이버</a></p> // 타임리프 경로가 우선이라 네이트로 이동
+        <p><a th:href="@{/}">메인 페이지</a></p>
+
+        <p><img th:src="@{/img/dog.jpg}" alt="강아지"></p>
+        <p><img th:src="@{/img/cat.jpg}" alt="고양이"></p>
+    </body>
+</html>

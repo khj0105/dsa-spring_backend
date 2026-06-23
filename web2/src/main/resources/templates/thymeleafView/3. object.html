@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>3. object.html</title>
+    </head>
+    <body>
+        <h2>1. 객체 표현식 (*{...})</h2>
+        <ul th:object="${person}">
+            <li>아이디: <span th:text="*{id}"></span></li> <!--*{id}는 ul태그 아래 속하는 li태그이니 굳이 person..id안하고 *{id}이렇게 하면 됨-->
+            <li>이름: <span th:text="*{name}"></span></li>
+        </ul>
+        <th:block th:object="${person}"> <!--상위 태그가 없을 때 *{name}를 사용하고 싶을때 th:block를 씀 html에 전혀 영향을 안 줌-->
+            <p>이름: <span th:text="*{name}"></span></p>
+        </th:block>
+        <p>이름: <span th:text="*{name}"></span></p> <!--상위 태그 없음-->
+        <p>비밀번호: <span th:text="${person.password}"></span></p>
+        <p>전화번호: <span th:text="${person.phone}"></span></p>
+        <p>통신사: [[${person.com}]]</p>
+
+        <hr>
+
+        <h2>2. 조건문 (if / unless)</h2>
+        <div th:if="${num gt 50}">숫자가 50보다 큽니다.</div>
+        <div th:unless="${num gt 50}">숫자가 50 이하입니다.</div>
+
+        <hr>
+
+        <h2>3. 선택문 (switch / case)</h2>
+        <div th:switch="${num}">
+            <p th:case="1">하나</p>
+            <p th:case="2">둘</p>
+            <p th:case="*">그 외의 숫자</p>
+        </div>
+    </body>
+</html>
