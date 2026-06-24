@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+  <head>
+      <meta charset="UTF-8">
+      <title>ex2-infoInput.html</title>
+      <script>
+          window.onload = function () {
+          const form = document.querySelector("form");
+                form.addEventListener("submit", function (event) {
+                    let num1 = document.querySelector('#num1');
+                    let num2 = document.querySelector('#num2');
+          }
+      </script>
+  </head>
+  <body>
+      <h2>개인정보입력</h2>
+      <form>
+        이름  <input type="text" name="name" id="name">
+        주민등록번호  <input type="text" name="number" id="number">
+        <input type="submit" value="입력">
+      </form>
+  </body>
+</html>

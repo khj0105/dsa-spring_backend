@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>ex1-calcForm.html</title>
+        <script>
+            window.onload = function () {
+                const form = document.querySelector("form");
+                form.addEventListener("submit", function (event) {
+                    let num1 = document.querySelector('#num1');
+                    let num2 = document.querySelector('#num2');
+
+                    if (num1.value == '' || isNaN(num1.value)) {
+                        alert('[첫번째 입력] 정수를 입력하세요.');
+                        num1.focus();       // 커서 이동
+                        num1.select();      // 데이터 전체 선택
+                        event.preventDefault();     // 제출 막기
+                    }
+
+                    if (num2.value == '' || isNaN(num2.value)) {
+                        alert('[두번째 입력] 정수를 입력하세요.');
+                        num2.focus();       // 커서 이동
+                        num2.select();      // 데이터 전체 선택
+                        event.preventDefault();     // 제출 막기
+                    }
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <h2>계산</h2>
+        <form th:action="@{/ex/calc}" method="post">
+            <input type="text" name="num1" id="num1">
+            <select name="op" id="op">
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+            </select>
+            <input type="text" name="num2" id="num2">
+            <input type="submit" value="계산">
+        </form>
+
+
+
+
+
+
+        <!--<form>
+            <input type="text"> <br>
+            <select>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+            </select>
+            <input type="text"> <br>
+            <button type="submit"></button>
+        </form>-->
+    </body>
+</html>

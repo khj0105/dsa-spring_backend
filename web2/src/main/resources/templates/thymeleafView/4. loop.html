@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>4. loop.html</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                padding: 10px;
+            }
+            caption {
+                font-size: 20px;
+                font-weight: bold;
+                padding: 10px;
+            }
+            table tr:nth-child(odd) {
+                background-color: #e6f7ff;
+            }
+            table tr:nth-child(even) {
+                background-color: #fff2e6;
+            }
+            .highlight-row {
+                background-color: #ffffcc;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h2>1. 리스트(List) 반복문과 상태 객체(status)</h2>
+        <p th:text="|사이즈?: ${#lists.size(strList)}|"></p>
+        <p th:text="|포함?: ${#lists.contains(strList, 'CSS')}|"></p>
+
+        <table>
+            <caption>strList, 상태 객체</caption>
+            <tr>
+                <th>item</th>
+                <th>count (1부터)</th>
+                <th>index (0부터)</th>
+                <th>current (현재값)</th>
+                <th>even (짝수)</th>
+                <th>odd (홀수)</th>
+                <th>first (첫번째)</th>
+                <th>last (마지막)</th>
+            </tr>
+            <!-- each = 첫번째 변수 (내용물), 두번째 변수(상태객체) : 반복할 대상 -->
+            <!--
+                index   현재 반복 인덱스 (0부터 시작)
+                count   현재 반복 인덱스 (1부터 시작)
+                size    총 요소 수
+                current 현재 요소
+                even    현재 반복이 짝수인지 여부 (boolean)
+                odd     현재 반복이 홀수인지 여부 (boolean)
+                first   현재 반복이 첫번째인지 여부 (boolean)
+                last    현재 반복이 마지막인지 여부 (boolean)
+            -->
+            <tr th:each="item, status : ${strList}">
+                <td th:text="${item}">내용물</td>
+                <td th:text="${status.count}">1</td>
+                <td th:text="${status.index}">0</td>
+                <td th:text="${status.current}">현재값</td>
+                <td th:text="${status.even}">짝수</td>
+                <td th:text="${status.odd}">홀수</td>
+                <td th:text="${status.first}">첫번째</td>
+                <td th:text="${status.last}">마지막</td>
+            </tr>
+        </table>
+
+        <br>
+
+        <table>
+            <caption>personList</caption>
+            <tr>
+                <th>ID</th>
+                <th>PW</th>
+                <th>NAME</th>
+                <th>PHONE</th>
+                <th>COM</th>
+            </tr>
+            <tr th:each="person : ${personList}">
+                <td th:text="${person.id}"></td>
+                <td th:text="${person.password}"></td>
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.phone}"></td>
+                <td th:text="${person.com}" th:classappend="${person.com == 'KT'} ? 'highlight-row'"></td>
+            </tr>
+            <tr th:each="person : ${personList}" th:object="${person}">
+                <td th:text="*{id}"></td>
+                <td th:text="*{password}"></td>
+                <td th:text="*{name}"></td>
+                <td th:text="*{phone}"></td>
+                <td th:text="*{com}" th:classappend="*{com == 'KT'} ? 'highlight-row'"></td>
+            </tr>
+
+            <hr>
+
+            <h2>2. 맵(Map) 반복문</h2>
+            <p th:text="|사이즈?: ${#maps.size(map)}|"></p>
+            <p th:text="|포함?: ${#maps.containsKey(map, 'brand')}|"></p>
+
+            <ul>
+                <li th:each="entry : ${map}">
+                    <span th:text="|key: ${entry.key}|"></span>
+                    <br>
+                    <span th:text="|value: ${entry.value}|"></span>
+                </li>
+            </ul>
+
+            <hr>
+
+            <h2> 3. th:block (HTML 태그 없이 반복만 돌리기)</h2>
+            <th:block th:each="n, status : ${#numbers.sequence(1, 5, 1)}">
+                <span th:text="${n}"></span>
+                <span th:unless="${status.last}">, </span>
+            </th:block>
+        </table>
+    </body>
+</html>

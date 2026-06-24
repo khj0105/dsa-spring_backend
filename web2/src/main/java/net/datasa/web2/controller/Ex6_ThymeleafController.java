@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /*
 	Thymeleaf Test
@@ -53,5 +57,34 @@ public class Ex6_ThymeleafController {
 		model.addAttribute("num, 75");
 		
 		return "thymeleafView/3. object";
+	}
+	
+	// ---------------------------------------------------------------------------------
+	@GetMapping("/loop")
+	public String loop(Model model) {
+		
+		log.debug("--- 타임리프 반복문(List, Map) 예제 ---");
+		
+		// 리스트 데이터 생성 - (collection은 제네릭 타입 사용)
+		List<String> strList = new ArrayList<>(List.of("JAVA", "DB", "HTML", "CSS", "JS"));
+		
+		List<Person> personList = new ArrayList<>();
+		personList.add(new Person("aaa", "111", "a", "010-1111-2222", "SKT"));
+		personList.add(new Person("bbb", "111", "b", "010-2222-3333", "KT"));
+		personList.add(new Person("ccc", "111", "c", "010-3333-4444", "LGU+"));
+		personList.add(new Person("ddd", "111", "d", "010-4444-5555", "KT"));
+		
+		model.addAttribute("strList", strList);
+		model.addAttribute("personList", personList);
+		
+		// 맵 데이터 생성
+		Map<String, Object> productMap = new HashMap<>();
+		productMap.put("product", "노트북");
+		productMap.put("price", 1500000);
+		productMap.put("brand", "삼성");
+		
+		model.addAttribute("map", productMap);
+	
+		return "thymeleafView/4. loop";
 	}
 }
