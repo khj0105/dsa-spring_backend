@@ -1,0 +1,16 @@
+<!-- 
+	레이아웃 파일에는 <!DOCTYPE html>은 가능하면 생략하거나 fragment 부분만 남겨서 작성하는 것이 좋음 
+	(전체 HTML로 구성된 파일은 삽입 시 중복 문제 유발 가능)
+ -->
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+	<!-- th:fragment="header": 조각(fragment) 으로 정의 -->
+	<header th:fragment="header">
+	    <a th:href="@{/}">홈</a>
+	    <a th:if="${session.loginId == null}" th:href="@{/member/join}">회원가입</a>
+	    <a th:if="${session.loginId == null}" th:href="@{/member/login}">로그인</a>
+	    <a th:if="${session.loginId != null}" th:href="@{/member/logout}">로그아웃</a>
+	    <a th:href="@{/member/list}">회원목록</a>
+	</header>
+</body>
+</html>

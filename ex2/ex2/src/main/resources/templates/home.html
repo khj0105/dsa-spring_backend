@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>HOME</title>
+	<link rel="stylesheet" th:href="@{/css/home.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+	<!-- 
+		Fragment
+		 - Thymeleaf에서 HTML의 특정 영역(조각)을 재사용할 수 있도록 정의하는 기능
+		 - 중복되는 HTML을 재사용하여 유지보수를 쉽게 하기 위해 fragment 기능을 사용
+	
+		th:replace	기존 태그 전체를 fragment로 완전히 대체
+		th:insert	기존 태그는 살아 있고 그 안에 fragment 삽입(내 태그 유지)
+	 -->
+
+	<!-- 메뉴 바 -->
+	<div th:replace="~{layout/header :: header}"></div>
+	<!-- layout/header :: header 는 templates.layout/header.html 안의 header를 가져오겠다는 의미 -->
+	<!-- 여기서 header는 th:fragment="header" 탐색, <header> 탐색 -->
+
+	<!-- 본문 내용 -->
+	<main>
+		<h1>
+			<span th:if="${session.loginId != null}" th:text="|${session.loginId}님 |" id="loginId"></span>
+			홈페이지에 오신 것을 환영합니다
+		</h1>
+	</main>
+
+</body>
+</html>

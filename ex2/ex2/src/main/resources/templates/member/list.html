@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>회원목록</title>
+	<link rel="stylesheet" th:href="@{/css/list.css}">
+	<link rel="stylesheet" th:href="@{/css/header.css}">
+</head>
+<body>
+
+	<!-- 메뉴 바 -->
+	<div th:replace="~{layout/header :: header}"></div>
+
+	<h1>회원목록</h1>
+	
+	<table>
+		<tr>
+			<th>아이디</th>
+			<th>비밀번호</th>
+			<th>이름</th>
+			<th>전화번호</th>
+		</tr>
+		<!-- 회원정보 출력 -->
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+
+</body>
+</html>
