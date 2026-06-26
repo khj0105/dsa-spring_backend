@@ -4,20 +4,62 @@
       <meta charset="UTF-8">
       <title>ex2-infoInput.html</title>
       <script>
-          window.onload = function () {
+          <!--window.onload = function () {
           const form = document.querySelector("form");
                 form.addEventListener("submit", function (event) {
                     let num1 = document.querySelector('#num1');
                     let num2 = document.querySelector('#num2');
+          }-->
+          window.onload = function() {
+            if ('[[${error}]]' !== '') {
+                alert('[[${error}]]');
+            }
+                const form = document.querySelector('#formInfo');
+                form.addEventListener("submit", function(event) {
+                    let name = document.querySelector('#name');
+                    let ssn = document.querySelector('#ssn');
+
+                    // 1. 이름 유효성 검사
+                    if (name.value.length < 2) {
+                        alert('이름을 입력하세요.');
+                        event.preventDefault();
+                        name.focus();
+                        return;
+                    }
+
+                    // 2. 주민등록번호 유효성 검사 (앞 6자리 - 뒤 7자리)
+                    const ssnRegex = /^\d{6}-[1-48]\d{6}$/;
+                    if (!ssnRegex.test(ssn.value.trim())) {
+                        alert('주민등록번호 형식을 정확히 입력해주세요.')
+                        event.preventDefault();
+                        ssn.focus();
+                        return;
+                    }
+                });
           }
       </script>
   </head>
   <body>
-      <h2>개인정보입력</h2>
+      <!--<h2>개인정보입력</h2>
       <form>
         이름  <input type="text" name="name" id="name">
         주민등록번호  <input type="text" name="number" id="number">
         <input type="submit" value="입력">
-      </form>
+      </form>-->
+        <h2>개인정보입력</h2>
+
+        <form th:action="@{/ex/info}" method="post" id="formInfo">
+            <table>
+                <tr>
+                    <td><label for="name">이름</label> </td>
+                    <td><input type="text" name="name" id="name" th:value="${name}"></td>
+                </tr>
+                <tr>
+                    <td><label for="ssn">주민등록번호</label></td>
+                    <td><input type="text" name="ssn" id="ssn" th:value="${ssn}" placeholder="000000-0000000 형식으로 입력"></td>
+                </tr>
+                <input type="submit" value="입력">
+            </table>
+        </form>
   </body>
 </html>

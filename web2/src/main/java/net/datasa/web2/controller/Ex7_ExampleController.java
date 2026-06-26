@@ -1,12 +1,14 @@
 package net.datasa.web2.controller;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 import net.datasa.web2.domain.CalcDTO;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDate;
 
 /*
 	연습 문제
@@ -74,16 +76,91 @@ public class Ex7_ExampleController {
 	파일명:
 	ex2-infoInput.html, ex2-infoOutput.html
 	*/
+	
+	// 개인정보 입력폼으로 이동
 	@GetMapping("/info")
 	public String info() {
 		
-		return "exView/ex2-infoInput.html";
+		return "exView/ex2-infoInput";
 	}
 	
+	// 입력값 처리
 	@PostMapping("/info")
-	public String infoOutput() {
+	public String info(
+			@RequestParam("name") String name,
+			@RequestParam("ssn") String ssn,
+			Model model
+	) {
+		log.debug("전달된 값: {}, {}", name, ssn);
+		
+		model.addAttribute("name", name);
+		model.addAttribute("ssn", ssn);
+		
+		// 주민등록번호 처리
+		try {
+			String ssnYear = ssn.substring(0, 2);
+			int month = Integer.parseInt(ssn.substring(2,4));
+			int day = Integer.parseInt(ssn.substring(4,6));
+			char genderCode = ssn.charAt(7);
+			
+			// 성별 판별
+			String gender = (genderCode == '1' || genderCode =='3') ? "남자" : "여자";
+		
+			// 출생 연도
+			int yearPrefix = (genderCode == '1' || genderCode == '2') ? 1900 : 2000;
+		
+			int year = yearPrefix + Integer.parseInt(ssnYear);
+			
+			// 현재 나이 계산
+			int thisYear = LocalDate.now().getYear();
+			int age = thisYear - year;
+			
+			// 출생 연도 포맷
+			String birth = String.format("""
+						%d년 %d월 %d일
+					""", year, month, day);
+			
+			// Model 저장
+			model.addAttribute("age", age);
+			model.addAttribute("gender", gender);
+			model.addAttribute("birth", birth);
+			
+			return "exView/ex2-infoOutput";
+		} catch (Exception e) {
+			log.debug("에러발생: {}", e.getMessage());
+			model.addAttribute("error", e.getMessage());
+			return "exView/ex2-infoInput";
+		}
 		
 		
-		return "exView/ex2-infoOutput";
+	}
+	
+	//-------------------------------------------------------------------
+	/*
+		[연습문제 3]
+		방문횟수 카운트 예제
+		방문횟수가 저장된 쿠키를 읽어온다
+		없으면 방문횟수는 현재 0으로 처리
+		있으면 쿠키에 저장된 숫자가 기존 방문횟수
+		방문횟수에 1을 더한다
+		쿠키에 증가된 방문횟수를 저장하여 클라이언트로 보낸다
+		방문횟수를 Model에 저장하여 ex3-count.html페이지에서 문구 출력
+	*/
+	@GetMapping("/count")
+	public String count(
+			@CookieValue(name = "count", defaultValue = "0") int count,
+			HttpServletResponse response,
+			Model model
+	) {
+		count++;
+		model.addAttribute("count", count);
+		
+		Cookie cookie = new Cookie("count", Integer.toString(count));
+		cookie.setMaxAge(60*60*24*3);
+		cookie.setPath("/ex/count");
+		response.addCookie(cookie);
+		
+		
+		return "exView/ex3-count";
 	}
 }
