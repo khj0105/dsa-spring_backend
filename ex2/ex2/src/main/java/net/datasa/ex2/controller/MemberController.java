@@ -1,13 +1,18 @@
 package net.datasa.ex2.controller;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.datasa.ex2.dto.Member;
 import net.datasa.ex2.service.MemberService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 /**
 	[ Controller (컨트롤러) ]
@@ -90,17 +95,33 @@ public class MemberController {
 	// 로그인 페이지 이동
 	@GetMapping("/login")
 	public String loginForm() {
-		return "";
+		return "member/login";
 	}
 	// 입력값 받아서 로그인 처리
 	@PostMapping("/login")
-	public String login() {
-		return "";
+	public String login(
+			@RequestParam(name = "id") String id,
+			@RequestParam(name = "pw") String pw,
+			HttpSession session) {
+		
+		log.debug("> 로그인 시도 ID: {}", id);
+		boolean isValid = ms.loginCheck(id, pw);
+		
+		if (isValid) {
+			log.debug("> 로그인 성공!");
+			session.setAttribute("loginId", id);
+			return "redirect:/";
+		} else {
+			log.debug("> 로그인 실패: 아이디 또는 비밀번호 불일치");
+			return "member/login";
+		}
 	}
 	// 로그아웃 처리
 	@GetMapping("/logout")
-	public String logout() {
-		return "";
+	public String logout(HttpSession session) {
+		log.debug("> 로그아웃 요청 처리");
+		session.invalidate();
+		return "redirect:/";
 	}
 	
 	
@@ -109,7 +130,13 @@ public class MemberController {
 	 * 회원목록
 	 */
 	@GetMapping("/list")
-	public String memberList() {
-		return "";
+	public String memberList(Model model) {
+		log.debug("> 전체 회원목록 조회 요청");
+		
+		List<Member> list = ms.selectList();
+		
+		model.addAttribute("memberList", list);
+		
+		return "member/list";
 	}
 }
