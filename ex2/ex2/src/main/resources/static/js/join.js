@@ -9,7 +9,7 @@ window.onload = function () {
 
 		// 아이디 유효성 검사: 3~14자, 영문/숫자/특수문자 포함 허용
         if (id.length < 3 || id.length > 14) {
-            alert("아이디는 3자 이상, 14자 이하로 입력해주세요.");
+            alert("아이디는 3~14자 영문, 숫자, 특수문자ㅡㄹㄹ 포함할 수 있습니다.");
             e.preventDefault();
             return;
         }
@@ -24,6 +24,11 @@ window.onload = function () {
             e.preventDefault();
             return;
 		}
+//        if (!pw1 || !pw2 || pw1  !|| pw2) {
+//            alert("비밀번호가 비어 있거나 일치하지 않습니다.");
+//            e.preventDefault();
+//            return;
+//        }
 
 		// 이름 필수 입력
 		if (name === "") {

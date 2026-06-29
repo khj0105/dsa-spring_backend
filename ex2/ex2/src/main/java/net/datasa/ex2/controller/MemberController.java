@@ -1,5 +1,7 @@
 package net.datasa.ex2.controller;
 
+import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,10 +9,7 @@ import net.datasa.ex2.dto.Member;
 import net.datasa.ex2.service.MemberService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -93,34 +92,63 @@ public class MemberController {
 	 * 로그인, 로그아웃
 	 */
 	// 로그인 페이지 이동
+//	@GetMapping("/login")
+//	public String loginForm() {
+//		return "member/login";
+//	}
 	@GetMapping("/login")
-	public String loginForm() {
-		return "member/login";
+	public String loginForm(
+			@CookieValue(name = "recentId", defaultValue = "") String recentId,
+			Model model
+	) {
+		log.debug(">최근 ID: {}", recentId);
+		model.addAttribute("recentId",recentId);
+		return "member/loginForm";
 	}
+	
 	// 입력값 받아서 로그인 처리
 	@PostMapping("/login")
 	public String login(
-			@RequestParam(name = "id") String id,
-			@RequestParam(name = "pw") String pw,
-			HttpSession session) {
+			@RequestParam("id") String id,
+			@RequestParam("pw") String pw,
+			@RequestParam(name = "check", defaultValue = "false") boolean check,
+			HttpSession session,
+			HttpServletResponse response
+			) {
 		
-		log.debug("> 로그인 시도 ID: {}", id);
-		boolean isValid = ms.loginCheck(id, pw);
+		log.debug("> 로그인 시도 id={}, pw={}, check={}", id, pw, check);
 		
-		if (isValid) {
-			log.debug("> 로그인 성공!");
+		boolean result = ms.loginCheck(id, pw);
+		
+		if (result) {
 			session.setAttribute("loginId", id);
+			log.debug("> 로그인 성공! 현재 세션ID: {}", id);
+			
+			// 아이디 저장 체크 여부에 따라 쿠키 생성/삭제
+			Cookie c = new Cookie("recentId", id);
+			c.setPath("/member/login");
+			c.setMaxAge(0);
+			
+			if (check) {
+				c.setMaxAge(60 * 60 * 24 * 3);
+				log.debug("> 쿠키 저장");
+			}
+			
+			response.addCookie(c);
+			
 			return "redirect:/";
+			
 		} else {
-			log.debug("> 로그인 실패: 아이디 또는 비밀번호 불일치");
-			return "member/login";
+			log.debug("> 로그인 실패..");
+			return "redirect:/member/login";
 		}
 	}
 	// 로그아웃 처리
 	@GetMapping("/logout")
 	public String logout(HttpSession session) {
-		log.debug("> 로그아웃 요청 처리");
+		session.removeAttribute("loginId");
 		session.invalidate();
+		log.debug("> 로그 아웃!");
 		return "redirect:/";
 	}
 	
@@ -131,11 +159,10 @@ public class MemberController {
 	 */
 	@GetMapping("/list")
 	public String memberList(Model model) {
-		log.debug("> 전체 회원목록 조회 요청");
 		
 		List<Member> list = ms.selectList();
-		
 		model.addAttribute("memberList", list);
+		log.debug("> 회원목록: {}", list);
 		
 		return "member/list";
 	}

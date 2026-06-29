@@ -12,8 +12,13 @@
 	<div th:replace="~{layout/header :: header}"></div>
 
 	<h1>회원목록</h1>
-	
-	<table>
+
+	<p class="no-member"
+		th:if="${memberList == null or memberList.isEmpty()}">
+		회원이 없습니다.
+	</p>
+
+	<table th:if="${memberList != nulll and !memberList.isEmpty()}">
 		<tr>
 			<th>아이디</th>
 			<th>비밀번호</th>
@@ -21,11 +26,11 @@
 			<th>전화번호</th>
 		</tr>
 		<!-- 회원정보 출력 -->
-		<tr>
-			<td></td>
-			<td></td>
-			<td></td>
-			<td></td>
+		<tr th:each="member : ${memberList}">
+			<td th:text="${member.id}"></td>
+			<td th:text="${member.pw}"></td>
+			<td th:text="${member.name}"></td>
+			<td th:text="${member.phone}"></td>
 		</tr>
 	</table>
 
