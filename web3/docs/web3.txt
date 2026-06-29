@@ -1,0 +1,264 @@
+[ web3 ]
+
+1. 프로젝트 개요
+    목적:  자바 Optional<T> 객체의 개념을 이해하고, Spring Data JPA 환경에서
+          Entity와 DTO의 분리 목적 및 영속성 컨텍스트의 특징(1차 캐시, 변경 감지, 쓰기 지연)과
+          데이터의 저장, 조회, 수정, 삭제 실습을 통해 @Transactional과 CRUD 기본 처리의 이해.
+
+    개발 환경 및 구조:
+        Backend     :  Java 21, Spring Boot, Spring Data JPA
+        Frontend    :  Thymeleaf HTML Template Engine
+        Architecture:  MVC 패턴 및 계층형 아키텍처 (Controller ➔ Service ➔ Repository ➔ DB)
+
+
+2. 주요 실습 내용
+    ① 인터페이스 기반 설계의 이해와 Java Optional 이해 및 테스트
+        뷰 폴더: templates/
+        실습 파일:
+            home.html, TestController.java
+            HomeController, TestService.java, TestServiceImpl1, 2.java
+        내용:
+            a. JPA의 반환 타입으로 자주 사용되는 Optional의 null 방지 메커니즘 이해.
+               NullPointerException(NPE)을 안전하게 처리하고, 값이 없을 때의 예외 처리 및 기본값 반환 패턴을 학습.
+            b. 인터페이스 다형성과 스프링 DI를 이용한 결합도 낮추기.
+               다형성(Polymorphism)을 활용하여 하나의 규격으로 여러 가지 기능을 수행하는 하위 클래스들을 설계하여,
+               스프링의 DI(의존성 주입) 기술을 이용해 소스 코드를 수정하지 않고 컴포넌트(부품)를 자유롭게 갈아끼우는 학습.
+
+    ② Person 데이터 관리 (CRUD 실습)
+        뷰 폴더: templates/
+        실습 파일:
+            1. insert-form.html,            // 새로운 Person 정보를 입력하는 페이지
+            2. select-form.html,            // 특정 Person을 검색하기 위해 ID를 입력하는 페이지
+            3. select-result.html,          // 입력한 ID에 해당하는 Person의 상세 정보 조회 결과 페이지
+            4. delete-form.html,            // 삭제할 대상의 ID를 입력하는 페이지
+            5. delete-result.html           // 데이터 삭제 완료 및 처리 결과를 보여주는 페이지
+            6. person-list.html,            // 데이터베이스에 저장된 모든 Person의 전체 목록 조회 페이지
+            7. update-form.html,            // 기존 Person 정보를 수정하는 입력 폼 및 수정 완료 결과 페이지
+
+            PersonController.java,      // 클라이언트의 URL 요청을 받아 처리하고 적절한 HTML 뷰를 반환하는 컨트롤러
+            PersonDTO.java,             // 화면(UI)과 백엔드 계층 간에 안전하게 데이터를 주고받기 위한 데이터 전송 객체
+            PersonEntity.java,          // 데이터베이스 테이블과 1:1로 매핑되는 JPA 핵심 엔티티 객체
+            PersonRepository.java,      // 데이터베이스에 접근하여 CRUD(생성·조회·수정·삭제)를 수행하는 JPA 인터페이스
+            PersonService.java,         // 비즈니스 로직의 결합도를 낮추고 확장성을 높이기 위한 설계용 인터페이스
+            PersonServiceImpl.java      // 실제 데이터 가공 및 핵심 비즈니스 로직을 직접 처리하는 서비스 구현체
+        내용:
+            하나의 회원 정보(Person)를 데이터베이스에 저장하고, ID 기반의 단건 조회/삭제, 전체 목록 조회 및 수정 처리를 실습.
+            Thymeleaf 템플릿과 URL 경로 바인딩(@PathVariable, @RequestParam)을 연동하여 웹 UI와 백엔드 간의 데이터 흐름을 완성.
+
+
+3. 핵심 동작 흐름 (Flow)
+    ① 웹 요청 수신 및 데이터 저장/조회 흐름
+    Client (Browser):
+        사용자가 폼에 데이터를 입력하고 제출하거나 특정 링크를 클릭하여 요청.
+        (예: /person/insert-person, /person/select-person)
+    Controller:
+        요청을 받아 파라미터(@RequestParam) 또는 경로 변수(@PathVariable)를 바인딩하고,
+        화면단에서 넘어온 데이터를 DTO 객체에 담아 Service 계층으로 전달.
+    Service:
+        비즈니스 로직을 수행. (기능 처리)
+        데이터 저장을 위해 DTO를 Entity로 변환한 후 Repository를 호출.
+    Repository (Spring Data JPA):
+        save() 또는 findById() 등의 메서드를 호출하여 영속성 컨텍스트를 거쳐 데이터베이스(RDBMS)에 SQL을 실행.
+    View (Thymeleaf):
+        DB에서 조회된 Entity 결과를 다시 DTO로 변환하여 Model에 담고,
+        해당 Thymeleaf 뷰 파일(HTML)을 통해 사용자에게 동적으로 렌더링된 화면을 출력.
+
+    ② 데이터 수정 및 트랜잭션 흐름
+        Client ➔ Controller:
+            수정할 데이터가 담긴 요청을 받아 Service의 메서드 호출.
+        Service (@Transactional 시작):
+            메서드가 시작되면서 트랜잭션과 영속성 컨텍스트가 생성.
+        Entity 조회:
+            repository.findById()를 통해 DB에서 데이터를 조회하면,
+            해당 엔티티가 영속성 컨텍스트의 1차 캐시에 저장되고 원본 상태의 스냅샷이 찍힘.
+        변경 감지 (Dirty Checking):
+            자바 코드 내에서 엔티티의 필드 값을 수정. (별도의 update() 메서드를 호출하지 않음)
+        트랜잭션 종료 (Commit):
+            메서드가 정상 종료되면 트랜잭션이 커밋.
+            이때 JPA 변경 감지 엔진이 스냅샷과 현재 엔티티 상태를 비교하여 변경된 부분이 있으면
+            UPDATE SQL을 자동으로 생성해 DB에 반영(쓰기 지연).
+
+4. 실습 포인트
+    Entity와 DTO의 철저한 분리:
+        DB 테이블과 직접 매핑되는 Entity를 컨트롤러나 뷰로 직접 노출하지 않고,
+        통신용인 DTO를 따로 두어 보안성 및 계층 간 독립성을 확보하는 것을 권장.
+    영속성 컨텍스트의 메커니즘 이해:
+        1차 캐시를 통한 조회 최적화와 트랜잭션 커밋 시점에 쿼리가 몰아서 나가는 '쓰기 지연',
+        그리고 코드 변경만으로 SQL이 나가는 '변경 감지'를 확인.
+    파라미터 수신 방식의 차이:
+        쿼리스트링 방식(?id=abc)은 @RequestParam을,
+        RESTful한 경로 방식(/member/abc)은 @PathVariable을 사용.
+
+
+** 알아두기 **
+📌  @Annotation (어노테이션)
+        역할:
+            클래스의 역할을 명시하고, 스프링 컨테이너가 해당 객체를 자동으로 생성하고 관리(Bean 등록)할 수 있도록 도와줌.
+            백엔드 내부 로직을 계층별로 나누어 가독성과 유지보수성을 극대화.
+    @Controller
+        설명: 스프링 MVC의 컨트롤러 클래스를 정의.
+        역할: 웹 클라이언트의 요청(URL)을 수신하고 비즈니스 로직을 호출한 후, 결과를 Model에 담아 적절한 뷰(HTML)를 반환.
+    @Service
+        설명: 비즈니스 로직을 담당하는 서비스 클래스를 정의.
+        역할: 컨트롤러와 데이터 접근 레이어 사이의 중간 계층에서 핵심 도메인 로직을 처리 (주로 트랜잭션 단위)
+    @Repository
+        설명: 데이터 접근 객체(DAO)를 정의.
+        역할: 데이터베이스와의 직접적인 상호 작용(CRUD)을 담당하며,
+            DB 예외를 스프링의 공통 데이터 접근 예외로 변환.
+    @Component
+        설명: 스프링 컨테이너가 관리하는 가장 일반적이고 범용적인 빈(Bean)을 정의.
+        역할: 특정 계층(Controller, Service 등)의 역할이 명확하지 않은 일반 클래스를 스프링 빈으로 자동 스캔하고 등록할 때 사용.
+    @Configuration
+        설명: 스프링의 환경 설정 클래스를 정의할 때 사용.
+        역할: 내부에서 @Bean 어노테이션을 사용하여 개발자가 직접 수동으로 스프링 빈을 정의하고 세팅을 제공할 수 있게 함.
+    @Autowired
+        설명: 의존성 주입(Dependency Injection)을 위해 사용.
+        역할: 스프링 컨테이너가 관리하는 객체(Bean) 중에서 타입이 일치하는 객체를 찾아 자동으로 주입(연결).
+    @RestController
+        설명: @Controller에 @ResponseBody가 결합된 형태.
+        역할: HTML 뷰를 반환하는 대신, JSON이나 XML 등 데이터 자체를 HTTP 응답 본문으로
+            직접 반환하는 RESTful 웹 서비스 구축에 사용됩니다.
+
+📌  Spring 핵심 개념
+    1. 스프링 컨테이너 (Spring Container)
+        - 애플리케이션 내 객체(Bean)의 생성, 설정, 관리, 조립, 소멸을 도맡아 하는 핵심 핵심 구성 요소.
+          (BeanFactory, ApplicationContext가 이에 해당)
+        - 객체 간의 결합도를 낮추고 캡슐화를 높이기 위해 객체 제어권을 컨테이너가 가져갑니다.
+    2. DI (Dependency Injection - 의존성 주입)
+        개념: "부품 조립".
+            객체가 스스로 사용할 다른 객체를 직접 생성하는 것이 아니라,
+            외부(스프링 컨테이너)로부터 주입받는 방식.
+            객체간의 의존성 및 결합도를 낮춰 코드의 재사용성과 테스트 용이성을 높임.
+
+            객체를 생성하고 관계를 맺는 3가지 방법:
+                a. 지역 변수 방식:
+                    class Frame {
+                        public void f1() {
+                            A a = new A();
+                            a .... ();
+                        }
+                    }
+                    메서드 내부에서 new A()로 직접 생성.
+                    메서드가 끝나면 객체도 소멸하므로 일회성 관계.
+                b. 필드 직접 생성 (Composition - Has-A 관계):
+                    class Frame {
+                        private A a;
+
+                        public Frame() {
+                            a = new A();
+                        }
+                    }
+                    클래스의 멤버 변수로 두고 생성자에서 직접 new A()로 생성.
+                    외부에서 변경 불가능하며 강하게 결합.
+                c. 외부 주입 방식 (Association - Has-A 관계 ⭐):
+                    class Frame {
+                        private A a;		// field injection
+
+                        public Frame(A a) {
+                            this.a = a;		// constructor injection
+                        }
+                        public void setA(A a) {
+                            this.a = a;		// setter injection
+                        }
+                    }
+                    외부에서 생성된 객체를 생성자나 Setter를 통해 전달받아 연결하는 방식.
+                    객체의 수명이 독립적이며 유연함.
+                주입 예시:
+                    B b = new B(); (의존성 생성) ➔ A a = new A(); ➔ a.setB(b);
+                    (주입 - Injection)
+    3. IoC (Inversion of Control - 제어의 역전)
+        개발자가 직접 프로그램의 흐름(객체 생성 및 호출)을 제어하는 것이 아니라,
+        프레임워크(스프링 컨테이너)가 대신 객체의 생명주기를 제어하는 개념을 의미.
+    4. Transaction (Layer 구분 이유)
+        웹 요청은 Controller,
+        비즈니스와 트랜잭션 관리는 Service,
+        DB 작업은 Repository로 역할을 분리.
+        * 이렇게 해야 특정 계층의 코드가 수정되어도 다른 계층에 영향을 주지 않아 유지보수성이 극대화.
+    5. AOP (Aspect-Oriented Programming - 관점 지향 프로그래밍)
+        로깅, 보안, 트랜잭션 관리와 같이 여러 모듈에서 공통적·반복적으로 사용되는
+        '횡단 관심사(Cross-Cutting Concerns)'를 핵심 로직에서 분리해 내어 한 곳에서 모듈화하는 기법.
+
+📌 데이터베이스 접근 기술의 발전과 JPA
+    JDBC API ➔ Persistence FrameworkJDBC API: 자바가 직접 DB 프로토콜을 쓰는 대신 공통 인터페이스인 JDBC를 사용.
+        각 DB 제조사(Oracle, MySQL 등)는 이에 맞춰 JDBC Driver를 만들어 제공.
+        구조: JAVA ➔ JDBC Interface ➔ JDBC Driver ➔ DBMS
+    Persistence Framework:
+        JDBC의 복잡한 반복 코드를 줄이고 영속화를 돕는 프레임워크로 두 가지 종류.
+        - SQL Mapping (Ex. MyBatis): 자바 코드와 SQL을 분리하고, SQL 실행 결과를 객체에 매핑. (SQL은 개발자가 직접 작성)
+        - ORM (Object Relational Mapping): 객체와 RDB 테이블을 매핑하여 프레임워크가 SQL을 자동으로 생성.
+    JPA (Java Persistence API) & Spring Data JPA
+        JPA: 자바 ORM 기술의 표준 API 명세(인터페이스 모음)이며, 실제 이를 구현한 대표적인 라이브러리가 Hibernate.
+        Spring Data JPA: 순수 JPA를 사용하려면 개발자가 EntityManager를 직접 다루며 코드를 짜야 하므로,
+            이를 한 단계 더 감싸서 인터페이스 선언만으로 기본적인 CRUD 작업이 가능하도록 스프링에서 제공하는 편리한 라이브러리.
+        구조: Application ➔ Spring Data JPA ➔ JPA (EntityManager) ➔ JDBC ➔ RDBMS
+    영속성 (Persistence) & 영속성 컨텍스트 (Persistence Context)
+        영속성: 데이터를 프로그램이 종료되어도 사라지지 않고 물리적 저장소에 영구히 저장하는 성질.
+        영속성 컨텍스트: JPA가 관리하는 엔티티 객체들이 머무는 내부 메모리 공간(1차 캐시 저장소).
+            싱글톤이 아니며, 트랜잭션과 생명주기를 같이 함 (@Transactional 메서드가 실행될 때 켜지고 끝나면 꺼짐).
+        영속성 컨텍스트의 핵심 4대 기능:
+            1차 캐시: 한 번 DB에서 조회한 객체는 메모리에 저장해두고, 다시 요청할 때 DB에 가지 않고 메모리에서 바로 꺼내와 속도가 빠름.
+            동일성 보장: 같은 트랜잭션 내에서 식별자(ID)가 같다면 주소값까지 완전히 같은 동일 객체임을 보장.
+            쓰기 지연 (Write-behind): 데이터를 추가/수정/삭제할 때 즉시 DB에 쿼리를 보내지 않고,
+                '쓰기 지연 SQL 저장소'에 모아두었다가 트랜잭션이 커밋되는 순간 한꺼번에 실행.
+            변경 감지 (Dirty Checking): 조회 시점의 원본 상태(스냅샷)를 보관해두고,
+                트랜잭션이 끝날 때 현재 상태와 비교하여 바뀐 부분이 있으면 자동으로 UPDATE SQL.
+                별도의 save 처리가 필요 없음.
+
+📌 Entity 클래스와 DTO 클래스를 분리해야 하는 이유
+    개념                          설명                              주요 역할
+    -----------------------------------------------------------------------------------------
+    Entity                      데이터베이스 테이블과 1:1로           DB 영속화 목적, 엄격한 구조
+                                직접 매핑되는 객체
+    DTO                         계층 간(컨트롤러 ↔ 서비스 ↔ 뷰)       화면 출력 및 입력 양식에 맞춤,
+    (Data Transfer Object)      데이터 전송을 위한 객체               유연한 구조
+    -----------------------------------------------------------------------------------------
+
+    - 계층 간 책임 분리 (단일 책임 원칙): 하나에 다 넣으면 DB 관리 로직과 화면 출력 로직이 섞여 코드가 비대해지고 엉망이 됨.
+    - 보안상 안전: Entity를 그대로 화면에 던지면 테이블 구조가 노출될 뿐만 아니라,
+        회원 비밀번호 같은 민감한 필드까지 통신 상에 노출될 위험이 있습니다.
+        DTO를 쓰면 딱 필요한 데이터만 골라서 보낼 수 있음.
+    - 데이터 구조의 유연성: 화면 요구사항은 수시로 변함.
+        Entity는 고정해두고 DTO만 요구사항에 맞춰 변형해 쓰는 것이 훨씬 유연함.
+    - 성능 최적화 및 N+1 예방: Entity를 직접 반환하면 연관 관계 객체를 무심코 호출하다가 불필요한 지연 로딩 쿼리가 폭발할 수 있음.
+        DTO로 필요한 값만 딱 JPQL로 뽑아오면 성능상 이점이 큼.
+    - 예기치 않은 DB 수정 방지: Entity를 컨트롤러나 뷰단에서 다루다가 실수로 값을 바꾸면,
+        영속성 컨텍스트의 '변경 감지' 기능 때문에 DB 값까지 마음대로 수정되어 버리는 사고가 날 수 있음.
+        순수 자바 객체인 DTO를 써야 안전함.
+
+📌 Java Optional
+    개념: null이 반환되어 발생할 수 있는 NullPointerException(NPE)을 원천 차단하기 위해 도입된 Wrapper 클래스.
+    핵심:
+        "이 안에는 값이 들어있을 수도 있고, 없을 수도 있어"라는 것을 개발자에게 명시적으로 알려주어,
+        안전하게 기본값을 설정(orElse)하거나 예외를 던지도록(orElseThrow) 유도.
+        코드가 간결해지고 함수형 프로그래밍 스타일에 적합.
+
+📌 요청 파라미터 수신 방식의 차이
+    @RequestParam: URL 뒤에 붙는 쿼리스트링 파라미터를 가져옴.
+        (예: /member?id=abc), 주로 검색, 페이징, 정렬, 필터링 등 동적인 조건 처리에 사용.
+    @PathVariable: URL 경로 자체의 일부를 변수로 취급하여 가져옴.
+        (예: /member/abc), REST API에서 특정 리소스 자체를 식별하고 조회, 수정, 삭제할 때 사용.
+
+📌 @Transactional (트랜잭션 관리)
+    동작 방식: 메서드나 클래스에 붙이면, 시작 시점에 트랜잭션을 열고 성공적으로 끝나면 Commit, 도중에 예외가 터지면 Rollback.
+        (반드시 public 메서드에만 적용 가능)
+    주의점 - 프록시 방식: 스프링은 AOP(프록시 객체) 기반으로 트랜잭션을 제어하므로,
+        동일한 클래스 내부에서 일반 메서드가 다른 트랜잭션 메서드를 직접 호출하면 트랜잭션이 작동하지 않음.
+    주의점 - 예외와 롤백: 기본적으로 RuntimeException(체크되지 않은 예외)이나 Error가 밖으로 던져질 때만 자동으로 롤백함.
+        만약 코드 내부에서 try-catch문으로 예외를 붙잡아두고 끝내면, 스프링은 문제가 없었다고 판단하여 Commit 처리를 해버림.
+        롤백이 되게 하려면 catch문 안에서 예외를 다시 밖으로 던지거나(throw),
+        @Transactional(rollbackFor = Exception.class)처럼 옵션을 명시해야 함.
+
+📌 JPA 성능 최적화 문제와 해결책
+    1. N+1 문제
+        원인: 전체 목록을 조회하는 쿼리 1번(1)을 실행했는데,
+            각 아이템이 가진 연관 관계 데이터(예: 회원의 팀 정보)를 가져오려고
+            회원 수(N)만큼 추가로 조회를 수행하여 총 1 + N번의 쿼리가 날아가는 치명적인 성능 저하 현상.
+            (주로 지연 로딩 상황에서 루프를 돌 때 발생)
+        해결책 (Fetch Join): JPQL 작성 시 JOIN FETCH 문법을 사용하면
+            단 1번의 조인 쿼리로 연관된 엔티티까지 통째로 묶어서 가져오므로 N+1 문제를 깔끔하게 해결 가능.
+    2. 지연 로딩 (Lazy Loading) vs 즉시 로딩 (Eager Loading)
+        지연 로딩 (LAZY): 연관된 객체를 처음부터 가져오지 않고,
+            실제 그 데이터에 접근할 때(예: member.getTeam()) 비로소 DB를 조회하는 영리한 방식.
+            메모리가 절약되지만 루프 안에서 잘못 쓰면 N+1을 유발할 수 있음.
+        즉시 로딩 (EAGER): 회원을 조회할 때 무조건 연관된 팀 정보까지 한 번에 다 긁어옴.
+            쓰지 않는 데이터까지 항상 로딩되므로 예측하기 힘든 쿼리가 날아가고 성능이 저하됨.
