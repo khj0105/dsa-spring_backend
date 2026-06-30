@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>1. insert-form.html</title>
+    </head>
+    <body>
+        <h1>[ 데이터 입력 ]</h1>
+
+        <form th:action="@{/person/insert-person}" method="post">
+            <!-- ID, NAME, AGE 입력 받아 DB까지 저장 -->
+            <label for="id">아이디</label>
+            <input type="text" name="id" id="id">
+            <label for="id">이름</label>
+            <input type="text" name="name" id="name">
+            <label for="id">나이</label>
+            <input type="text" name="age" id="age">
+
+            <button type="submit">버튼</button>
+        </form>
+    </body>
+</html>

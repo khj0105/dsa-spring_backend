@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-@ConditionalOnProperty(name = "service.impl", havingValue = "impl2", matchIfMissing = true)
+@ConditionalOnProperty(
+		name = "service.impl",
+		havingValue = "impl2"/*, matchIfMissing = true*/)
 public class TestServiceImpl2 implements TestService{
 	
 	@Override

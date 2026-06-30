@@ -26,6 +26,7 @@ public class HomeController {
 	private TestService ts;
 	
 	
+	
 	@GetMapping({"", "/"})
 	public String home() {
 		
@@ -33,6 +34,8 @@ public class HomeController {
 		
 		String serviceName2 = env.getProperty("service.impl");
 		log.debug("Environment에서 가져온 값: {}", serviceName2);
+		
+		ts.testLog();
 		
 		return "home";
 	}

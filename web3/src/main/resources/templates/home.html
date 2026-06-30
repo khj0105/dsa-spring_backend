@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="thymeleaf.org">
   <head>
       <meta charset="UTF-8">
       <title>home.html</title>
   </head>
   <body>
     <h1>[ web3 ]</h1>
+
+    <ul>
+        <li>
+            <a th:href="@{/optional}">Java Optional 객체</a>
+            <p> JPA 반환 타입인 Optional의 null 방지 메커니즘과 처리 패턴</p>
+        </li>
+    </ul>
+
+    <h3>Person 데이터 관리</h3>
+    <ol>
+        <li><a th:href="@{/person/save-test}">저장 테스트</a></li>
+        <li><a th:href="@{/person/insert-page}">데이터 입력으로 저장</a></li>
+        <li><a th:href="@{/person/select-page}">ID로 회원 1명 조회</a></li>
+        <li><a th:href="@{/person/delete-page}">ID로 회원 1명 삭제</a></li>
+        <li><a th:href="@{/person/list-page}">전체목록조회(조회, 삭제, 수정)</a></li>
+    </ol>
   </body>
 </html>
