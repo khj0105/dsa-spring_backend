@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ac38c2a8-ac79-4430-ba95-ee62a9b563b7" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/../../ex1/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/java/net/datasa/ex1/Ex1Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/java/net/datasa/ex1/controller/ExController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/java/net/datasa/ex1/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/static/css/inquiry.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/static/css/introduce.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/static/css/menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/static/img/profile.jfif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/static/js/inquiry.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/templates/ex/inquiry.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/templates/ex/introduce.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/templates/ex/notice.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ex1/src/test/java/net/datasa/ex1/Ex1ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/ex2.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/datasa/ex2/Ex2Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/datasa/ex2/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/datasa/ex2/controller/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/datasa/ex2/dto/Member.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/datasa/ex2/repository/MemberRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/datasa/ex2/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/header.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/home.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/join.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/loginForm.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/join.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/join.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/loginForm.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/net/datasa/ex2/Ex2ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../web3/src/main/java/net/datasa/web3/controller/PersonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../web3/src/main/java/net/datasa/web3/controller/PersonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../web3/src/main/java/net/datasa/web3/service/PersonService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../web3/src/main/java/net/datasa/web3/service/PersonService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../web3/src/main/java/net/datasa/web3/service/PersonServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../web3/src/main/java/net/datasa/web3/service/PersonServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../web3/src/main/resources/templates/person/6. person-list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../web3/src/main/resources/templates/person/6. person-list.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3Fbrxv8jT6uX90KoGKpk062DF1k" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.ex2 빌드.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Ex2Application.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/busan14/backend/ex2/ex2/src/main/resources/templates&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDK&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.annotationProcessors&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\busan14\backend\ex2\ex2\src\main\resources\templates" />
+      <recent name="C:\busan14\backend\ex2\ex2\src\main\resources\templates\member" />
+      <recent name="C:\busan14\backend\ex2\ex2\src\main\resources\templates\layout" />
+      <recent name="C:\busan14\backend\ex2\ex2\src\main\java\net\datasa\ex2\controller" />
+      <recent name="C:\busan14\backend\ex2\ex2\src\main\resources\static\js" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="net.datasa.ex2.repository" />
+      <recent name="net.datasa.ex2.service" />
+      <recent name="net.datasa.ex2.dto" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="ac38c2a8-ac79-4430-ba95-ee62a9b563b7" name="변경" comment="" />
+      <created>1782354859528</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1782354859528</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ex2$Ex2Application.ic" NAME="Ex2Application 커버리지 결과" MODIFIED="1782377116411" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>net.datasa.ex2.*</FILTER>
+    </SUITE>
+  </component>
+</project>
