@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>6. person-list.html</title>
+    </head>
+    <body>
+        <h1>[ 전체 조회 결과 ]</h1>
+
+        <table>
+            <tr>
+                <th>번호</th>
+                <th>아이디</th>
+                <th>이름</th>
+                <th>나이</th>
+
+                <th>[Query String]</th>
+                <th>[Thymeleaf]</th>
+                <th>[PathVariable]</th>
+                <th>[삭제-버튼]</th>
+                <th>[수정-버튼]</th>
+            </tr>
+            <tr th:if="${#lists.isEmpty(personList)}">
+                <td colspan="4">조회 결과가 없습니다.</td>
+            </tr>
+            <tr th:each="person, status : ${personList}">
+                <td th:text="${status.count}"></td>
+                <td th:text="${person.id}"></td>
+                <td th:text="${person.name}"></td>
+                <td th:text="${person.age}"></td>
+
+                <!-- 1. QueryString (문자열 템플릿)-->
+                <td>
+                    <a th:href="|select-person?searchId=${person.id}|"
+                        th:text="${person.id}"></a>
+                </td>
+                <!-- 2. Thymeleaf - QueryString 방식 - 목록, 페이징, 검색 등... -->
+                <!-- <a th:href="@{/경로(파라미터명1=${값1}, 파라미터명2=${값2})}">링크</a> -->
+                <td>
+                    <a th:href="@{/person/select-person(searchId=${person.id})}"
+                       th:text="${person.id}"></a>
+                </td>
+                <!-- 3. PathVariable 방식 (RESTful URL 사용에 가장 표준적) - 상세보기, 수정, 삭제 등....-->
+                <!-- <a th:href="@{/경로/{이름1}/{이름2}(이름1=${값1}, 이름2=${값2})}"></a> -->
+                <td>
+                    <a th:href="@{/person/info/{searchId}(searchId=${person.id})}"
+                       th:text="${person.id}"></a>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+
+            <p><a th:href="@{/}">home</a></p>
+
+    </body>
+</html>

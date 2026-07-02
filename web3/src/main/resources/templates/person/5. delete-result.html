@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>5. delete-result.html</title>
+    </head>
+    <body>
+        <h1>[ 삭제 결과 ]</h1>
+
+        <div th:if="${result}">
+            <p><span th:text="${deletedId}"></span> : 삭제되었습니다.</p>
+        </div>
+
+        <div th:unless="${result}">
+            <p><span th:text="${deleted}"></span> : 없는 아이디 입니다.</p>
+        </div>
+
+        <p><a th:href="@{/}">home</a></p>
+    </body>
+</html>

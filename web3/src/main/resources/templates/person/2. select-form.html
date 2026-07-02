@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>2. select-form.html</title>
+    </head>
+    <body>
+        <h1>[ 조회하기 ]</h1>
+        <form th:action="@{/person/select-person}" method="get">
+            <table>
+                <tr>
+                    <th>찾을 아이디</th>
+                    <td><input type="text" name="searchId" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="조회">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

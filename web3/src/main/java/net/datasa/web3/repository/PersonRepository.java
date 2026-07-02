@@ -20,6 +20,8 @@ import org.springframework.stereotype.Repository;
 	count()			전체 개수 조회
  */
 @Repository
-public interface PersonRepository extends JpaRepository<PersonEntity, String> {
+public interface PersonRepository
+		// JPA 기능을 사용하기 위한 상속, 제네릭타입은 <Entity 클래스, PK의 데이터 타입>
+		extends JpaRepository<PersonEntity, String> { // 사용하려는 entity와 그 키 값
 
 }

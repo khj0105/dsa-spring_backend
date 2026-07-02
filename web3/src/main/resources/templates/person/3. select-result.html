@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>3. select-result.html</title>
+    </head>
+    <body>
+        <h1>[ 조회 결과 ]</h1>
+
+        <div th:if="${person == null}">
+            <p><span th:text="${searchId}"></span> : 없는 아이디입니다.</p>
+        </div>
+
+        <table th:if="${person != null}" th:object="${person}">
+            <tr>
+                <th>아이디</th>
+                <td th:text="*{id}"></td>
+            </tr>
+            <tr>
+                <th>이름</th>
+                <td th:text="*{name}"></td>
+            </tr>
+            <tr>
+                <th>나이</th>
+                <td th:text="*{age}"></td>
+            </tr>
+        </table>
+        <p><a th:href="@{/}">home</a></p>
+    </body>
+</html>
