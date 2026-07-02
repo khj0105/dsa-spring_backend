@@ -3,6 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <title>6. person-list.html</title>
+        <script>
+            window.onload = function() {
+                /*
+                    dataset
+                    - HTML 요소의 data-* 속성에 접근할 수 있게 해주는 JS의 내장 객체
+                        HTML 속성                 JS에서 읽는 법
+                        ===========================================
+                        data-id="3"             dataset.id
+                        data-user-name="홍길동"  dataset.userName
+                        data-member-level       dataset.memberLevel
+                    하이픈(-)은 카멜 케이스(camelCase)로 자동 변환 됨.
+                */
+
+                // 삭제 버튼 이벤트 처리
+                let buttons = document.querySelectorAll(".deleteButton");
+                for (let i = 0; i < buttons.length; i++) {
+                    buttons[i].addEventListener("click", function() {
+                            if (!confirm("삭제하시겠습니까?")) return;
+
+                            let id = this.dataset.id;   // data-id 읽기
+                            location.href = `/person/delete-person/${id}`;
+                    });
+                }
+
+                // 수정 버튼 이벤트 처리
+                document.querySelectorAll(".updateButton").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        let id = this.dataset.id;
+                        location.href = `/person/update-page/${id}`;
+                    });
+                });
+            }
+        </script>
     </head>
     <body>
         <h1>[ 전체 조회 결과 ]</h1>
@@ -46,8 +79,16 @@
                     <a th:href="@{/person/info/{searchId}(searchId=${person.id})}"
                        th:text="${person.id}"></a>
                 </td>
-                <td></td>
-                <td></td>
+                <!-- 삭제 -->
+                <td>
+                    <button type="button" class="deleteButton"
+                            th:data-id="${person.id}">삭제</button>
+                </td>
+                <!-- 수정 -->
+                <td>
+                    <button type="button" class="updateButton"
+                            th:data-id="${person.id}">수정</button>
+                </td>
             </tr>
         </table>
 

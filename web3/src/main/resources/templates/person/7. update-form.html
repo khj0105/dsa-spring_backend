@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>7. update-form.html</title>
+    </head>
+    <body>
+
+        <h1>[ 회원정보 수정 ]</h1>
+
+        <div th:if="${person == null}">
+            <p><span th:text="${updateId}"></span> : 없는 아이디입니다.</p>
+        </div>
+
+        <form th:action="@{/person/update-person/{updateId}(updateId=${person.id})}"
+              method="post" th:if="${person != null}">
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <td><input type="text" name="name" th:value="${person.name}"></td>
+                </tr>
+                <tr>
+                    <th>나이</th>
+                    <td><input type="number" name="age" th:value="${person.age}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="저장">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>

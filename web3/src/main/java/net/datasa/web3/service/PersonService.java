@@ -16,4 +16,6 @@ public interface PersonService {
 	void delete(String deleteId);
 	
 	List<PersonDto> selectAll();
+	
+	void update(PersonDto dto);
 }

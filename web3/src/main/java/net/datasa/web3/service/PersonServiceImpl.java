@@ -111,8 +111,24 @@ public class PersonServiceImpl implements PersonService{
 		
 		return dtoList;
 	}
-
-//	@Override
+	
+	@Override
+	public void update(PersonDto dto) {
+		
+		PersonEntity entity = pr.findById(dto.getId())
+				.orElseThrow(() ->
+						new EntityNotFoundException("회원이 없습니다."));
+		log.debug("수정 전: {}", entity);
+		
+		entity.setName(dto.getName());
+		entity.setAge(dto.getAge());
+		
+		log.debug("수정 후: {}", entity);
+		
+		pr.save(entity);
+	}
+	
+	//	@Override
 //	public void save(PersonDto dto) {
 //		PersonEntity personEntity = new PersonEntity();
 //		personEntity.setId(dto.getId());
