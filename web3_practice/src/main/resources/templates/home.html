@@ -3,8 +3,39 @@
     <head>
         <meta charset="UTF-8">
         <title>home.html</title>
+        <style>
+            table { width: 80%; margin: 20px auto; border-collapse: collapse; text-align: center; }
+            th, td { border: 1px solid #ddd; padding: 12px; }
+            th { background-color: #f9f7e8; }
+            h1 { text-align: center; }
+            .top-link { text-align: right; width: 80%; margin: 0 auto; display: block; color: red; font-weight: bold; text-decoration: none; }
+        </style>
+        <script>
+            window.onload = function() {
+                // 수정 버튼 이벤트
+                document.querySelectorAll(".updateBtn").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        let sid = this.dataset.sid;
+                        location.href = `/student/update/${sid}`;
+                    });
+                });
+
+                // 삭제 버튼 이벤트
+                document.querySelectorAll(".deleteBtn").forEach(btn => {
+                    btn.addEventListener("click", function() {
+                        if(confirm("정말 삭제하시겠습니까?")) {
+                            let sid = this.dataset.sid;
+                            location.href = `/student/delete/${sid}`;
+                        }
+                    });
+                });
+            };
+        </script>
     </head>
     <body>
+        <div style="text-align: right; width: 80%; margin: 0 auto;">
+        <a th:href="@{/student/enroll}" class="top-link">학생정보 등록</a>
+        </div>
         <h1>[ 학생 목록 ]</h1>
 
         <table>
@@ -18,12 +49,25 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                </tr>
+            <tr th:if="${#lists.isEmpty(studentList)}">
+                <td colspan="5">등록된 학생이 없습니다.</td>
+            </tr>
+            <tr th:each="student : ${studentList}">
+                <td th:text="${student.studentId}"></td>
+                <td>
+                    <a th:href="@{/student/select(sid=${student.studentId})}" th:text="${student.name}"></a>
+                </td>
+                <td th:text="${student.major}"></td>
+                <td>
+                    JAVA: <span th:text="${student.java}"></span><br>
+                    DB: <span th:text="${student.db}"></span><br>
+                    WEB: <span th:text="${student.web}"></span>
+                </td>
+                <td>
+                    <button type="button" class="updateBtn" th:data-sid="${student.studentId}">수정</button>
+                    <button type="button" class="deleteBtn" th:data-sid="${student.studentId}">삭제</button>
+                </td>
+            </tr>
             </tbody>
         </table>
     </body>

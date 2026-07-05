@@ -3,8 +3,112 @@
     <head>
         <meta charset="UTF-8">
         <title>enroll.html</title>
+        <style>
+            table { margin: 20px auto; border-collapse: collapse; width: 50%; }
+            th, td { border: 1px solid #ddd; padding: 15px; }
+            th { background-color: #f9f7e8; width: 30%; text-align: center; }
+            h1 { text-align: center; }
+            .btn-box { text-align: center; margin-top: 15px; }
+            .btn-box button, .btn-box a { padding: 8px 16px; margin: 0 5px; background-color: #007bff; color: white; border: none; text-decoration: none; cursor: pointer; }
+            select, input[type="text"] { width: 95%; padding: 5px; }
+        </style>
+        <script>
+            window.onload = function() {
+                document.getElementById("enrollForm").addEventListener("submit", function(e) {
+                    let name = document.getElementById("name").value.trim();
+                    let major = document.getElementById("major").value.trim();
+                    let java = document.getElementById("java").value;
+                    let db = document.getElementById("db").value;
+                    let web = document.getElementById("web").value;
+
+                    // 1. 이름 유효성 검사 (3자 이상 10자 이하)
+                if (name.length < 3 || name.length > 10) {
+                    alert("이름은 3자 이상 10자 이하로 입력해주세요.");
+                    e.preventDefault();
+                    return;
+                }
+
+                // 2. 전공 빈칸 검사
+                if (major === "") {
+                    alert("전공을 입력해주세요.");
+                    e.preventDefault();
+                    return;
+                }
+
+                // 3. 과목별 등급 선택 검사
+                if (java === "") {
+                    alert("자바 등급을 선택해주세요.");
+                    e.preventDefault();
+                    return;
+                }
+                if (db === "") {
+                    alert("데이터베이스 등급을 선택해주세요.");
+                    e.preventDefault();
+                    return;
+                }
+                if (web === "") {
+                    alert("웹 등급을 선택해주세요.");
+                    e.preventDefault();
+                    return;
+                }
+                });
+            };
+        </script>
     </head>
     <body>
         <h1>[ 학생 등록 ]</h1>
+
+        <form id="enrollForm" th:action="@{/student/enroll}" method="post">
+            <table>
+                <tr>
+                    <th>이름</th>
+                    <td><input type="text" name="name" id="name" placeholder="3~10자 사이"></td>
+                </tr>
+                <tr>
+                    <th>전공</th>
+                    <td><input type="text" name="major" id="major"></td>
+                </tr>
+                <tr>
+                    <th>자바</th>
+                    <td>
+                        Java 등급 선택:<br>
+                        <select name="java" id="java">
+                            <option value="">-- 선택 --</option>
+                            <option value="상">상</option>
+                            <option value="중">중</option>
+                            <option value="하">하</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>데이터베이스</th>
+                    <td>
+                        DB 등급 선택:<br>
+                        <select name="db" id="db">
+                            <option value="">-- 선택 --</option>
+                            <option value="상">상</option>
+                            <option value="중">중</option>
+                            <option value="하">하</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>웹</th>
+                    <td>
+                        web 등급 선택:<br>
+                        <select name="web" id="web">
+                            <option value="">-- 선택 --</option>
+                            <option value="상">상</option>
+                            <option value="중">중</option>
+                            <option value="하">하</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div class="btn-box">
+                <button type="submit">등록</button>
+                <a th:href="@{/student/list}">홈</a>
+            </div>
+        </form>
     </body>
 </html>
