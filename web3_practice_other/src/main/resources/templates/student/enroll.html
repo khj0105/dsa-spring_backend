@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>학생등록</title>
+	<link rel="stylesheet" th:href="@{/css/common.css}">
+	<!-- 유효성 검사 작성 -->
+	<script th:src="@{/js/validation.js}"></script>
+</head>
+<body>
+
+	<h1>[ 학생등록 ]</h1>
+
+	<form th:action="@{/student/save}" method="post">
+		<table>
+			<tr>
+				<th>이름</th>
+				<td>
+					<input type="text" name="name" id="name" placeholder="3~10자 사이">
+				</td>
+			</tr>
+			<tr>
+				<th>전공</th>
+				<td>
+					<input type="text" name="major" id="major">
+				</td>
+			</tr>
+			<tr>
+				<th>자바</th>
+				<td>
+					<label for="java">Java 등급 선택:</label>
+					<select name="java" id="java">
+						<option value="">-- 선택 --</option>
+						<option value="상">상</option>
+						<option value="중">중</option>
+						<option value="하">하</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>데이터베이스</th>
+				<td>
+					<label for="db">DB 등급 선택:</label>
+					<select name="db" id="db">
+						<option value="">-- 선택 --</option>
+						<option value="상">상</option>
+						<option value="중">중</option>
+						<option value="하">하</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<th>웹</th>
+				<td>
+					<label for="web">web 등급 선택:</label>
+					<select name="web" id="web">
+						<option value="">-- 선택 --</option>
+						<option value="상">상</option>
+						<option value="중">중</option>
+						<option value="하">하</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="등록">
+					<input type="button" value="홈" id="home">
+				</td>
+			</tr>
+		</table>
+	</form>
+
+</body>
+</html>

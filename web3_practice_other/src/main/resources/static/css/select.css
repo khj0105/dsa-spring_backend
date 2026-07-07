@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+/* select.html */
+
+body {
+	background-color: #f5f5f5;
+	padding: 10px;
+	color: #333;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+table {
+	width: 400px;
+	margin: 0 auto;
+	border-collapse: collapse;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+th, td {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+
+th {
+	background-color: beige;
+	text-align: center;
+	width: 100px;
+}
+
+td p {
+	margin: 4px 0;
+}

@@ -1,0 +1,265 @@
+/* list.html - css */
+@charset "UTF-8";
+
+/* 기본 박스 사이즈 통일 */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* 전체 레이아웃 */
+body {
+    font-family: 'Helvetica, Arial, sans-serif';
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+    margin: 0;
+    padding: 50px 0 40px; /* padding-top + 기존 padding 합침 (동일 효과) */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    color: #333;
+    overflow-x: hidden; /* 가로 스크롤 방지 */
+}
+
+/* 제목 */
+h2 {
+    font-size: 24px;
+    color: #ff7e5f;
+    cursor: pointer;
+    margin-top: 86px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* 상단 영역 (제목 + 아이콘) */
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 30px 0 100px;
+    position: relative;
+}
+
+.top img {
+    height: 24px;
+    position: absolute;
+    right: 0;
+    margin-right: 30px;
+    cursor: pointer;
+}
+
+/* 바깥 컨테이너 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 1200px;
+    margin: 0 50px;
+    width: calc(100% - 100px);
+    padding: 20px 40px 50px;
+}
+
+/* 카드들을 그리드로 배치 */
+.items {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+}
+
+/* 카드 하나 */
+.item {
+    position: relative;
+    background-color: beige; /* JS로 랜덤 색상 덮어씌워짐 */
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 3px 1px #dadce0;
+    width: 100%;
+    max-width: 320px;
+}
+
+/* 텍스트 & 폼 스타일 */
+label {
+    font-weight: bolder;
+    color: darkgray;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    resize: none;
+    overflow-y: auto;
+}
+
+input[type="password"],
+input[type="submit"] {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background: linear-gradient(to right, #feb47b, #ff7e5f);
+}
+
+/* 공통 버튼 스타일 */
+.action-btn {
+    width: 48%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 수정 버튼 – 파스텔 민트 */
+.update-btn {
+    background: linear-gradient(to right, #d4f7e7, #b8efdb);
+}
+
+.update-btn:hover {
+    background: linear-gradient(to right, #b8efdb, #a3e8cf);
+}
+
+/* 삭제 버튼 – 파스텔 코랄핑크 */
+.delete-btn {
+    background: linear-gradient(to right, #ffd6d6, #ffb8c8);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(to right, #ffb8c8, #ffa5b8);
+}
+
+/* 버튼들을 가로로 정렬하는 래퍼 */
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 4%;
+}
+
+/* 인기 게시물 배지 (왼쪽 상단) */
+/* 🔥 HOT 배지 - 하트 버튼과 동일한 레벨의 알약 스타일 */
+.badge-hot {
+    position: absolute;
+    top: 10px;                 /* 하트 높이에 정확히 맞춤 */
+    left: 12px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 3px 9px;         /* 하트 버튼과 거의 동일한 두께 */
+    background: #ff9f43;       /* 따뜻한 오렌지 알약 */
+    color: #fff;               /* HOT 글자 하얀색 */
+
+    font-size: 13px;           /* 하트 버튼 텍스트 크기와 동일 */
+    font-weight: 700;
+    border: none;
+    border-radius: 999px;      /* 완전 둥근 알약 스타일 */
+
+    box-shadow: 0 2px 5px rgba(255, 159, 67, 0.4);
+    z-index: 6;                /* 하트보다 위쪽에 있어도 OK */
+    cursor: default;           /* 클릭 아니므로 default */
+}
+
+
+/* 추천 버튼 - 우측 상단 플로팅 */
+.like-floating {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    z-index: 5;
+}
+
+/* 추천 버튼 디자인 */
+.like-icon-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: #ff6f9c;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(255, 110, 150, 0.4);
+    transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
+}
+
+.like-icon-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(255, 110, 150, 0.55);
+}
+
+.like-icon-btn:active {
+    transform: scale(0.96);
+}
+
+/* 숫자 색상 */
+.like-count {
+    font-weight: 700;
+    font-size: 14px;
+    color: #fff;
+}
+
+/* ----- 반응형 ----- */
+
+/* 1024px 이하: 그리드 2열 */
+@media (max-width: 1024px) {
+    .items {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 768px 이하: 컨테이너 여백/패딩 조절 */
+@media (max-width: 768px) {
+    .container {
+        margin: 0 16px;
+        width: calc(100% - 32px);
+        padding: 16px 16px 32px;
+    }
+
+    h2 {
+        margin-top: 70px;
+    }
+}
+
+/* 640px 이하: 1열 */
+@media (max-width: 640px) {
+    .items {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 400px 이하: 컨테이너 여백 더 줄이기 */
+@media (max-width: 400px) {
+    .container {
+        margin: 0 10px;
+        width: calc(100% - 20px);
+        padding: 12px 12px 24px;
+    }
+}

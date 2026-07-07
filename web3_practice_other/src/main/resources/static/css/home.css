@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+/* home.html */
+
+body {
+	background-color: #f9f9f9;
+	color: #333;
+	padding: 10px;
+}
+
+/* 링크 기본 스타일 */
+a {
+	text-decoration: none;
+	color: #007BFF;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #0056b3;
+}
+
+h1 {
+	text-align: center;
+}
+
+body > a {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	color: red;
+}
+
+table {
+	margin: auto;
+	width: 80%;
+	border-collapse: collapse;
+	margin-top: 20px;
+	background-color: #fff;
+}
+
+th, td {
+	border: 1px solid #ccc;
+	padding: 5px;
+	text-align: center;
+}
+
+th {
+	background-color: beige;
+	height: 40px;
+}
+
+input[type="button"] {
+	padding: 6px 12px;
+	margin: 2px;
+	border: 1px solid #888;
+	background-color: #e0e0e0;
+	cursor: pointer;
+}
+
+input[type="button"]:hover {
+	background-color: #ccc;
+}

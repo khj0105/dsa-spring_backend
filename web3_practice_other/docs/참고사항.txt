@@ -1,0 +1,29 @@
+ex3
+학생관리 페이지 만들기
+
+포트 번호: 9003
+루트 경로: /
+* 그 외 설정은 application.properties 참고
+
+생성 파일
+- java
+	HomeController
+	StudentController
+
+	StudentDTO
+	StudentEntity
+
+	StudentRepository
+	StudentService	(인터페이스 없음)
+
+- resources
+	home.html
+	enroll.html
+	select.html
+	updateForm.html
+
+	css, js 파일 별도
+
+
+* Entity 정의시
+	StudentId 에 @GeneratedValue(strategy = GenerationType.IDENTITY) 매핑

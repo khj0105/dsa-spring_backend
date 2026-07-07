@@ -1,0 +1,60 @@
+@charset "UTF-8";
+
+/* enroll.html , updateForm.html */
+
+body {
+	background-color: #f9f9f9;
+	padding: 10px;
+	color: #333;
+}
+
+h1 {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+table {
+	width: 500px;
+	margin: 0 auto;
+	border-collapse: collapse;
+	background-color: #fff;
+	border: 1px solid #ccc;
+}
+
+th, td {
+	padding: 20px;
+	border: 1px solid #ccc;
+	text-align: center
+}
+
+th {
+	background-color: beige;
+	width: 100px;
+}
+
+label {
+    display: block;
+    text-align: left;
+	color: darkgray;
+}
+
+input[type="text"], select {
+	width: 100%;
+	padding: 3px;
+	box-sizing: border-box;
+}
+
+input[type="submit"], input[type="button"] {
+	display: inline;
+	margin: 10px auto;
+	padding: 8px 16px;
+	border: none;
+	background-color: #007BFF;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+	background-color: #0056b3;
+}

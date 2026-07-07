@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>HOME</title>
+	<link rel="stylesheet" th:href="@{/css/home.css}">
+	<script>
+		window.onload = function() {
+			// 수정 버튼 클릭시 이벤트 처리
+			document.querySelectorAll(".updateBtn").forEach(btn => {
+				btn.addEventListener("click", function() {
+					let uid = this.dataset.uid;
+					location.href = `/student/update/${uid}`;
+				});
+			});
+			// 삭제 버튼 클릭시 이벤트 처리
+			document.querySelectorAll(".deleteBtn").forEach(btn => {
+				btn.addEventListener("click", function() {
+					let did = this.dataset.did;
+					location.href = `/student/delete/${did}`;
+				});
+			});
+		}
+	</script>
+</head>
+<body>
+
+	<h1>[ 학생목록 ]</h1>
+
+	<a th:href="@{/student/save-form}">학생정보 등록</a>
+	
+	<table>
+		<tr>
+			<th>학번</th>
+			<th>이름</th>
+			<th>전공</th>
+			<th>이해도</th>
+			<th>etc</th>
+		</tr>
+		<!-- 학생목록으로부터 정보 출력 -->
+		<tr th:each="student : ${studentList}">
+			<td th:text="${student.studentId}">/td>
+			<td>
+				<a th:href="@{/student/select(sid=${student.studentId})}"
+			   		th:text="${student.name}"></a>
+			</td>
+			<td th:text="${student.major}"></td>
+			<td>
+				<p th:text="|JAVA: ${student.java}|"></p>
+				<p th:text="|DB: ${student.db}|"></p>
+				<p th:text="|WEB: ${student.web}|"></p>
+			</td>
+			<td>
+				<input type="button" value="수정" class="updateBtn"
+					   th:data-uid="${student.studentId}">
+				<input type="button" value="삭제" class="deleteBtn"
+					   th:data-did="${student.studentId}">
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>
