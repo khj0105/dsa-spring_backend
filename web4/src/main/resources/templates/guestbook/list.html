@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>web4</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href=@{/css/list.css}>
+    <link rel="stylesheet" th:href="@{/css/list.css}">
     <!-- SweetAlert 사용(CDN) -->
     <script defer th:src="@{https://cdn.jsdelivr.net/npm/sweetalert2@11}"></script>
     <!-- defer: HTML 문서가 끝까지 다 읽혀서 화면이 완전히 구성된 직후에 다운로드 완료된 자바스크립트를 차례대로 실행 -->
@@ -20,33 +20,34 @@
             </a>
         </div>
         <div class="items">
-            <div class="item">
-                <span class="badge-hot">🔥 HOT</span>
+            <div class="item" th:each="guest : ${guestbookList}">
+                <span th:if="${guest.recommendCnt >= 10}"
+                        class="badge-hot">🔥 HOT</span>
                 <div class="like-floating">
-                    <form>
+                    <form th:action="@{/guestbook/recommend/{num}(num=${guest.num})}" method="post">
                         <button type="submit" class="like-icon-btn">
-                            ❤ <span class="like-count">0</span>
+                            ❤ <span class="like-count" th:text="${guest.recommendCnt}">0</span>
                         </button>
                     </form>
                 </div>
                 <p>
                     <label>글번호</label>
-                    <span></span>
+                    <span th:text="${guest.num}"></span>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <label>작성자</label>
-                    <span></span>
+                    <span th:text="${guest.name}"></span>
                 </p>
                 <p>
                     <label>작성일</label>
-                    <span></span>
+                    <span th:text="${#temporals.format(guest.inputdate, 'yyyy-MM-dd HH:mm:ss')}"></span>
                 </p>
 
-                <textarea rows="4" cols="30" readonly></textarea>
+                <textarea rows="4" cols="30" readonly th:text="${guest.message}"></textarea>
                 <form>
                     <input type="password" name="password" placeholder="비밀번호를 입력하세요..">
                     <div class="btn-row">
-                        <button class="action-btn update-btn">수정</button>
-                        <button class="action-btn delete-btn">삭제</button>
+                        <button class="action-btn update-btn" th:formaction="@{/guestbook/update/{num}(num=${guest.num})}" formmethod="get">수정</button>
+                        <button class="action-btn delete-btn" th:formaction="@{/guestbook/delete/{num}(num=${guest.num})}" formmethod="post">삭제</button>
                     </div>
                 </form>
             </div>

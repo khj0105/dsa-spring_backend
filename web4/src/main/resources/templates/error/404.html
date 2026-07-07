@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>404.html</title>
+        <link rel="stylesheet" th:href="@{/css/error.css}">
+    </head>
+    <body>
+
+        <div class="error-box">
+            <h1>404 - 찾을 수 없습니다.</h1>
+            <p>요청하신 경로 또는 데이터가 존재하지 않습니다.</p>
+            <a th:href="@{/}">홈으로 돌아가기</a>
+        </div>
+    </body>
+</html>

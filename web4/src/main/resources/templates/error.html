@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+  <head>
+      <meta charset="UTF-8">
+      <title>error.html</title>
+      <link rel="stylesheet" th:href="@{/css/error.css}">
+  </head>
+  <body>
+    <div class="error-box">
+      <h1>죄송합니다.</h1>
+      <p>문제가 지속되면 관리자에게 문의해주세요.</p>
+
+        <!--
+            Spring Boot는 다음 순서로 에러 페이지를 찾음
+                1. /error 라는 URL을 처리하는 컨트롤러
+                2. templates/error/{status}.html (ex. 404.html)
+                3. templates/error.html
+        -->
+
+      <p th:text="|에러 코드: ${status}"></p>
+      <p th:text="|에러 메시지: ${error}"></p>
+      <a th:href="@{/}">홈으로 돌아가기</a>
+    </div>
+  </body>
+</html>
