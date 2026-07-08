@@ -13,20 +13,22 @@
 
     <div class="form-container">
         <h2>글수정</h2>
-        <form>
+        <form th:action="@{/guestbook/update/{num}(num=${guestbook.num})}" method="post">
             <div class="form-group">
                 <label for="name">이름</label>
                 <input type="text" id="name" name="name"
-                       placeholder="이름을 입력하세요" readonly>
+                       placeholder="이름을 입력하세요" readonly th:value="${guestbook.name}"> <!--input태그 하나 있고 닫는 태그가 없으면 th:value-->
             </div>
             <div class="form-group">
                 <label for="password">비밀번호</label>
                 <input type="password" id="password" name="password"
+                       th:value="${guestbook.password}"
                        placeholder="비밀번호를 입력하세요">
             </div>
             <div class="form-group">
                 <label for="message">내용<span id="cnt">(0 / 200)</span></label>
                 <textarea id="message" name="message" maxlength="200"
+                          th:text="${guestbook.message}"
                           placeholder="내용을 입력하세요"></textarea>
             </div>
             <button type="submit">저장</button>

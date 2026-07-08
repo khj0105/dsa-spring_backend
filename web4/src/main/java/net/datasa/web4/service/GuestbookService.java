@@ -6,7 +6,11 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.datasa.web4.domain.dto.GuestbookDTO;
 import net.datasa.web4.domain.entity.GuestbookEntity;
+import net.datasa.web4.domain.entity.GuestbookRecommendEntity;
+import net.datasa.web4.domain.entity.GuestbookRecommendKey;
 import net.datasa.web4.exception.PasswordException;
+import net.datasa.web4.exception.RecommendException;
+import net.datasa.web4.repository.GuestbookRecommendRepository;
 import net.datasa.web4.repository.GuestbookRepository;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -21,6 +25,7 @@ import java.util.List;
 public class GuestbookService {
 	
 	private final GuestbookRepository gr;
+	private final GuestbookRecommendRepository  rr;
 	
 	/*
 		글 저장
@@ -99,4 +104,77 @@ public class GuestbookService {
 		gr.delete(entity);
 		
 	}
+	
+	// -------------------------------------------------------------------------
+	/*
+		비밀번호가 일치할 경우, 글 번호에 일치하는 게시글 정보 조회
+		@param num
+		@param password
+		@return dto 해당 번호의 게시글 정보
+		@throws EntityNotFoundException 해당 번호의 글이 없을 때
+		@throws PasswordException 비밀번호가 틀릴 때
+	 */
+	public GuestbookDTO selectGuestbook(Integer num, String password) {
+		GuestbookEntity entity = gr.findById(num)
+				.orElseThrow(() -> new EntityNotFoundException(num + "번 글이 없습니다."));
+		
+		if (!entity.getPassword().equals(password)) {
+			throw new PasswordException("비밀번호가 틀립니다.");
+		}
+		
+		GuestbookDTO dto = GuestbookDTO.builder()
+				.num(entity.getNum())
+				.name(entity.getName())
+				.password(entity.getPassword())
+				.message(entity.getMessage())
+				.build();
+		
+		return dto;
+		
+	}
+	
+	// -------------------------------------------------------------------------
+	/*
+		게시글 수정
+		@param dto
+	 */
+	public void update(GuestbookDTO dto) {
+		GuestbookEntity entity = gr.findById(dto.getNum())
+				.orElseThrow(() -> new EntityNotFoundException(dto.getNum() + "번 글이 없습니다."));
+		
+		entity.setPassword(dto.getPassword());
+		entity.setMessage(dto.getMessage());
+	}
+	
+	// -------------------------------------------------------------------------
+	/*
+		추천 처리
+		@param num
+		@param clientIp
+	 */
+	public void recommend(Integer num, String clientIp) {
+		// 파라미터 객체화
+		GuestbookRecommendKey key = new GuestbookRecommendKey(num, clientIp);
+		
+		// 1. 이미 이 IP로 글을 추천했는지 확인
+		boolean exists = rr.existsById(key);
+		if (exists) {
+			throw new RecommendException("이미 추천한 글입니다.");
+		}
+		
+		// 2. 추천 이력 저장
+		GuestbookRecommendEntity recommend = GuestbookRecommendEntity
+				.builder()
+				.id(key)
+				.build();
+		rr.save(recommend);
+		
+		// 3. 원글의 추천 수 +1
+		GuestbookEntity guest = gr.findById(num)
+				.orElseThrow(() -> new EntityNotFoundException(
+						"글을 찾을 수 없습니다."
+				));
+		guest.increaseRecommend();
+	}
 }
+
