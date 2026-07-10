@@ -3,8 +3,87 @@
     <head>
         <meta charset="UTF-8">
         <title>list.html</title>
+        <script>
+            document.querySelectorAll('.btn-detail').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const extraText = btn.previousElementSibling;
+                    extraText.classList.toggle('expanded');
+                    btn.textContent = extraText.classList.contains('expanded') ? '접기' : '자세히';
+                });
+            });
+
+            document.querySelectorAll('.btn-delete').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    if (!confirm('이 주문을 삭제하시겠습니까?')) return;
+                    const id = btn.dataset.id;
+                    fetch(`/chicken/order/${id}`, { method: 'DELETE' })
+                        .then(res => {
+                            if (!res.ok) throw new Error('삭제 실패');
+                            btn.closest('.order-card').remove();
+                        })
+                        .catch(err => alert(err.message));
+                });
+            });
+        </script>
     </head>
     <body>
+    <div class="top-nav">
+        <a th:href="@{/chicken/order}" class="btn-order">주문하기</a>
+        <a th:href="@{/chicken/list}" class="btn-list">주문내역보기</a>
+    </div>
 
+    <h1 class="page-title">🍗 치킨 주문 목록</h1>
+
+    <div class="order-grid">
+        <div class="order-card" th:each="order : ${orders}">
+            <div class="order-header">
+                <span class="order-no" th:text="'주문 번호: ' + ${order.id}"></span>
+                <button type="button" class="btn-delete" th:attr="data-id=${order.id}">삭제</button>
+            </div>
+            <div class="order-date" th:text="${#temporals.format(order.orderDate, 'yyyy-MM-dd HH:mm:ss')}"></div>
+
+            <div class="info-row">
+                <span class="info-label">치킨 종류</span>
+                <span class="info-value" th:text="${order.chickenType}"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">수량</span>
+                <span class="info-value" th:text="${order.quantity} + '개'"></span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">추가 메뉴</span>
+                <span class="info-value extra-value">
+                <span class="extra-text" th:text="${order.extraOptions}"></span>
+                <button type="button" class="btn-detail">자세히</button>
+            </span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">배달 방식</span>
+                <span class="info-value" th:text="${order.deliveryType}"></span>
+            </div>
+
+            <div class="receipt-box">
+                <div class="receipt-title">RECEIPT</div>
+                <div class="receipt-row">
+                    <span>치킨 가격</span>
+                    <span th:text="${#numbers.formatInteger(order.chickenPrice * order.quantity, 0, 'COMMA')} + '원'"></span>
+                </div>
+                <div class="receipt-row">
+                    <span>추가 가격</span>
+                    <span th:text="${#numbers.formatInteger(order.extraTotalPrice, 0, 'COMMA')} + '원'"></span>
+                </div>
+                <div class="receipt-row">
+                    <span>배달 가격</span>
+                    <span th:text="${#numbers.formatInteger(order.deliveryPrice, 0, 'COMMA')} + '원'"></span>
+                </div>
+                <div class="receipt-total">
+                    <span>최종 결제 금액</span>
+                    <span th:text="${#numbers.formatInteger(order.totalPrice, 0, 'COMMA')} + '원'"></span>
+                </div>
+            </div>
+        </div>
+
+        <p class="empty-msg" th:if="${orders == null or orders.isEmpty()}">주문 내역이 없습니다.</p>
+    </div>
     </body>
 </html>
