@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>주문 목록</title>
+    <link rel="stylesheet" th:href="@{https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap}">
+    <link rel="stylesheet" th:href="@{/css/list.css}">
+    <script defer th:src="@{https://cdn.jsdelivr.net/npm/sweetalert2@11}"></script>
+    <script defer th:src="@{/js/list.js}"></script>
+    <!--<script th:inline="javascript">
+      // 백엔드 데이터를 안전하게 자바스크립트 변수에 할당
+      const options = /*[[${extraOptions}]]*/ {};
+    </script>-->
+</head>
+<body>
+
+  <div th:replace="~{fragment/nav :: fixedNav}"></div>
+
+  <h1>🍗 치킨 주문 목록</h1>
+
+  <div class="order-container">
+    <div class="order-card"
+         th:each="order : ${orderList}"
+         th:object="${order}">
+      <div>
+        <div class="card-header">
+          <div class="order-id" th:text="|주문 번호: *{id}|">주문 번호: 1</div>
+          <div class="order-date" th:text="*{#temporals.format(orderDate, 'yyyy-MM-dd HH:mm:ss')}">2026-07-03 16:42:22</div>
+
+          <div class="order-delete">
+            <button type="button" class="btn-delete" th:onclick="|confirmDelete(*{id})|">삭제</button>
+          </div>
+        </div><!-- card-header -->
+
+        <div class="card-body">
+          <div class="info-row">
+            <span class="info-label">치킨 종류</span>
+            <span class="info-value" th:text="*{chickenType}">후라이드</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">수량</span>
+            <span class="info-value" th:text="|*{quantity}개|">1개</span>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">추가 메뉴</span>
+            <div style="display: flex; align-items: center; justify-content: flex-end; width: 100%; overflow: hidden;">
+              <span class="info-value-ellipsis" th:text="*{extraOptions}">치즈볼, 콜라 대짜, 소스추가, 무추가</span>
+              <button class="btn-more"
+                      th:data-options="*{extraOptions}"
+                      onclick="showExtraOptions(this.getAttribute('data-options'))">자세히</button>
+            </div>
+          </div>
+
+          <div class="info-row">
+            <span class="info-label">배달 방식</span>
+            <span class="info-value" th:text="*{deliveryType}">배민원</span>
+          </div>
+        </div><!-- card-body -->
+      </div>
+
+      <div class="receipt-section">
+        <div class="receipt-title">RECEIPT</div>
+        <div class="receipt-row">
+          <span>치킨 가격</span>
+          <span th:text="|*{#numbers.formatInteger(chickenPrice, 0, 'COMMA')}원|">18,000원</span>
+        </div>
+        <div class="receipt-row">
+          <span>추가 가격</span>
+          <span th:text="|*{#numbers.formatInteger(extraTotalPrice, 0, 'COMMA')}원|">3,000원</span>
+        </div>
+        <div class="receipt-row">
+          <span>배달 가격</span>
+          <span th:text="|*{#numbers.formatInteger(deliveryPrice, 0, 'COMMA')}원|">2,000원</span>
+        </div>
+        <div class="total-row">
+          <span>최종 결제 금액</span>
+          <span th:text="|*{#numbers.formatInteger(totalPrice, 0, 'COMMA')}원|">23,000원</span>
+        </div>
+      </div><!-- receipt-section -->
+    </div><!-- order-card -->
+  </div><!-- order-container -->
+</body>
+</html>
