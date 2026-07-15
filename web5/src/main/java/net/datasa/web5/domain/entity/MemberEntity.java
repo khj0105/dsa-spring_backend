@@ -19,6 +19,9 @@ public class MemberEntity {
 	@Column(name = "member_id", length = 30)
 	String memberId;
 	
+	@Column(name = "member_password", length = 100)
+	String memberPassword;
+	
 	@Column(name = "member_name", nullable = false, length = 30)
 	String memberName;
 	
@@ -37,7 +40,7 @@ public class MemberEntity {
 	@Column(name = "rolename")
 	String rolename;
 	
-	// @Prepersist는 insert 시점에 작동
+	// @PrePersist는 insert 시점에 작동
 	// DB에 INSERT 되기 전에 실행되는 콜백 메서드를 지정하는 어노테이션
 	@PrePersist
 	public void perPersist() {
