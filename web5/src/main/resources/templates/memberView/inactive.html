@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>inactive</title>
+        <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+        <script>
+            <!--유효성 검사-->
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>[ 휴면 계정 해제 ]</h1>
+        </header>
+
+        <section>
+            <form th:action="@{/member/inactive}" method="post">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <td>
+                            <input type="text" name="memberId" placeholder="ID입력">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Password</th>
+                        <td>
+                            <input type="password" name="memberPassword" placeholder="비밀번호 입력">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" class="center white">
+                            <input type="submit" value="휴면 해제">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </body>
+</html>
