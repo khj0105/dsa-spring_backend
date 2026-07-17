@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>infoForm.html</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/main.css}">
+
+    <!-- 카카오 우편번호 서비스 라이브러리 -->
+    <script th:src="@{https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js}"></script>
+    <script>
+        window.onload = function() {
+            const form = document.querySelector("#updateForm");
+            const postBtn = document.querySelector("#postBtn");
+
+            // 우편번호 검색 기능
+            postBtn.addEventListener("click", function() {
+                const width = 500;      // 팝업창 가로 크기
+                const height = 600;     // 팝업창 세로 크기
+
+                const left = window.screenX + (window.screen.width / 2) - (width / 2);
+                const top = window.screenY + (window.screen.height / 2) - (height / 2);
+
+                new daum.Postcode({
+                    oncomplete: function(data) {
+                        let addr = '';
+                        if (data.userSelectedType === 'R') {
+                            addr = data.roadAddress;        // 도로명 주소
+                        } else {
+                            addr = data.jibunAddress;       // 지번 주소
+                        }
+                        document.querySelector('#address').value = addr;
+                    }
+                }).open({
+                    left: left,
+                    top: top,
+                    popupTitle: '우편번호 검색'               // 팝업창 이름
+                });
+            });
+
+            form.addEventListener("submit", function(e) {
+                const pw = document.querySelector("#memberPassword").value;
+                const pw2 = document.querySelector("#memberPassword2").value;
+                const name = document.querySelector("#memberName").value;
+
+                if (pw !== '') {
+                    if (pw.length < 3 || pw.length > 10) {
+                        alert('비밀번호는 3~10자로 입력하세요.');
+                        e.preventDefault();
+                        return;
+                    }
+                    if (pw !== pw2) {
+                        alert('비밀번호를 정확하게 다시 입력하세요.');
+                        e.preventDefault();
+                        return;
+                    }
+                }
+                if (name.trim() === '') {
+                    alert('이름을 입력하세요.');
+                    e.preventDefault();
+                    return;
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>[ 개인정보 수정 ]</h1>
+    </header>
+
+    <section>
+        <form id="updateForm" method="post" th:action="@{/member/info}">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td th:text="${member.memberId}"></td>
+                </tr>
+                <tr>
+                    <th>비밀번호</th>
+                    <td>
+                        <input type="password" name="memberPassword" id="memberPassword" placeholder="비밀번호를 변경하려면 입력하세요"><br>
+                        <input type="password" id="memberPassword2" placeholder="비밀번호 다시 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>이름</th>
+                    <td>
+                        <input type="text" name="memberName" id="memberName" th:value="${member.memberName}" placeholder="이름 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td>
+                        <input type="text" name="email" id="email" th:value="${member.email}" placeholder="이메일 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>전화번호</th>
+                    <td>
+                        <input type="text" name="phone" id="phone" th:value="${member.phone}" placeholder="전화번호 입력">
+                    </td>
+                </tr>
+                <tr>
+                    <th>주소</th>
+                    <td>
+                        <input type="text" name="address" id="address" th:value="${member.address}" placeholder="주소 입력" style="width: 300px;" readonly>
+                        <input type="button" id="postBtn" value="주소 검색">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <input type="submit" value="수정">
+            <input type="reset" value="다시 쓰기">
+        </form>
+    </section>
+</body>
+</html>

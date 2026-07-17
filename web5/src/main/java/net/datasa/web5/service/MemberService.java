@@ -124,4 +124,76 @@ public class MemberService {
 		Authentication info = SecurityContextHolder.getContext().getAuthentication();
 		log.debug(">>> 직접 만든 인증객체 정보: {}", info);
 	}
+	
+/*	public MemberDTO getMemberInfo(String memberId) {
+		MemberEntity entity = mr.findById(memberId)
+				.orElseThrow(() -> new EntityNotFoundException("회원이 존재하지 않습니다."));
+		
+		MemberDTO dto = MemberDTO.builder()
+				.memberId(entity.getMemberId())
+				.memberName(entity.getMemberName())
+				.email(entity.getEmail())
+				.phone(entity.getPhone())
+				.address(entity.getAddress())
+				.build();
+		
+		return dto;
+	}
+	
+	public void update(MemberDTO dto) {
+		MemberEntity entity = mr.findById(dto.getMemberId())
+				.orElseThrow(() -> new EntityNotFoundException("회원이 존재하지 않습니다."));
+		
+				entity.setMemberName(dto.getMemberName());
+				entity.setEmail(dto.getEmail());
+				entity.setPhone(dto.getPhone());
+				entity.setAddress(dto.getAddress());
+				if(dto.getMemberPassword() != null && !dto.getMemberPassword().isEmpty()) {
+					entity.setMemberPassword(passwordEncoder.encode(dto.getMemberPassword()));
+				}
+		
+		mr.save(entity);
+	}*/
+	
+	// ----------------------------------------------------------------------------------------
+	/*
+		회원정보 조회
+		@param id 조회할 아이디
+		@return 회원 한 명의 정보
+	 */
+	public MemberDTO getMember(String id) {
+		MemberEntity entity = mr.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException(id + " : 아이디가 없습니다."));
+		
+		MemberDTO dto = MemberDTO.builder()
+				.memberId(entity.getMemberId())
+				.memberName(entity.getMemberName())
+				.email(entity.getEmail())
+				.phone(entity.getPhone())
+				.address(entity.getAddress())
+				.enabled(entity.getEnabled())
+				.rolename(entity.getRolename())
+				.build();
+		return dto;
+	}
+	
+	// -----------------------------------------------------------
+	/*
+		회원정보 수정
+		@param dto 수정할 회원정보
+	 */
+	public void updateMember(MemberDTO dto) {
+		MemberEntity entity = mr.findById(dto.getMemberId())
+				.orElseThrow(() -> new EntityNotFoundException(dto.getMemberId() + " : 회원정보가 없습니다."));
+		
+		if (!dto.getMemberPassword().isEmpty()) {
+			entity.setMemberPassword(passwordEncoder.encode(dto.getMemberPassword()));
+		}
+		entity.setMemberName(dto.getMemberName());
+		entity.setEmail(dto.getEmail());
+		entity.setPhone(dto.getPhone());
+		entity.setAddress(dto.getAddress());
+		
+		mr.save(entity);
+	}
 }

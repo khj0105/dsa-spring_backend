@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>info.html</title>
+        <script>
+            window.onload = function() {
+                document.querySelector('#infoForm').addEventListener('submit', function(e) {
+                    const pw = document.querySelector('#memberPassword');
+                    const pw2 = document.querySelector('#memberPassword2');
+                    const name = document.querySelector('#memberName');
+                    const msgBox = document.querySelector('#msgBox');
+
+                    if (pw.value !== "") {
+                        if(pw.value.length < 3 || pw.value.length >10 || pw.value !== pw2.value) {
+                            msgBox.innerHTML='비밀번호를 다시 입력해주세요';
+                            e.preventDefault();
+                            return;
+                        }
+                    }
+
+                    if (name.value === "") {
+                        msgBox.innerHTML='이름을 입력해주세요';
+                        e.preventDefault();
+                        return;
+                    }
+
+                });
+            }
+        </script>
+    </head>
+    <body>
+
+    <header>
+        <h1>[ 휴면 계정 해제 ]</h1>
+    </header>
+
+    <section>
+        <div id="msgBox" style="color:red;"></div>
+        <form th:action="@{/member/info}" id="infoForm" method="post">
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <td>
+                        <input type="text" name="memberId" th:value="${member.memberId}" readonly>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td>
+                        <input type="password" id="memberPassword" name="memberPassword"  th:value=${member.memberPassword}>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Password 확인</th>
+                    <td>
+                        <input type="password" id="memberPassword2"  th:value=${member.memberPassword}>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td>
+                        <input type="text" name="memberName" id="memberName" th:value="${member.memberName}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>
+                        <input type="text" name="memberEmail" id="memberEmail" th:value="${member.email}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Phone</th>
+                    <td>
+                        <input type="text" name="memberPhone" id="memberPhone" th:value="${member.phone}">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td>
+                        <input type="text" name="memberAddress" id="memberAddress" th:value="${member.address}">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="center white">
+                        <input type="submit" value="수정">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+    </body>
+</html>

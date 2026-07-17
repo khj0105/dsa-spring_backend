@@ -4,7 +4,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import net.datasa.web5.domain.dto.MemberDTO;
+import net.datasa.web5.security.AuthenticatedUser;
 import net.datasa.web5.service.MemberService;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -124,6 +128,76 @@ public class MemberController {
 		ms.bypassLogin(memberId, request);
 		
 		return "redirect:/";
+	}
+	
+	// ---------------------------------------------------------------------------------------------
+	
+	/*@GetMapping("/info")
+	public String info (
+			@AuthenticationPrincipal AuthenticatedUser user,
+			Model model
+			) {
+		 	String memberId = user.getId();
+			 
+			 MemberDTO dto = ms.getMemberInfo(memberId);
+			 model.addAttribute("member", dto);
+		return "memberView/info";
+	}
+	
+	@PostMapping("/info")
+	public String info(
+			@AuthenticationPrincipal AuthenticatedUser user,
+			MemberDTO dto
+	) {
+		ms.update(dto);
+		return "redirect:/";
+	}*/
+	
+	
+	// ---------------------------------------------------------------------------------------------
+/*
+	개인정보 수정 페이지로 이동
+	@param user		로그인한 사용자 정보(Security Context - Authentication)
+	@param model
+	@return infoForm.html
+		@PreAuthorize		메서드 실행 "전"에 권한 검사
+		@PostAuthorize		메서드 실행 "후"에 결과를 보고 권한 검사
+ */
+	@PreAuthorize("isAuthenticated()")		// 로그인한 사용자만 접근 허용
+	@GetMapping("/info")
+	public String info(
+			@AuthenticationPrincipal UserDetails user,
+			Model model
+	) {
+		log.debug("로그인한 사용자 정보: {}", user);
 		
+		// 회원 조회
+		MemberDTO member = ms.getMember(user.getUsername());
+		model.addAttribute("member", member);
+		log.debug("[조회 성공] {}", member);
+		
+		return "memberView/infoForm";
+	}
+	
+	// --------------------------------------------------------------------------
+	/*
+		개인정보 수정 처리
+		@param user		로그인한 사용자 정보
+		@param member	수정할 정보
+		@return /
+	 */
+	@PreAuthorize("isAuthenticated()")
+	@PostMapping("/info")
+	public String info(
+			@AuthenticationPrincipal AuthenticatedUser user,
+			MemberDTO member
+	){
+		log.debug("수정할 정보: {}", member);
+		member.setMemberId(user.getUsername());
+		
+		ms.updateMember(member);
+		log.debug("[수정 성공]");
+		
+		return "redirect:/";
 	}
 }
