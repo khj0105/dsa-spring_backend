@@ -8,7 +8,6 @@ import net.datasa.web4.service.GuestbookService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import net.datasa.web4.domain.dto.GuestbookDTO;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
