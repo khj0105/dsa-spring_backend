@@ -64,6 +64,11 @@ public class WebSecurityConfig {
 				// 위에서 정의한 일반 public URL 허용
 				.requestMatchers(PUBLIC_URLS.toArray(String[]::new)).permitAll()   			// 모두 접근 허용
                 .requestMatchers("/member/loginForm", "/member/login").permitAll() 	// 명시 허용
+					
+				// 요청 경로의 권한 검사
+//					.requestMatchers("/admin/page").hasAnyRole("ADMIN", "USER")
+//					.requestMatchers("/admin/**").hasRole("ADMIN")
+				
 				.anyRequest().authenticated()
             )
 			

@@ -10,6 +10,7 @@ import net.datasa.web5.domain.entity.MemberEntity;
 import net.datasa.web5.exception.PasswordException;
 import net.datasa.web5.repository.MemberRepository;
 import net.datasa.web5.security.AuthenticatedUserDetailsService;
+import org.springframework.data.domain.Sort;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
@@ -19,6 +20,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 	회원 서비스
@@ -195,5 +199,89 @@ public class MemberService {
 		entity.setAddress(dto.getAddress());
 		
 		mr.save(entity);
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------
+	// 관리자
+	public void admin() {
+			MemberEntity entity = MemberEntity.builder()
+					.memberId("admin")
+					.memberPassword(
+							passwordEncoder.encode("8735")
+					)
+					.memberName("이순신")
+					.email("1234@gmail.com")
+					.phone("010-1234-5678")
+					.address("busan")
+					.enabled(true)
+					.rolename("ROLE_ADMIN")
+					.build();
+			 
+			mr.save(entity);
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------
+	/*
+		회원목록 전체조회
+		@return 회원목록
+	 */
+	public List<MemberDTO> selectAll() {
+		Sort sort = Sort.by(
+				Sort.Order.asc("rolename"),
+				Sort.Order.desc("memberName")
+		);
+		
+		List<MemberEntity> entityList = mr.findAll(sort);
+		List<MemberDTO>    dtoList    = new ArrayList<>();
+		
+		for (MemberEntity entity : entityList) {
+			MemberDTO dto = MemberDTO.builder()
+					.memberId(entity.getMemberId())
+					.memberName(entity.getMemberName())
+					.email(entity.getEmail())
+					.phone(entity.getPhone())
+					.address(entity.getAddress())
+					.enabled(entity.getEnabled())
+					.rolename(entity.getRolename())
+					.build();
+			dtoList.add(dto);
+		}
+		return dtoList;
+	}
+	
+	// ----------------------------------------------------------------------------------------------------------
+	/*
+		회원 검색 결과 조회
+		@param keyword
+		@return
+	 */
+	public List<MemberDTO> selectById(String keyword) {
+		List<MemberEntity> resultEntityList = mr.findByMemberIdContaining(keyword);
+		List<MemberDTO> resultDtoList = new ArrayList<>();
+		
+		for (MemberEntity entity : resultEntityList) {
+			MemberDTO dto = MemberDTO.builder()
+					.memberId(entity.getMemberId())
+					.memberName(entity.getMemberName())
+					.email(entity.getEmail())
+					.phone(entity.getPhone())
+					.address(entity.getAddress())
+					.enabled(entity.getEnabled())
+					.rolename(entity.getRolename())
+					.build();
+			resultDtoList.add(dto);
+		}
+		return resultDtoList;
+	}
+	
+	public void updateRole(String id) {
+		MemberEntity entity = mr.findById(id)
+				.orElseThrow(() -> new EntityNotFoundException("회원이 존재하지 않습니다."));
+		
+		if (entity.getRolename().equals("ROLE_USER")) {
+			entity.setRolename("ROLE_ADMIN");
+		} else {
+			entity.setRolename("ROLE_USER");
+		}
 	}
 }

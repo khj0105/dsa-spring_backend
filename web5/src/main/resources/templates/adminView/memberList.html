@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:sec="http://thymeleaf.org/extras/spring-security">
+    <head>
+        <meta charset="UTF-8">
+        <title>memberList.html</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <script>
+            window.onload = function() {
+                const roleBtn = document.querySelectorAll('.roleBtn');
+
+                roleBtn.forEach(btn => {
+                    btn.addEventListener('click', function(e) {
+                        let id = this.dataset.id;
+                        if (confirm('정말 권한을 변경하시겠습니까?')) {
+                            location.href = `/admin/updateRole/${id}`;
+                        }
+                    });
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>[ 회원 목록 ]</h1>
+        </header>
+        <section>
+            <table>
+                <caption th:text="|${#authentication.name}님 로그인 중|" style="text-align: left;"></caption>
+
+                <!-- 회원 검색 -->
+                <form th:action="@{/admin/list}" method="get">
+                        <input type="text" name="keyword" placeholder="ID 포함 검색" th:value="${keyword}">
+                        <input type="submit" value="검색">
+                </form>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>NAME</th>
+                        <th>EMAIL</th>
+                        <th style="width: 150px;">PHONE</th>
+                        <th>ADDRESS</th>
+                        <th>ROLENAME</th>
+                        <th>ENABLED</th>
+                        <th>변경</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="m : ${memberList}"
+                        th:if="${m.memberId} != ${#authentication.name}">
+                        <td th:text="${m.memberId}"></td>
+                        <td th:text="${m.memberName}"></td>
+                        <td th:text="${m.email}"></td>
+                        <td th:text="${m.phone}"></td>
+                        <td th:text="${m.address}"></td>
+                        <td th:text="${m.rolename}"></td>
+                        <td th:text="${m.enabled}"></td>
+                        <td>
+                            <input type="button" value="권한변경" class="roleBtn" th:data-id="${m.memberId}">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </body>
+</html>
