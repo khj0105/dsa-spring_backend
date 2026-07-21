@@ -274,7 +274,9 @@ public class MemberService {
 		return resultDtoList;
 	}
 	
-	public void updateRole(String id) {
+	
+	
+	/*public void updateRole(String id) {
 		MemberEntity entity = mr.findById(id)
 				.orElseThrow(() -> new EntityNotFoundException("회원이 존재하지 않습니다."));
 		
@@ -283,5 +285,26 @@ public class MemberService {
 		} else {
 			entity.setRolename("ROLE_USER");
 		}
+	}*/
+	public void updateRole(String memberId) {
+		MemberEntity entity = mr.findById(memberId)
+				.orElseThrow(() -> new EntityNotFoundException("회원이 존재하지 않습니다."));
+		String updateRolename = entity.getRolename()
+				.equals("ROLE_USER") ? "ROLE_ADMIN" : "ROLE_USER";
+		
+		entity.setRolename(updateRolename);
+	}
+	
+	// --------------------------------------------------------------------------------
+	/*
+		활성화/비활성화 변경
+		@param memberId
+		@param enabled
+	 */
+	public void updateEnabled(String memberId, boolean enabled) {
+		MemberEntity entity = mr.findById(memberId)
+				.orElseThrow(() -> new EntityNotFoundException("회원이 존재하지 않습니다."));
+		
+		entity.setEnabled(enabled);
 	}
 }

@@ -78,12 +78,45 @@ public class AdminController {
 	}
 	
 	
-	@GetMapping("/updateRole/{id}")
+	/*@GetMapping("/updateRole/{id}")
 	public String changeRole(
 			@PathVariable("id") String id
 	) {
 		
 		ms.updateRole(id);
+		
+		return "redirect:/admin/list";
+	}*/
+	/*
+		권한 변경
+		@param memberId
+		@return
+	 */
+	@PreAuthorize("hasRole('ADMIN')")
+	@GetMapping("/updateRole" + "/{id}")
+	public String update(
+			@PathVariable("id") String memberId
+	) {
+		ms.updateRole(memberId);
+		log.debug("권한 변경 성공!");
+		
+		return "redirect:/admin/list";
+	}
+	
+	// -----------------------------------------------------------------
+	/*
+		계정상태 변경
+		@param memberId
+		@param enabled
+		@return /admin/list
+	 */
+	@GetMapping("/updateEnabled" + "/{id}/{enabled}")
+	public String toggleEnabled(
+			@PathVariable("id") String memberId
+			, @PathVariable("enabled") boolean enabled
+	) {
+		ms.updateEnabled(memberId, !enabled);	// enabled 반전
+		log.debug("{} 계정의 활성 상태를 {}로 변경", memberId, !enabled);
 		
 		return "redirect:/admin/list";
 	}
