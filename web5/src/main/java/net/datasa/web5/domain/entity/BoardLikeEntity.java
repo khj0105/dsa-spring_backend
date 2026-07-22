@@ -7,17 +7,24 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
+/*
+    추천 이력 정보 엔티티
+ */
 @Builder
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @ToString(exclude = {"board", "member"})
 @EntityListeners(AuditingEntityListener.class)
 @Entity
-@Table(name = "board_like",
+@Table(
+		name = "board_like",
 		// 여러 컬럼을 묶은 복합 유니크 제약조건을 만들 때 사용
-		uniqueConstraints = {@UniqueConstraint(columnNames = {"board_num", "member_id"})})
+		uniqueConstraints = {
+				@UniqueConstraint(columnNames = {"board_num", "member_id"})
+		}
+)
 public class BoardLikeEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
