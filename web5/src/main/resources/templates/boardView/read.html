@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>read.html</title>
+    </head>
+    <body>
+        <header>
+            <h1>[ 게시글 읽기 ]</h1>
+        </header>
+
+        <section>
+            <table>
+                <tr>
+                    <th>작성자</th>
+                    <td th:text="|${board.memberName} (${board.memberId})|"></td>
+                </tr>
+                <tr>
+                    <th>작성일</th>
+                    <td th:text="${#temporals.format(board.createDate, 'yyyy년 MM월 dd일 a hh시 mm분 ss초')}"></td>
+                </tr>
+                <tr>
+                    <th>수정일</th>
+                    <td th:text="${board.updateDate != null} ? ${#temporals.format(board.updateDate, 'yyyy년 MM월 dd일 a hh시 mm분 ss초')} : ''"></td>
+                </tr>
+                <tr>
+                    <th>조회수</th>
+                    <td th:text="${board.viewCount}"></td>
+                </tr>
+                <tr>
+                    <th>추천수</th>
+                    <td th:text="${board.likeCount}"></td>
+                </tr>
+                <tr>
+                    <th>제목</th>
+                    <td th:text="${board.title}"></td>
+                </tr>
+                <tr>
+                    <th>내용</th>
+                    <td th:text="${board.contents}" style="white-space: pre-wrap;"></td>
+                </tr>
+                <tr>
+                    <th>파일첨부</th>
+                    <td><!-- 파일첨부 기능은 추후 구현 --></td>
+                </tr>
+            </table>
+
+            <br>
+            <a th:href="@{/board/list}">목록으로</a>
+        </section>
+    </body>
+</html>

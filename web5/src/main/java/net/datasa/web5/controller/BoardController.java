@@ -139,4 +139,11 @@ public class BoardController {
 		
 		return "boardView/list";
 	}
+	
+	@GetMapping("/read")
+	public String read(Model model, @RequestParam("boardNum") Integer boardNum) {
+		BoardDTO boardDTO = bs.read(boardNum);
+		model.addAttribute("board", boardDTO);
+		return "boardView/read";
+	}
 }

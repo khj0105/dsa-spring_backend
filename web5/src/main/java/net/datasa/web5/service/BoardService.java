@@ -146,4 +146,11 @@ public class BoardService {
 		
 		return boardDtoPage;
 	}
+	
+	public BoardDTO read(Integer boardNum) {
+		BoardEntity entity = br.findById(boardNum)
+				.orElseThrow(() -> new EntityNotFoundException("게시글이 없습니다."));
+		entity.increaseViewCount();
+		return BoardDTO.convertToBoardDTO(entity);
+	}
 }
