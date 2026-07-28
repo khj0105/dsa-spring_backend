@@ -5,7 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import net.datasa.web5.domain.dto.BoardDTO;
 import net.datasa.web5.service.BoardService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -140,10 +142,84 @@ public class BoardController {
 		return "boardView/list";
 	}
 	
-	@GetMapping("/read")
+	/*@GetMapping("/read")
 	public String read(Model model, @RequestParam("boardNum") Integer boardNum) {
 		BoardDTO boardDTO = bs.read(boardNum);
 		model.addAttribute("board", boardDTO);
 		return "boardView/read";
+	}*/
+	// ----------------------------------------------------------------------------------
+	/*
+		게시글 상세보기 (읽기)
+		@param model
+		@param boardNum	조회할 글 번호
+		@return	read.html
+	 */
+	@GetMapping("/read")
+	public String read(
+			Model model
+			, @RequestParam("boardNum") int boardNum
+	) {
+		log.debug("조회할 글번호: {}", boardNum);
+		
+		BoardDTO boardDTO = bs.getBoard(boardNum);
+		model.addAttribute("board", boardDTO);
+		
+		return "boardView/read";
+	}
+	
+	// ------------------------------------------------------------
+	/*
+		첨부 파일 다운로드     비동기 요청일때는 restfulapi일때 자주 사용
+		@param boardNum
+		@return
+			ResponseEntity
+				- HttpServletResponse에서 일일이 해야하는 것들을
+				Spring이 객체화해서 제공하는 응답 객체
+				- HTTP 응답 요소
+					1. Status (상태 코드) : 200 OK, 404 NOT FOUND, 500 ERROR 등
+					2. Header (헤더 정보) : 파일명, 파일 타입, 파일 크기, 쿠키 등 메타 데이터
+					3. Body (본문 데이터)	: 진짜 전달할 내용물 (HTML, JSON, 파일 등..)
+	 */
+	@GetMapping("/download")
+	public ResponseEntity<Resource> download(
+			@RequestParam("boardNum") int boardNum
+	) {
+		log.debug("[BoardController] 다운로드 요청 - 글 번호: {}", boardNum);
+		
+		return bs.download(boardNum, uploadPath);
+	}
+	
+	// ---------------------------------------------------------------------------
+	/*
+		이미지 미리보기
+		@param boardNum
+		@return HTTP 응답 바디에 파일/스트림 전송
+	 */
+	@GetMapping("/preview")
+	public ResponseEntity<Resource> preview(
+			@RequestParam("boardNum") int boardNum
+	) {
+		log.debug("[BoardController] 미리보기 요청 - 글 번호: {}", boardNum);
+		
+		return bs.preview(boardNum, uploadPath);
+	}
+	
+	// -------------------------------------------------------------------------------
+	/*
+		게시글 추천
+		@param boardNum		게시글 번호
+		@param user			인증 정보
+		@return /board/read
+	 */
+	@PreAuthorize("isAuthenticated()")
+	@GetMapping("like" + "/{boardNum}")
+	public String like(
+			@PathVariable("boardNum") int boardNum
+			, @AuthenticationPrincipal UserDetails user
+	) {
+		bs.like(boardNum, user.getUsername());
+		
+		return "redirect:/board/read?boardNum=" + boardNum;
 	}
 }

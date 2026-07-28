@@ -40,7 +40,7 @@ public interface BoardRepository extends JpaRepository<BoardEntity, Integer>{
 			"JOIN FETCH board.member m " +
 			"WHERE board.title     Like %:searchWord% " +
 			"   OR board.contents  Like %:searchWord% " +
-			"   OR m.memberId      Like %:searchWord% " +
+			"   OR m.memberId      Like %:searchWord%	 " +
 			"ORDER BY board.boardNum DESC"
 	)
 	Page<BoardEntity> searchAll(

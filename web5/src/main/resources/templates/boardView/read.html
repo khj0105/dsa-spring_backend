@@ -1,8 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
     <head>
         <meta charset="UTF-8">
         <title>read.html</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <script>
+            // 모든 리소스 로딩 완료 후에 함수 실행
+            // window.onload = function() {
+
+               // HTML 및 DOM 트리 파싱 완료 후 (HTML, JS만 대기)
+               document.addEventListener("DOMContentLoaded", () => {
+                    // 1. 글 추천
+                    const likeBtn = document.querySelector("#likeButton");
+                    if(likeBtn) {
+                        likeBtn.addEventListener("click", () => {
+                            const bNum = likeBtn.dataset.num;
+                            location.href = `/board/like/${bNum}`;
+                        });
+                    }
+            });
+        </script>
     </head>
     <body>
         <header>
@@ -12,16 +30,18 @@
         <section>
             <table>
                 <tr>
-                    <th>작성자</th>
-                    <td th:text="|${board.memberName} (${board.memberId})|"></td>
+                    <th style="width: 100px">작성자</th>
+                    <td style="width: 400px;">
+                        <span th:text="|${board.memberName} (${board.memberId})|"></span>
+                    </td>
                 </tr>
                 <tr>
                     <th>작성일</th>
-                    <td th:text="${#temporals.format(board.createDate, 'yyyy년 MM월 dd일 a hh시 mm분 ss초')}"></td>
+                    <td th:text="${board.createDate}"></td>
                 </tr>
                 <tr>
                     <th>수정일</th>
-                    <td th:text="${board.updateDate != null} ? ${#temporals.format(board.updateDate, 'yyyy년 MM월 dd일 a hh시 mm분 ss초')} : ''"></td>
+                    <td th:text="${board.updateDate}"></td>
                 </tr>
                 <tr>
                     <th>조회수</th>
@@ -37,16 +57,47 @@
                 </tr>
                 <tr>
                     <th>내용</th>
-                    <td th:text="${board.contents}" style="white-space: pre-wrap;"></td>
+                    <td><pre th:text="${board.contents}"></pre></td>
                 </tr>
                 <tr>
                     <th>파일첨부</th>
-                    <td><!-- 파일첨부 기능은 추후 구현 --></td>
+                    <td>
+                        <a th:href="@{/board/download(boardNum=${board.boardNum})}"
+                           th:text="${board.originalName}"></a>
+
+                        <!-- 이미지 미리보기 -->
+                        <th:block th:if="${board.originalName} != null"
+                                  th:with="fn=${#strings.toLowerCase(board.originalName)}
+                                    , isImg=${fn.matches('.*[.](png|jpg|jpeg|gif|webp)$')}">
+                            <th:block th:if="${isImg}">
+                                <div style="margin-top: 10px">
+                                    <img th:src="@{/board/preview(boardNum=${board.boardNum})}"
+                                         th:onerror="alert('미리보기 이미지를 불러올 수 없습니다.');"
+                                         alt="첨부 이미지 미리보기"
+                                         style="max-width: 420px; width: 100%; border: 1px solid #ddd">
+                                </div>
+                            </th:block>
+                            <th:block th:unless="${isImg}">
+                                <div style="margin-top: 8px; color:#666;">
+                                    (이미지 파일이 아니라 미리보기를 지원하지 않습니다.)
+                                </div>
+                            </th:block>
+                        </th:block>
+                    </td>
                 </tr>
             </table>
 
             <br>
-            <a th:href="@{/board/list}">목록으로</a>
+
+            <div>
+                <th:block sec:authorize="isAuthenticated()">
+                    <button id="likeButton" th:data-num="${board.boardNum}">추천</button>
+                </th:block>
+                <th:block th:if="${#authentication.name == board.memberId}">
+                    <button id="deleteButton" th:data-num="${board.boardNum}">삭제</button>
+                    <button id="updateButton" th:data-num="${board.boardNum}">수정</button>
+                </th:block>
+            </div>
         </section>
     </body>
 </html>
