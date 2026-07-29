@@ -19,6 +19,26 @@
                             location.href = `/board/like/${bNum}`;
                         });
                     }
+
+                    // 2. 글 삭제
+                    const deleteBtn = document.querySelector("#deleteButton");
+                    if (deleteBtn) {
+                        deleteBtn.addEventListener("click", () => {
+                            const bNum = deleteBtn.dataset.num;
+                            if (confirm("삭제하겠습니까?")) {
+                                location.href = `/board/delete/${bNum}`;
+                            }
+                        });
+                    }
+
+                    // 3. 글 수정
+                    const updateBtn = document.querySelector("#updateButton");
+                    if (updateBtn) {
+                        updateBtn.addEventListener("click", () => {
+                            const bNum = updateBtn.dataset.num;
+                            location.href = `/board/update/${bNum}`;
+                        });
+                    }
             });
         </script>
     </head>

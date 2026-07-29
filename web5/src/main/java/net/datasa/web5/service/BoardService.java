@@ -30,6 +30,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -345,4 +346,72 @@ public class BoardService {
 			// 추천수 증가
 			board.increaseLikeCount();
 		}
+	
+		// ---------------------------------------------------------------------------
+		/*
+			게시글 삭제
+			@param boardNum		삭제할 글 번호
+			@param username		로그인한 아이디
+			@return uploadPath	삭제할 첨부파일 경로
+		 */
+		public void delete(int boardNum, String username, String uploadPath) {
+			BoardEntity boardEntity = br.findById(boardNum)
+					.orElseThrow(() -> new EntityNotFoundException("게시글이 없습니다."));
+			
+			if (!boardEntity.getMember().getMemberId().equals(username)) {
+				throw new RuntimeException("삭제 권한이 없습니다.");
+			}
+			
+			// 삭제 처리
+			br.delete(boardEntity);
+			
+			// 파일 삭제
+			if (boardEntity.getFileName() != null) {
+				try {
+					boolean result = fileManager.deleteFile(
+							uploadPath, boardEntity.getFileName());
+					if (!result) {
+						log.debug("> 삭제 대상 파일이 이미 없음.");
+					}
+				} catch (Exception e) {
+					throw new FileStorageException("파일이 없습니다.");
+				}
+			}
+		}
+	
+		// -------------------------------------------------------------------------------------
+		/*
+			게시글 수정 처리
+			@param boardDTO			수정할 글 정보
+			@param uploadPath		파일 경로
+			@param upload			업로드된 파일
+		 */
+		public void update(BoardDTO boardDTO, String uploadPath, MultipartFile upload) {
+			BoardEntity boardEntity = br.findById(boardDTO.getBoardNum())
+					.orElseThrow(() -> new EntityNotFoundException("'게시글이 없습니다."));
+			
+			if (!boardEntity.getMember().getMemberId().equals(boardDTO.getMemberId())) {
+				throw new RuntimeException("수정 권한이 없습니다.");
+			}
+			
+			// 전달된 정보 수정
+			boardEntity.setTitle(boardDTO.getTitle());
+			boardEntity.setContents(boardDTO.getContents());
+			boardEntity.setUpdateDate(LocalDateTime.now());			// 수동 날짜 저장
+			
+			// 업로드된 파일 유무에 따라 기존 파일 삭제 후 새로 저장
+			if (upload != null && !upload.isEmpty()) {
+				try {
+					if (boardEntity.getFileName() != null) {
+						fileManager.deleteFile(uploadPath, boardDTO.getFileName());
+					}
+					String fileName = fileManager.saveFile(uploadPath, upload);
+					boardEntity.setOriginalName(upload.getOriginalFilename());
+					boardEntity.setFileName(fileName);
+				} catch (IOException e) {
+					throw new FileStorageException("파일이 없습니다.");
+				}
+			}
+		}
+	
 }

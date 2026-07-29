@@ -222,4 +222,65 @@ public class BoardController {
 		
 		return "redirect:/board/read?boardNum=" + boardNum;
 	}
+	
+	// ---------------------------------------------------------
+	/*
+		게시글 삭제
+		@param boardNum			삭제할 글 번호
+		@param user				로그인한 사용자 정보
+		@return /board/list
+	 */
+	@PreAuthorize("isAuthenticated()")
+	@GetMapping("/delete" + "/{boardNum}")
+	public String delete (
+			@PathVariable("boardNum") int boardNum
+			, @AuthenticationPrincipal UserDetails user
+	) {
+		bs.delete(boardNum, user.getUsername(), uploadPath);
+		
+		return "redirect:/board/list";
+	}
+	
+	// ---------------------------------------------------------
+	/*
+		게시글 수정 페이지로 이동
+		@param model
+		@param boardNum		수정할 게시글 번호
+		@return updateForm.html
+	 */
+	@PreAuthorize("isAuthenticated()")
+	@GetMapping("/update" + "/{boardNum}")
+	public String update (
+			Model model
+			,@PathVariable("boardNum") int boardNum
+	) {
+		BoardDTO boardDTO = bs.getBoard(boardNum);
+		model.addAttribute("board", boardDTO);
+		
+		return "boardView/updateForm";
+	}
+	
+	/*
+		게시글 수정 처리
+		@param boardNum		수정할 글 번호
+		@param boardDTO		수정할 글 정보
+		@param user			로그인한 사용자 정보
+		@param upload		업로드된 첨부파일
+		@return	  /board/read
+	 */
+	@PreAuthorize("isAuthenticated()")
+	@PostMapping("/update" + "/{boardNum}")
+	public String update(
+			@PathVariable("boardNum") int boardNum
+			, @ModelAttribute BoardDTO boardDTO
+			, @AuthenticationPrincipal UserDetails user
+			, MultipartFile upload
+	) {
+		boardDTO.setBoardNum(boardNum);
+		boardDTO.setMemberId(user.getUsername());
+		
+		bs.update(boardDTO, uploadPath, upload);
+		
+		return "redirect:/board/read?boardNum=" + boardDTO.getBoardNum();
+	}
 }
