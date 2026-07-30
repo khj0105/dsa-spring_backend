@@ -118,6 +118,44 @@
                     <button id="updateButton" th:data-num="${board.boardNum}">수정</button>
                 </th:block>
             </div>
+
+            <!-- 7/29 댓글 -->
+            <!-- 로그인 사용자 ID $ 게시글 번호-->
+            <input type="hidden" id="loginUserId" sec:authorize="isAuthenticated()" th:value="${#authentication.name}">
+            <input type="hidden" id="boardNum" th:value="${board.boardNum}">
+
+            <!-- 댓글 작성 폼 -->
+            <div sec:authorize="isAuthenticated()">
+                <input type="text" id="replyContents" style="width: 500px" placeholder="댓글을 입력하세요">
+                <button type="submit">댓글 작성</button>
+            </div>
+
+            <!-- 댓글 목록 출력 영역 (JS가 직접 렌더링) -->
+            <table class="reply">
+                <tbody id="replyListBody">
+                    <!-- JS에 의해 동적 생성 -->
+                    <!-- innerHTML을 이용-->
+                </tbody>
+            </table>
         </section>
+
+        <!-- 댓글 출력 탬플릿 (화면에 출력되지 않는 HTML 탬플릿) -->
+        <template>
+            <tr>
+                <td class="replyid">
+                    <a class="replyUserLink"></a>
+                </td>
+                <td class="replytext"></td>
+                <td class="replydate" style="width: 20%;"></td>
+                <td class="white btnArea">
+                    <a href="#" class="replyDeleteBtn">
+                        <img src="/img/icon_delete.png" alt="삭제">
+                    </a>
+                    <a href="#" class="replyUpdateBtn">
+                        <img src="/img/icon_edit.png" alt="수정">
+                    </a>
+                </td>
+            </tr>
+        </template>
     </body>
 </html>

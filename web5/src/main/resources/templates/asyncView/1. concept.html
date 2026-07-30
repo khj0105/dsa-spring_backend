@@ -27,7 +27,7 @@
                               .catch(error => console.log('catch: ', error))
                               .finally(console.log('무조건 실행'));
 
-                     resultBox.textContent = "대기 중 (Pending).. 2초 뒤 약속이 이행됩니다.";
+                     resultBox.textContent = "대기 중 (Pending)... 2초 뒤 약속이 이행됩니다.";
                  });
 
                  // 2. Fetch (Then 방식)
@@ -38,6 +38,21 @@
                           .then(data => resultBox.textContent = `Then 방식 결과: ${data}`
                         );
                  });
+
+                 // 3. Async / Await 방식
+                 document.querySelector('#btnAsync').addEventListener('click', async () => {
+                    try {
+                        const response = await fetch('/api/basic');
+                        const data = await response.text();
+
+                        resultBox.textContent = `Async/Await 방식 결과: ${data}`;
+
+                    } catch (error) {
+                        console.error('에러 발생:', error);
+                        resultBox.textContent = "서버 통신 실패";
+                    }
+                 });
+
             });
         </script>
     </head>
