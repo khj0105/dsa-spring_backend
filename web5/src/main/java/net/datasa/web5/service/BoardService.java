@@ -413,5 +413,43 @@ public class BoardService {
 				}
 			}
 		}
+		
+		// ------------------------------------------------------------------------------------
+	/*	댓글 */
+		/*
+		 댓글 목록 조회
+			@param boardNum 게시글 번호
+			@return 댓글 목록
+		 */
+		public List<ReplyDTO> getReplyList(int boardNum) {
+			Sort sort = Sort.by(Sort.Direction.DESC, "createDate");
+			List<ReplyEntity> replyEntityList = rr.findByBoard_BoardNum(boardNum, sort);
+			List<ReplyDTO> replyDTOList = new ArrayList<>();
+			
+			for (ReplyEntity entity : replyEntityList) {
+				ReplyDTO dto = ReplyDTO.convertToReplyDTO(entity);
+				replyDTOList.add(dto);
+			}
+			
+			return replyDTOList;
+		}
 	
-}
+		// ------------------------------------------------------------------------------------
+		/*
+			댓글 저장
+			@param replyDTO	작성한 댓글 정보
+		 */
+		public void replyWrite(ReplyDTO replyDTO) {
+			MemberEntity memberEntity = mr.findById(replyDTO.getMemberId())
+					.orElseThrow(() -> new EntityNotFoundException("사용자 아이디가 없습니다."));
+			BoardEntity boardEntity = br.findById(replyDTO.getBoardNum())
+					.orElseThrow(() -> new EntityNotFoundException("게시글이 없습니다."));
+			
+			ReplyEntity entity = ReplyEntity.builder()
+					.member(memberEntity)
+					.board(boardEntity)
+					.contents(replyDTO.getContents())
+					.build();
+			rr.save(entity);
+		}
+	}

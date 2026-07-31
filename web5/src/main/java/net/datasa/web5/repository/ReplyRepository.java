@@ -1,6 +1,7 @@
 package net.datasa.web5.repository;
 
 import net.datasa.web5.domain.entity.ReplyEntity;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -16,4 +17,8 @@ public interface ReplyRepository extends JpaRepository<ReplyEntity, Integer>{
 	// 게시글 정보에 필요한 댓글 목록
 	@EntityGraph(attributePaths = {"member"})
 	List<ReplyEntity> findByBoard_BoardNumOrderByCreateDateDesc(int boardNum);
+	
+	// 한 게시글의 댓글
+	@EntityGraph(attributePaths = {"member"})
+	List<ReplyEntity> findByBoard_BoardNum(int boardNum, Sort sort);
 }
