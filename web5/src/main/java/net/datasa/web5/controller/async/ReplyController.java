@@ -56,23 +56,43 @@ public class ReplyController {
 		return ResponseEntity.ok("success");
 	}
 	
-	// 삭제
+	// --------------------------------------------------------------------
+	/*
+		댓글 삭제
+		@param replyNum			삭제할 댓글 번호
+		@param user				로그인한 사용자 정보
+		@return 응답 객체
+	 */
 	@PreAuthorize("isAuthenticated()")
 	@ResponseBody
-	@DeleteMapping("/delete")
-	public ResponseEntity<String> deleteReply (
+	@DeleteMapping("/delete" +"/{replyNum}")
+	public ResponseEntity<String> replyDelete (
 		@AuthenticationPrincipal UserDetails user
+		,@PathVariable("replyNum") int replyNum
 	) {
-		reply
 		
-		bs.
+		bs.replyDelete(replyNum, user.getUsername());
 		
-		return ResponseEntity.ok("delete");
+		return ResponseEntity.ok("success");
 	}
 	
-	
-	// 수정
+	// ----------------------------------------------------------
+	/*
+	 	댓글 수정
+	 	@param replyDTO		수정할 댓글 정보
+	 	@param user			로그인한 사용자 정보
+	 	@return 응답 객체
+	 */
 	@PreAuthorize("isAuthenticated()")
 	@ResponseBody
-	@PatchMapping
+	@PutMapping("/update")
+	public ResponseEntity<String> replyUpdate (
+			@AuthenticationPrincipal UserDetails user
+			,@RequestBody ReplyDTO replyDTO
+	){
+		
+		bs.replyUpdate(replyDTO, user.getUsername());
+		
+		return ResponseEntity.ok("success");
+	}
 }

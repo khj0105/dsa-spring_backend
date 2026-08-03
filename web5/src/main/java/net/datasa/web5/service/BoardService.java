@@ -452,4 +452,32 @@ public class BoardService {
 					.build();
 			rr.save(entity);
 		}
+	
+		// -----------------------------------------------------------------------------------
+		/*
+			댓글 삭제
+			@param replyNum		삭제할 댓글 번호
+			@param username 	로그인한 아이디
+	 	*/
+		public void replyDelete(int replyNum, String username) {
+			ReplyEntity replyEntity = rr.findById(replyNum)
+							.orElseThrow(() -> new EntityNotFoundException("댓글이 없습니다."));
+				
+			if (!replyEntity.getMember().getMemberId().equals(username)) {
+				throw new RuntimeException("삭제 권한이 없습니다.");
+			}
+			
+			rr.delete(replyEntity);
+		}
+	
+	public void replyUpdate(ReplyDTO replyDTO, String username) {
+			ReplyEntity replyEntity = rr.findById(replyDTO.getReplyNum())
+					.orElseThrow(() -> new EntityNotFoundException("댓글이 없습니다."));
+			
+			if(!replyEntity.getMember().getMemberId().equals(username)) {
+				throw new RuntimeException("수정 권한이 없습니다.");
+			}
+			
+			replyEntity.setContents(replyEntity.getContents());
 	}
+}

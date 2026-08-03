@@ -168,19 +168,29 @@
                         // 댓글 수정
                         const editBtn = e.target.closest(".replyUpdateBtn");
                         if (editBtn) {
-                            if (!confirm("정말 수정하시겠습니까?")) return;
+                           const replyNum = editBtn.dataset.num;
 
-                            const replyNum = editBtn.dataset.num;
-                            const res = await fetch(`/reply/fetch/${replyNum}`, {
-                                method: "Patch"
-                            });
+                           const tr = editBtn.closest("tr");
+                           const oldContents = tr ? tr.querySelector(".replytext").textContent : "";
 
-                            if (res.ok) loadReplyList();
-                            return;
-                        }
+                           const newContents = prompt("댓글 수정", oldContents);
+
+                           if (newContents === null) return;
+                           if (newContents.trim().length < 5) {
+                                alert("댓글은 5자 이상 입력해야 합니다.");
+                                return;
+                           }
+
+                           const res = await fetch(`/reply/update`, {
+                                method: "PUT",
+                                headers: { "Content-Type": "application/json" },
+                                body: JSON.stringify({ replyNum, contents: newContents.trim() })
+                           });
+
+                           if (res.ok) loadReplyList();
+                           return;
+                           }
                     });
-
-
             });     // DOMContentLoaded
         </script>
     </head>
