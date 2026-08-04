@@ -9,6 +9,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -94,5 +95,28 @@ public class ReplyController {
 		bs.replyUpdate(replyDTO, user.getUsername());
 		
 		return ResponseEntity.ok("success");
+	}
+	
+	// ------------------------------------------------
+	/*
+		해당 회원의 댓글 목록 페이지 이동
+		@param memberId		조회할 아이디
+	 	@return replyList.html
+	 */
+	@GetMapping("/userReplyList")
+	public String userReplyList (
+			@RequestParam("memberId") String memberId,
+			Model model
+	) {
+		// 특정 회원의 댓글 목록
+		List<ReplyDTO> replyList = bs.userReplyList(memberId);
+		// 특정 회원의 댓글 수
+		int replyCount = bs.replyCount(memberId);
+		
+		model.addAttribute("id", memberId);
+		model.addAttribute("count", replyCount);
+		model.addAttribute("replyList", replyList);
+		
+		return "boardView/replyList";
 	}
 }

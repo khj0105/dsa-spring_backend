@@ -21,4 +21,10 @@ public interface ReplyRepository extends JpaRepository<ReplyEntity, Integer>{
 	// 한 게시글의 댓글
 	@EntityGraph(attributePaths = {"member"})
 	List<ReplyEntity> findByBoard_BoardNum(int boardNum, Sort sort);
+	
+	// 특정 회원의 댓글 목록
+	List<ReplyEntity> findByMember_MemberId(String memberId, Sort sort);
+	
+	// 댓글 목록 수
+	int countByMember_MemberId(String memberId);
 }

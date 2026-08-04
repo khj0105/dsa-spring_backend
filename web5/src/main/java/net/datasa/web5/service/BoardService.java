@@ -480,4 +480,33 @@ public class BoardService {
 			
 			replyEntity.setContents(replyEntity.getContents());
 	}
+	
+	// --------------------------------------------------------------------------------
+	/*
+		회원 1명의 댓글 목록 조회
+		@param memberId		조회할 아이디
+		@return 댓글 목록
+	 */
+	public List<ReplyDTO> userReplyList(String memberId) {
+			Sort sort = Sort.by(Sort.Direction.DESC, "createDate");
+			List<ReplyEntity> replyEntityList = rr.findByMember_MemberId(memberId, sort);
+			
+			List<ReplyDTO> replyDTOList = new ArrayList<>();
+			for (ReplyEntity entity : replyEntityList) {
+				ReplyDTO dto = ReplyDTO.convertToReplyDTO(entity);
+				replyDTOList.add(dto);
+			}
+			return replyDTOList;
+	}
+	
+	
+	// ------------------------------------------------------------------------------------------------
+	/*
+		특정 회원의 댓글 수
+		@param memberId
+		@return
+	 */
+	public int replyCount(String memberId) {
+		return rr.countByMember_MemberId(memberId);
+	}
 }

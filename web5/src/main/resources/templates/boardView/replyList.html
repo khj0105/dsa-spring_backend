@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <title>replyList.html</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <script>
+
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1 th:text="|[ ${id} 의 댓글 목록 ]|"></h1>
+        </header>
+
+        <section>
+            <table>
+                <tr>
+                    <td class="white">
+                        <span th:text="|전체: ${count}개|"></span>
+                    </td>
+                    <td class="white" colspan="2"></td>
+                    <td class="head" style="text-align: right;">
+                        <a th:href="@{/}">HOME</a>
+                    </td>
+                </tr>
+                <tr>
+                    <th>게시글 번호</th>
+                    <th>작성자</th>
+                    <th style="width: 300px">내용</th>
+                    <th style="width: 150px">작성일</th>
+                </tr>
+                <tr th:if="${replyList == null or replyList.isEmpty()}">
+                    <td class="white center" colspan="4">
+                        <span th:text="|작성할 댓글이 없습니다.|"></span>
+                    </td>
+                </tr>
+                <tr th:each="reply : ${replyList}">
+                    <td th:text="${reply.boardNum}" class="center"></td>
+                    <td th:text="${reply.memberId}" class="center"></td>
+                    <td class="center">
+                        <a th:href="@{/board/read(boardNum=${reply.boardNum})}"
+                           th:text="${reply.contents}"></a>
+                    </td>
+                    <td th:text="${reply.createDate}" class="center"></td>
+                </tr>
+            </table>
+
+            <br>
+            <div id="navigator">
+                <form method="get" th:action="@{/reply/userReplyList}">
+                    <input type="text" name="memberId" th:value="${id}">
+                    <input type="submit" value="검색">
+                </form>
+            </div>
+        </section>
+    </body>
+</html>
