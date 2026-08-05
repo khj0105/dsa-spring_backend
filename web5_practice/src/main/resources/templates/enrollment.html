@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>enrollment.html</title>
+        <link rel="stylesheet" th:href="@{/css/main.css}">
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+
+               const stars = document.querySelectorAll(".star");
+                const ratingInput = document.querySelector("#ratingValue");
+                const ratingText = document.querySelector("#ratingText");
+
+            stars.forEach(star => {
+                star.addEventListener("click", () => {
+                    const value = star.dataset.value;
+
+                    stars.forEach(s => {
+                        s.textContent = s.dataset.value <= value ? "★" : "☆";
+                    });
+
+                    ratingInput.value = value;
+                    ratingText.textContent = `${value}점`;
+                });
+            });
+
+        });
+        </script>
+    </head>
+    <body>
+    <header>
+        <h1>맛집 등록</h1>
+        <a th:href="@{/restaurant/list}">목록으로</a>
+    </header>
+
+    <section>
+        <form th:action="@{/restaurant/write}" method="post">
+
+            <div>
+                <label>맛집 이름</label>
+                <input type="text" name="name" placeholder="맛집 이름을 입력해주세요.">
+            </div>
+
+            <div>
+                <label>음식 종류</label>
+                <select name="category">
+                    <option value="">선택해주세요</option>
+                    <option value="한식">한식</option>
+                    <option value="중식">중식</option>
+                    <option value="일식">일식</option>
+                    <option value="양식">양식</option>
+                    <option value="카페/디저트">카페/디저트</option>
+                </select>
+            </div>
+
+            <div>
+                <label>주소</label>
+                <input type="text" name="address" placeholder="주소 검색 버튼을 눌러주세요" readonly>
+                <button type="button">주소 검색</button>
+                <input type="text" name="detailAddress" placeholder="상세 주소를 입력해주세요 (동/호수 등)">
+            </div>
+
+            <div>
+                <label>전화번호</label>
+                <input type="text" name="phone" placeholder="예) 051-123-4567">
+            </div>
+
+            <div>
+                <label>별점</label>
+                <div class="star-rating">
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span id="ratingText">0점</span>
+                </div>
+                <input type="hidden" id="ratingValue" name="rating" value="0">
+            </div>
+
+            <div>
+                <label>한 줄 소개</label>
+                <textarea name="description" placeholder="맛집에 대한 간단한 소개를 남겨주세요."></textarea>
+            </div>
+
+            <button type="submit">등록하기</button>
+            <button type="button">취소</button>
+
+        </form>
+    </section>
+    </body>
+</html>
