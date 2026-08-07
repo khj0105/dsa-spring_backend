@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>향수 설문조사 결과</title>
+    <!-- CSS 참조 -->
+    <link rel="stylesheet" href="/css/result.css">
+    <!-- JS 참조 -->
+    <script src="/js/result.js"></script>
+</head>
+<body>
+<h1>향수 설문 결과</h1>
+<section>
+    <table style="border: 1px solid black">
+        <tr style="border: 1px solid black">
+            <th style="border: 1px solid black">이름</th>
+            <th style="border: 1px solid black">나이</th>
+            <th style="border: 1px solid black">선호 향기</th>
+            <th style="border: 1px solid black">사용 빈도</th>
+            <th style="border: 1px solid black">선호 브랜드</th>
+            <th style="border: 1px solid black">구매 예산</th>
+            <th style="border: 1px solid black">추가 의견</th>
+            <th style="border: 1px solid black">설문 시간</th>
+        </tr>
+        <tr th:each="perfume : ${perfumeList}">
+            <th th:text="${perfume.name}" style="border: 1px solid black"></th>
+            <th th:text="${perfume.age}" style="border: 1px solid black"></th>
+            <th th:text="${perfume.favoriteScent}" style="border: 1px solid black"></th>
+            <th th:text="${perfume.usageFrequency}" style="border: 1px solid black"></th>
+            <th th:text="${perfume.favoriteBrand}" style="border: 1px solid black"></th>
+            <th th:text="${perfume.purchaseBudget}" style="border: 1px solid black"></th>
+            <th th:text="${perfume.comments}" style="border: 1px solid black"></th>
+            <th th:text="${#temporals.format(perfume.completionTime, 'yy.MM.dd HH:mm')} "
+                style="border: 1px solid black"></th>
+
+            <input type="hidden" class="delBtn" th:data-no="${perfume.no}">
+        </tr>
+    </table>
+</section>
+</body>
+</html>

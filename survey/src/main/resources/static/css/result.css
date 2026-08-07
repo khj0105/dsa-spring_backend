@@ -1,0 +1,17 @@
+* result.html 용 CSS */
+th {
+    background: lightseagreen;
+}
+
+h1 {
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+}
+
+tr:hover {
+    font-weight: bold;
+}
